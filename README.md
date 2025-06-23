@@ -25,29 +25,45 @@ Follow this steps to set up your project report:
 
 # Project Title
 
-_Group members: Name 1, Name 2, Name 3_
+_Group members: Nina Geyer, Estelle Klevenz, Liane Strauch_
 
 ## Introduction
 
-Start off by setting the stage for your project. Give a brief overview of relevant studies or work that have tackled similar issues. Then, clearly describe the main question or problem your project is designed to solve.
+_Start off by setting the stage for your project. Give a brief overview of relevant studies or work that have tackled similar issues. Then, clearly describe the main question or problem your project is designed to solve._
+
+A lot is going on on Reddit.
+In numerous subreddits, almost everything is discussed: People look for advice on life choices, shopping suggestions, are eager to understand something, learn something, rant about a thing or look to exchange experiences or discuss a topic.
+You can make Reddit a source for just about anything. And it is used that way! In a survey conducted 2024 by the Pew Research Center, around a third of the platform's users that participated stated that they regularly use Reddit as a source of information [FOOTNOTE-1].
+People use the various forums that Reddit offers in its subreddits as a source of information...but what is the quality of this information?
+
+### Evidence minus Intuition (EMI)
+
+To answer that question we employ the EMI-Score. The Evidence-minus-Intuition measure was created in the context of US congressional speeches and the communication of politicians. It aims to capture how much of their language is "evidence-based" opposed to "intuition-based" to give insight into their approach to honesty and truthfulness [FOOTNOTE-2]. "Evidence-based" reasoning apporaches truth "by relying on evidence, facts, data and other elements of external reality" [FOOTNOTE-4] whereas the "intuition-based" approach relies "on feelings, instincts, personal values and other elements drawn mainly from a person’s internal experiences." in its conception of truth [FOOTNOTE-5]. 
+As "information" is commonly defined as "facts about sth." [FOOTNOTE-6] the EMI can help us to measure whether a certain communicated paragraph "qualifies" as information. The EMI is not concerned with the actual truth value of the content it is applied on but only considers the rhetoric. Therefore, we assume that the concept can be transferred from political speech to the diverse content of Reddit forums without complications.
+
+### Roadmap
+
+- 
 
 ## Dataset
 
-Provide a short description of the dataset used in your project. Focus on highlighting the aspects that are particularly relevant to your work.
+_Provide a short description of the dataset used in your project. Focus on highlighting the aspects that are particularly relevant to your work._
+
+
 
 ## Methods
 
 ### Setup 
 
 
-Outline the tools, software, and hardware environment, along with configurations used for conducting your experiments. Be sure to document the Python version and other dependencies clearly. Provide step-by-step instructions on how to recreate your environment, ensuring anyone can replicate your setup with ease:
+_Outline the tools, software, and hardware environment, along with configurations used for conducting your experiments. Be sure to document the Python version and other dependencies clearly. Provide step-by-step instructions on how to recreate your environment, ensuring anyone can replicate your setup with ease:_
 
 ```bash
 conda create --name myenv python=<version>
 conda activate myenv
 ```
 
-Include a `requirements.txt` file in your project repository. This file should list all the Python libraries and their versions needed to run the project. Provide instructions on how to install these dependencies using pip, for example:
+_Include a `requirements.txt` file in your project repository. This file should list all the Python libraries and their versions needed to run the project. Provide instructions on how to install these dependencies using pip, for example:_
 
 ```bash
 pip install -r requirements.txt
@@ -55,25 +71,32 @@ pip install -r requirements.txt
 
 ### Experiments
 
-Report how you conducted the experiments. We suggest including detailed explanations of the preprocessing steps and model training in your project. For the preprocessing, describe  data cleaning, normalization, or transformation steps you applied to prepare the dataset, along with the reasons for choosing these methods. In the section on model training, explain the methodologies and algorithms you used, detail the parameter settings and training protocols, and describe any measures taken to ensure the validity of the models.
+_Report how you conducted the experiments. We suggest including detailed explanations of the preprocessing steps and model training in your project. For the preprocessing, describe  data cleaning, normalization, or transformation steps you applied to prepare the dataset, along with the reasons for choosing these methods. In the section on model training, explain the methodologies and algorithms you used, detail the parameter settings and training protocols, and describe any measures taken to ensure the validity of the models._
 
 ## Results and Discussion
 
-Present the findings from your experiments, supported by visual or statistical evidence. Discuss how these results address your main research question.
+_Present the findings from your experiments, supported by visual or statistical evidence. Discuss how these results address your main research question._
 
 ## Conclusion
 
-Summarize the major outcomes of your project, reflect on the research findings, and clearly state the conclusions you've drawn from the study.
+_Summarize the major outcomes of your project, reflect on the research findings, and clearly state the conclusions you've drawn from the study._
 
 ## Contributions
 
-| Team Member  | Contributions                                             |
-|--------------|-----------------------------------------------------------|
-| Alice Smith  | Data collection, preprocessing, model training, evaluation|                                                       |
-| Bob Johnson  | ...                                                       |
-| ...          | ...                                                       |
+| Team Member      | Contributions                                             |
+|------------------|-----------------------------------------------------------|
+| Nina Geyer       | main word2vec preprocessing & analysis, visualizations    |
+| Estelle Klevenz  | webpage, dictionary experiments                           |
+| Liane Strauch    | slides, model experimetns (BERT)                          |
 
 ## References
 
-Include a list of academic and professional sources you cited in your report, using an appropriate citation format to ensure clarity and proper attribution.
+_Include a list of academic and professional sources you cited in your report, using an appropriate citation format to ensure clarity and proper attribution._
 
+https://www.pewresearch.org/journalism/fact-sheet/social-media-and-news-fact-sheet/ [FOOTNOTE-1]
+
+Computational analysis of US congressional speeches reveals a shift from evidence to intuition (EMI-paper) [FOOTNOTE-3][FOOTNOTE-4][FOOTNOTE-5]
+
+From alternative conceptions of honesty to alternative facts in communications by US politicians [FOOTNOTE-2]
+
+https://dictionary.cambridge.org/de/worterbuch/englisch/information [FOOTNOTE-6]
