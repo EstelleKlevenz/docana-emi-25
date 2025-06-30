@@ -31,6 +31,10 @@ _Group members: Nina Geyer, Estelle Klevenz, Liane Strauch_
 
 _Start off by setting the stage for your project. Give a brief overview of relevant studies or work that have tackled similar issues. Then, clearly describe the main question or problem your project is designed to solve._
 
+How do you say it?
+Recent studies in the realm of the political sciences have shown a shift 
+
+
 A lot is going on on Reddit.
 In numerous subreddits, almost everything is discussed: People look for advice on life choices, shopping suggestions, are eager to understand something, learn something, rant about a thing or look to exchange experiences or discuss a topic.
 You can make Reddit a source for just about anything. And it is used that way! In a survey conducted 2024 by the Pew Research Center, around a third of the platform's users that participated stated that they regularly use Reddit as a source of information [FOOTNOTE-1].
@@ -39,17 +43,32 @@ People use the various forums that Reddit offers in its subreddits as a source o
 ### Evidence minus Intuition (EMI)
 
 To answer that question we employ the EMI-Score. The Evidence-minus-Intuition measure was created in the context of US congressional speeches and the communication of politicians. It aims to capture how much of their language is "evidence-based" opposed to "intuition-based" to give insight into their approach to honesty and truthfulness [FOOTNOTE-2]. "Evidence-based" reasoning apporaches truth "by relying on evidence, facts, data and other elements of external reality" [FOOTNOTE-4] whereas the "intuition-based" approach relies "on feelings, instincts, personal values and other elements drawn mainly from a person’s internal experiences." in its conception of truth [FOOTNOTE-5]. 
-As "information" is commonly defined as "facts about sth." [FOOTNOTE-6] the EMI can help us to measure whether a certain communicated paragraph "qualifies" as information. The EMI is not concerned with the actual truth value of the content it is applied on but only considers the rhetoric. Therefore, we assume that the concept can be transferred from political speech to the diverse content of Reddit forums without complications.
+The EMI is not concerned with the actual truth value of the content it is applied on but only considers the rhetoric. Therefore, we cannot infer anything about the actual quality of posts. assume that the concept can be transferred from political speech to the diverse content of Reddit forums without complications.
+
+- topics and discussions on reddit seperated through subreddits. super diverse - interesting to see how the language is different for different subreddits
 
 ### Roadmap
 
-- 
+- dataset with content from different subreddits
+- EMI score (how to)
+    - dictionary
+    - word2vec
+- visualizations
+    - wordclouds
+    - PCA
+1. different dictionary
+2. different model (BERT)
+2. comparison on post level: long vs summary
 
 ## Dataset
 
 _Provide a short description of the dataset used in your project. Focus on highlighting the aspects that are particularly relevant to your work._
 
-
+different subreddits
+- TLDR
+	- nur datensatz mit langen posts, identifiziert durch TLDR
+	- nur posts, keine thread-responses
+- datensatz aus paper zu summary training
 
 ## Methods
 
@@ -95,8 +114,8 @@ _Include a list of academic and professional sources you cited in your report, u
 
 https://www.pewresearch.org/journalism/fact-sheet/social-media-and-news-fact-sheet/ [FOOTNOTE-1]
 
-Computational analysis of US congressional speeches reveals a shift from evidence to intuition (EMI-paper) [FOOTNOTE-3][FOOTNOTE-4][FOOTNOTE-5]
+Computational analysis of US congressional speeches reveals a shift from evidence to intuition (EMI-paper) [Source-1]
 
-From alternative conceptions of honesty to alternative facts in communications by US politicians [FOOTNOTE-2]
+From alternative conceptions of honesty to alternative facts in communications by US politicians [Source-2]
 
 https://dictionary.cambridge.org/de/worterbuch/englisch/information [FOOTNOTE-6]
