@@ -42,18 +42,15 @@ The EMI is not concerned with the actual truth value of the content it is applie
 
 Our research quest is to show that the EMI can be applied to the domain of social-media and to find out how language is used in different subreddits.
 
+### Hypotheses
+
+The data employed are Reddit posts from different subreddits, subforums on the platform. We expect some to have more evidence based language and other to rely more on intuition in how contents are discussed.
+
 ### Roadmap
 
-- dataset with content from different subreddits
-- EMI score (how to)
-    - dictionary
-    - word2vec
-- visualizations
-    - wordclouds
-    - PCA
-1. different dictionary
-2. different model (BERT)
-2. comparison on post level: long vs summary
+After preprocessing we calculated the EMI score for subreddits, posts and individual words. To do this we followed the approach of the authors of the EMI score, as described in their paper from 2024 [Source-1]. The results were visually explored in histograms, wordclouds and PCA.
+
+To validate our findings and test them for their robustness we conducted several "experiments" changing different settings of the approach. As a first experiment we compared the EMI scores for the long-posts with those of the corresponding summaries. Secondly we followed the process described by the authors and constructed and applied our own dictionary and thus a vocabulary definition of evidence resp. intuition based on the language used in the reddit forums. Lastly we experimented with a different embedding / latent representation by applying BERT instead of the word2vec algorithm/method (XX) to the long posts.
 
 ## Dataset
 
