@@ -22,7 +22,10 @@ Our research quest is to show that the EMI can be applied to the domain of socia
 
 The data employed are Reddit posts from different subreddits, subforums on the platform. We expect some to have more evidence based language and other to rely more on intuition in how contents are discussed.
 
-XX
+- more evidence in subs that have fact content ('explainlikeimfive',  'todayilearned',
+ 'worldnews', news) or a topic that has clear facts (buildapc, technology, askscience)
+- more intuition is subs that regard personal experience (relationships,offmychest,talesfromtechsupport,depression )and advice (relationship_advice, 'askmen', dating_advice, loseit, advice)
+
 
 ### Roadmap
 
@@ -48,23 +51,21 @@ and r/advice.
 
 Processing and analysis happened mostly on the content column and the summary, grouped by subreddit.
 
-## Methods
-
-### Setup 
+## Methods - Setup
 
 XX
 _Outline the tools, software, and hardware environment, along with configurations used for conducting your experiments. Be sure to document the Python version and other dependencies clearly. Provide step-by-step instructions on how to recreate your environment, ensuring anyone can replicate your setup with ease:_
 
-### Experiments
+## Method - Experiments
 
 _Report how you conducted the experiments. We suggest including detailed explanations of the preprocessing steps and model training in your project. For the preprocessing, describe  data cleaning, normalization, or transformation steps you applied to prepare the dataset, along with the reasons for choosing these methods. In the section on model training, explain the methodologies and algorithms you used, detail the parameter settings and training protocols, and describe any measures taken to ensure the validity of the models._
 
-#### main analysis - EMI
-##### Preprocessing
+### Main Analysis - EMI
+#### Preprocessing
 
 On the selected subset of the reddit dataset we first applied data cleaning. We converted all words to lowercase, removed punctuation, tokenized the words with the nltk python package word-tokenizer and with the list provided by the nltk package we removed stopwords. The nltk tokenizer is a word tokenizer, currently an improved Treebank-Word-Tokenizer along with Punkt-Sentence-Tokenizer, we used the english version [SOURCE-3]. All preprocessing was applied on the "content" column, in batches of 1000 rows. All further analysis was then done on the cleaned content.
 
-##### EMI of the long posts
+#### EMI of the long posts
 
 According to the paper, the EMI-procedure includes 1. creating a list of keywords for each of the concepts, 2. training a word2vec model on the cleaned tokens and those lists of keywords, 3. calculating the average vector for each of the keyword lists to have an abstract representation of the concepts, 4. then calculating the cosine similarity between this concept-representation vectors and each post, where for each post the average of the word embeddings for its content words is computed. 5. the cosine similarities are binned and normalized and finally the EMI is obtained by subtracting the intuition score form the evidence score.
 
@@ -72,10 +73,10 @@ We followed this approach and the means used by the original authors. For the ma
 
 If the resulting EMI score is now a positive value, it indicates that evidence-based language is prevalent in a given post, a negative vlaue indicates prevalence of intuition-based rethoric.
 
-#### experiments
+### Extensions
 motivation: change orientation (dict), change on what and change how
 
-##### EMI of the summaries
+#### EMI of the summaries
 
 1. comparison on post level: long vs summary
 motivation:
@@ -84,7 +85,7 @@ train w2v
 map wo batch
 bin
 
-##### Tailored keyword lists
+#### Tailored keyword lists
 
 2. different dictionary
 - use preprocessed sample
@@ -109,12 +110,33 @@ compute cosine sim
 compute scores
 map & bin
 
-##### BERT
+#### BERT
    
 3. different model (BERT)
 motivation:
-C) Evaluation
-- hstogram over all
+
+embeddings rausgeholt, CLS
+512 Tokens pro input
+die meisten Posts zu gross fürs BERT
+
+Posts in sätze unterbrechen
+von jedem satz CLS
+mean über Posts
+
+- graue embedding mit PCA gezeigt
+- ev und int als vektor
+- sätze statt wörter als dict
+	- better for contextualization
+- durch bert
+- pCA
+- normalisiert
+- correlation with regular
+
+### Evaluation
+
+To evaluate our obtained results visually we 
+
+- histogram over all
 - histograms for subreddits
 - wordclouds with top toekns
 - barplot emi scores
@@ -126,14 +148,20 @@ C) Evaluation
 
 _Present the findings from your experiments, supported by visual or statistical evidence. Discuss how these results address your main research question._
 
+### Main Analysis
+### Long post vs. Summary
+### Original vs. Customized Keyword Lists
+- intuition lists tend to have negative connotations ("wrong" ,"dishonest")
+- not intented to judge content
+### Word2Evc vs. BERT
+
+- interesting: talesfromtechsupport very evidency
+- advice has an evidence mean but intuition mode
+
+
 ## Conclusion
 
 _Summarize the major outcomes of your project, reflect on the research findings, and clearly state the conclusions you've drawn from the study._
-
-### main analysis
-### long vs short
-### dictionary
-### BERT
 
 ## Contributions
 
