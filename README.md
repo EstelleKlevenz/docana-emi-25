@@ -118,7 +118,7 @@ mean über Posts
 
 ### Evaluation XX
 
-To evaluate our obtained results visually we 
+To exploe the calcuöated results we created histograms of the distribution 
 
 - histogram over all
 - histograms for subreddits
@@ -133,15 +133,27 @@ To evaluate our obtained results visually we
 _Present the findings from your experiments, supported by visual or statistical evidence. Discuss how these results address your main research question._
 
 ### Main Analysis
+- kinda works
 ### Long post vs. Summary
 ### Original vs. Customized Keyword Lists
 - intuition lists tend to have negative connotations ("wrong" ,"dishonest")
 - not intented to judge content
+- interesting: talesfromtechsupport very evidency
+- advice has an evidence mean but intuition mode
+
 ### Word2Evc vs. BERT
 
 - interesting: talesfromtechsupport very evidency
 - advice has an evidence mean but intuition mode
 
+##### thoughts xx
+- does it mirror the cliff between social and natural sciences?
+- limit in preprocessing/approach
+    - work with informal lang/mistakes fbc social media?
+- REMINDER: only analyses rhetoric and it can only be speculated to which extent it is a statement about the actual methods and rigor to the claims of the postee.
+(marker words possibly change over time - longevity of the dictionary)
+- next steps: Comparison social science paper and computer science / chemistry technical papers
+- intuition tied to negative in language - in original keywords_ "fake", "wrong" - how are those intuitive more than evidency words? gives intuition bad light
 
 ## Conclusion XX
 
