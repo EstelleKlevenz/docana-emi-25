@@ -81,32 +81,20 @@ To compute the EMI of the post summaries we applied the same cleaning as for the
 The keyword lists define the benchmark for each of the concepts. As the keyword lists used in the main analysis were originally developed in the context of political speech, the question occured, if their performance on social-media-language was equally good. To examine this, we analyzed what of the original vocabulary was actually used in the reddit posts and developed our own keyword lists based on the most common terms. In doing so, we again followed the approach of the developers of the original keyword lists.
 
 <p float="left">
-  <img src="figures/originalevidence.png" width="45%" />
-  <img src="/figures/originalintuition.png" width="45%" />
+  <img src="figures/originalevidence.png" width="50%" />
+  <img src="/figures/originalintuition.png" width="50%" />
 </p>
 
-2. different dictionary
-- use preprocessed sample
-- inspect original dictionaries
-    - word counts
-- use words with count >1000 as new seeds
-- remove some manually
-    find & true for ev
-    wrong for int
-    add article & argument
-- use fasttext embeddings to expand seed words
-    - cc.en.300.bin
-    - cosine similarity above 0.75
-- clean expanded sets from mistakes & smae word 
-- combine original with expansion
-- get colex viw web interface 
-- remove intersection btw ev & in
-- remove those that are not associated with the concepts
+The keyword approach of Lasser et al. involved: 1. starting out with a set of initial keywords, 2. expaning them computationally using fasttext emnbeddings and colexification networks, 3. filtering for duplicates, overlapping terms (in both lists) and lemma inflections. Subsequently they validated their keyword lists through an online survey whre paricipants rated the terms in how the represent the concpets and used a t-test to examine the results. We adapted their approach but waived the validation.
 
-train w2v for emi with new dict
-compute cosine sim
-compute scores
-map & bin
+As initial keywords we used those of the original keywords used in the main analysis that had a word count of over 1000 in our data. The frequency charts can be seen in Figure 1. We manually excluded "true" from the evidence seed-list and "wrong" from the intuition list to remove initial bias. we also removed "find" from the evidence list, as the termn is ambiguous, with different meanings in different contexts (E: "The study finds..." / I: "I find it to be challenging..."). we added to the evidence list the terms "article" and "argument" as we expect them to be prevalent in contexts such as: "This article shows..." and "An argument against this.." both showing evidence based language.
+
+We expaned this list using a pretrained embedding model, the English fastText word vectors trained on Common Crawl (subword-aware, 300d). The subword modeling makes it well suited for informal language, as can be present on social media. The fasttext model vectors were then translated to Gensim KeyedVectors format for easy handling. We expanded using the top 10'000 neighbors and filtered those with a cosine simialrity greater than / equal to 0.75.
+As an interim step we cleaned the retrieved set from misspellings and lemma inflections.
+
+For colexifications we employed the Database of Cross-Linguistic Colexifications [Source-5]. As there is currently no API to their concept database available, we manually retrieved related concepts via the web interface. Further we removed the intersection between the evidence and intuition list and manually excluded the terms that were not satisfactory associated with the pursued definiton of evidence and intuition.
+
+We then ran again the main analysis with the new keyword lists. Expect for exchanging the lists, all other steps of analysis stayed identical. The new keyword lists were applied on the long posts, thus on the cleaned content feature.
 
 #### BERT
    
@@ -180,3 +168,5 @@ From alternative conceptions of honesty to alternative facts in communications b
 https://www.nltk.org/api/nltk.tokenize.word_tokenize.html [Source-3]
 
 huggingface dTAA [Source-4]
+
+CLICS3 [Source-5]
