@@ -94,7 +94,7 @@ For colexifications we employed the Database of Cross-Linguistic Colexifications
 
 We then ran again the main analysis with the new keyword lists. Expect for exchanging the lists, all other steps of analysis stayed identical. The new keyword lists were applied on the long posts, thus on the cleaned content feature.
 
-#### BERT
+#### BERT XX
    
 3. different model (BERT)
 motivation:
@@ -116,7 +116,7 @@ mean über Posts
 - normalisiert
 - correlation with regular
 
-### Evaluation
+### Evaluation XX
 
 To evaluate our obtained results visually we 
 
@@ -128,7 +128,7 @@ To evaluate our obtained results visually we
     - subreddit vector representation
     - PCA on posts
     
-## Results and Discussion
+## Results and Discussion XX
 
 _Present the findings from your experiments, supported by visual or statistical evidence. Discuss how these results address your main research question._
 
@@ -143,7 +143,7 @@ _Present the findings from your experiments, supported by visual or statistical 
 - advice has an evidence mean but intuition mode
 
 
-## Conclusion
+## Conclusion XX
 
 _Summarize the major outcomes of your project, reflect on the research findings, and clearly state the conclusions you've drawn from the study._
 
