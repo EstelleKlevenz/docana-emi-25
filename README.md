@@ -80,8 +80,10 @@ To compute the EMI of the post summaries we applied the same cleaning as for the
 
 The keyword lists define the benchmark for each of the concepts. As the keyword lists used in the main analysis were originally developed in the context of political speech, the question occured, if their performance on social-media-language was equally good. To examine this, we analyzed what of the original vocabulary was actually used in the reddit posts and developed our own keyword lists based on the most common terms. In doing so, we again followed the approach of the developers of the original keyword lists.
 
-![Word Counts in the Reddit posts](/figures/originalevidence.png)
-![Word Counts in the Reddit posts](/figures/originalintuition.png)
+<p float="left">
+  <img src="figures/originalevidence.png" width="45%" />
+  <img src="/figures/originalintuition.png" width="45%" />
+</p>
 
 2. different dictionary
 - use preprocessed sample
