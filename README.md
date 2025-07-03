@@ -159,12 +159,12 @@ _Summarize the major outcomes of your project, reflect on the research findings,
 
 _Include a list of academic and professional sources you cited in your report, using an appropriate citation format to ensure clarity and proper attribution._
 
-Computational analysis of US congressional speeches reveals a shift from evidence to intuition (EMI-paper) [Source-1]
+[Computational analysis of US congressional speeches reveals a shift from evidence to intuition](https://doi.org/10.1038/s41562-025-02136-2) (EMI-paper) [Source-1]
 
-From alternative conceptions of honesty to alternative facts in communications by US politicians [Source-2]
+[From alternative conceptions of honesty to alternative facts in communications by US politicians](https://doi.org/10.1038/s41562-023-01691-w) [Source-2]
 
 https://www.nltk.org/api/nltk.tokenize.word_tokenize.html [Source-3]
 
-huggingface dTAA [Source-4]
+[huggingface Data](https://huggingface.co/datasets/webis/tldr-17/viewer/default) [Source-4]
 
-CLICS3 [Source-5]
+[CLICS3](https://clics.clld.org/parameters) [Source-5]
