@@ -33,9 +33,7 @@ To validate our findings and test them for their robustness we conducted several
 
 _Provide a short description of the dataset used in your project. Focus on highlighting the aspects that are particularly relevant to your work._
 
-XX - available on Huggingface [Source-4]
-
-The dataset contains Reddit subreddit posts containing "TL;DR" from 2006 to 2016. "TL;DR" is short for "too long, didn't read" and indicates a summary to a given post (either written by the author of the post or someone in the comments). The posts in the datasets are submissions and comments but only human produced, as bot-posts were filtered out. The original dataset contains 3,848,330 posts of 29'651 subreddits. For each posts the dataset has information on the author, the text body (raw and normalized), content, summary, subreddit and subreddit ID.
+The dataset contains Reddit subreddit posts containing "TL;DR" from 2006 to 2016. "TL;DR" is short for "too long, didn't read" and indicates a summary to a given post (either written by the author of the post or someone in the comments). The posts in the datasets are submissions and comments but only human produced, as bot-posts were filtered out. The original dataset contains 3,848,330 posts of 29'651 subreddits. For each posts the dataset has information on the author, the text body (raw and normalized), content, summary, subreddit and subreddit ID. Teh data is available onhugging face as hugging face dataset[Source-4].
 
 The dataset was originally intended to train summary-prediciton but it is suitable for our task as well as working with "TL;DR" posts ensures a certain length of the posts which helps with consistent quality of the computed EMI scores and relativizes the influence of single words. 
 The fact that bot posts were filtered is also important, as our analysis focuses on the language of humans in specific contexts.
@@ -81,8 +79,8 @@ To compute the EMI of the post summaries we applied the same cleaning as for the
 The keyword lists define the benchmark for each of the concepts. As the keyword lists used in the main analysis were originally developed in the context of political speech, the question occured, if their performance on social-media-language was equally good. To examine this, we analyzed what of the original vocabulary was actually used in the reddit posts and developed our own keyword lists based on the most common terms. In doing so, we again followed the approach of the developers of the original keyword lists.
 
 <p float="left">
-  <img src="figures/originalevidence.png" width="50%" />
-  <img src="/figures/originalintuition.png" width="50%" />
+  <img src="figures/originalevidence.png" width="45%" />
+  <img src="/figures/originalintuition.png" width="45%" />
 </p>
 
 The keyword approach of Lasser et al. involved: 1. starting out with a set of initial keywords, 2. expaning them computationally using fasttext emnbeddings and colexification networks, 3. filtering for duplicates, overlapping terms (in both lists) and lemma inflections. Subsequently they validated their keyword lists through an online survey whre paricipants rated the terms in how the represent the concpets and used a t-test to examine the results. We adapted their approach but waived the validation.
