@@ -116,22 +116,10 @@ mean über Posts
 - normalisiert
 - correlation with regular
 
-### Evaluation XX
-
-To exploe the calcuöated results we created histograms of the distribution 
-
-- histogram over all
-- histograms for subreddits
-- wordclouds with top toekns
-- barplot emi scores
-- PCA
-    - subreddit vector representation
-    - PCA on posts
-    
 ## Results and Discussion XX
 
 <p float="left">
-  <img src="/figures/hist_pca_base.png" width="95%" />
+  <img src="/figures/subreddit_emi_dist.png" width="95%" />
 </p>
 
 <p float="center">
@@ -143,6 +131,21 @@ To exploe the calcuöated results we created histograms of the distribution
 </p>
 
 _Present the findings from your experiments, supported by visual or statistical evidence. Discuss how these results address your main research question._
+
+- histogram of subreddits
+- EMI in a range of XX to XX
+- PCA
+    - subreddit vector representation
+
+works generally
+
+comparison long vs. short
+- histogram comparison
+- what is interesting?
+
+To explore the calculated results we created binned histograms of the distribution of EMI scores of the posts over a subreddit, colored according to whether their mean is a positive score (green) or a negative score (purple). We then created wordclouds that show the top occuring words per subreddit, colored accordingly to the EMI of the single term.
+
+
 
 ### Main Analysis
 - kinda works
@@ -161,11 +164,18 @@ _Present the findings from your experiments, supported by visual or statistical 
 ##### thoughts xx
 - does it mirror the cliff between social and natural sciences?
 - limit in preprocessing/approach
-    - work with informal lang/mistakes fbc social media?
+    Is the Preprocessing valid (how does it change the result?)
+    Stopword debate
+    Loss of words through spelling mistakes (spelling in itself might be a predictor)
+
 - REMINDER: only analyses rhetoric and it can only be speculated to which extent it is a statement about the actual methods and rigor to the claims of the postee.
 (marker words possibly change over time - longevity of the dictionary)
 - next steps: Comparison social science paper and computer science / chemistry technical papers
+Keywords
 - intuition tied to negative in language - in original keywords_ "fake", "wrong" - how are those intuitive more than evidency words? gives intuition bad light
+The provided dictionary is specialized to political talk (vs general online dialogue in reddit)
+adapted keyword list not differing significantly though
+
 
 ## Conclusion XX
 
