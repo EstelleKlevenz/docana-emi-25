@@ -138,14 +138,24 @@ To gain insight into the language used in the subs, we plotted the most used wor
 
 The PCA of each sub's average vector and the concept vectors shows in simplified form the spatial relationship between the subs and the concepts. As in the histograms, advice though colored green shows more similarity (=smaller distance) to the intuition subs than the other evidence subs. r/losit also strikes with a bigger gap to the other evidence subs. Apart from that the general classification seems to work, as you can lay a hyperplane through the space and separate the two groups along the "EMI of 0".
 
+### Long post vs. Summary
+
+comparison long vs. short
+- histogram comparison
+- what is interesting?
+
 <p float="left">
   <img src="/figures/comp_tldr_post.png" width="45%" />
   <img src="/figures/comp_dict_post.png" width="45%" />
 </p>
 
-### Long post vs. Summary
 ### Original vs. Customized Keyword Lists
-The influence of the new keyword lists in comparison to the 
+The influence of the new keyword lists on the EMI in comparison to the original ones can be seen in Figure XX. As one can see the deviation is minimal, with a global correlation of XX between the scores (see Figure XX). All subs get classified into the same category as before, even though the concept definiton is adjusted. This can also be seen in the corresponding PCA, see Figure XX.
+
+<p float="left">
+  <img src="/figures/PCA_Sub_dict.png" width="95%" />
+</p>
+
 ### Word2Evc vs. BERT
 
 comparison long vs. short
@@ -155,7 +165,10 @@ comparison long vs. short
 ## Discussion XX
 ### Long post vs. Summary
 ### Original vs. Customized Keyword Lists
+- concept robust with slightely different keywords
+- imbalance in values bc of keywords length diff?
 - intuition lists tend to have negative connotations ("wrong" ,"dishonest")
+- language not matching for 
 - not intented to judge content
 - interesting: talesfromtechsupport very evidency
 - advice has an evidence mean but intuition mode
