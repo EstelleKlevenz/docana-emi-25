@@ -122,12 +122,16 @@ mean über Posts
   <img src="/figures/subreddit_emi_dist.png" width="95%" />
 </p>
 
+To explore the calculated results we created binned histograms of the distribution of EMI scores of the posts over a sub, colored according to whether their mean is a positive score (green) or a negative score (purple). We can tell that 10/16 subs tend to have more evidence-based language whereas 6/10 lean more towards intuition-based rethoric. With exception of r/talesfromtechsupport, most of the distribution are right-skewed.
+The EMI ranges from -2 to 8, having a wider range of values on the positive side. Of particular note is r/advice, the only distribution where there is a sign change between mean and mode. For the other subs, color and mean correspond in the sign of the EMI scores. Advice is colored green, with a slightly positive mean, but the mode is on the intuitive side.
+
 <p float="center">
   <img src="/figures/composed_wc.png" width="95%" />
 </p>
 
 <p float="left">
-  <img src="/figures/comp_tldr_post.png" width="95%" />
+  <img src="/figures/comp_tldr_post.png" width="45%" />
+  <img src="/figures/comp_dict_post.png" width="45%" />
 </p>
 
 _Present the findings from your experiments, supported by visual or statistical evidence. Discuss how these results address your main research question._
