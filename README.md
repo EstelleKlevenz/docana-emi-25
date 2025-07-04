@@ -241,8 +241,8 @@ style="color: green;"
     <tr><td><b>certain</b></td><td><s>dishonest</s></td></tr>
     <tr><td><b>clear</b></td><td><s>dishonesty</s></td></tr>
     <tr><td>correct</td><td><s>distrust</s></td></tr>
-    <tr><td><b>counter-argument</b></td><td>doubt</td>
-    <tr><td style="color: red;"><s>correction</s></td><td><b>dunno</b></td></tr>
+    <tr><td style="color: red;"><s>correction</s></td><td>doubt</td>
+    <tr><td><b>counter-argument</b></td><td><b>dunno</b></td></tr>
     <tr><td>data</td><td><s>fake</s></td></tr>
     <tr><td style="color: red;"><s>dossier</s><td><s>fake news</s></td></td></tr>
     <tr><td>education</td><td><b>feel</b></td></tr>
