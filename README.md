@@ -131,7 +131,7 @@ To exploe the calcuöated results we created histograms of the distribution
 ## Results and Discussion XX
 
 <p float="left">
-  <img src="/figures/hist_pca_base.png" width="37%" />
+  <img src="/figures/hist_pca_base.png" width="95%" />
 </p>
 
 <p float="center">
