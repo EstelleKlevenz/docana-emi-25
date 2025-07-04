@@ -9,7 +9,7 @@ _Start off by setting the stage for your project. Give a brief overview of relev
 
 How do you say it?
 Recent studies in the realm of the political sciences have shown a shift in the rethoric of politicians. They propose that the current spread of misinformation in political discourse is linked to an "alternative understanding of truth and honesty that emphasizes invocation of subjective belief at the expense of reliance on evidence" [Source-2]. This can be seen and measured through the language that politicians use.
-As social media is cited as a key medium for spreading misinformation [Source-2], it is interesting to have a look, not only *wwat* kind of information is spread, but also *how?*.
+As social media is cited as a key medium for spreading misinformation [Source-2], it is interesting to have a look, not only *what* kind of information is spread, but also *how?*.
 
 ### Evidence minus Intuition (EMI)
 
@@ -27,7 +27,7 @@ Our research quest is to show that the EMI can be applied to the domain of socia
 
 After preprocessing we calculated the EMI score for subreddits, posts and individual words. To do this we followed the approach of the authors of the EMI score, as described in their paper from 2024 [Source-1]. The results were visually explored in histograms, wordclouds and PCA.
 
-To validate our findings and test them for their robustness we conducted several "experiments" changing different settings of the approach. As a first experiment we compared the EMI scores for the long posts with those of the corresponding summaries. Secondly we followed the process described by the authors and constructed and applied our own keyword list and thus a vocabulary definition of evidence resp. intuition based on the language used in the reddit forums. Lastly we experimented with a different latent representation of the posts by applying BERT instead of the word2vec algorithm to the long posts.
+To validate our findings and test them for their robustness we conducted several "experiments" changing different settings of the approach. As a first experiment we compared the EMI scores for the long posts with those of the corresponding summaries. Secondly, we followed the process described by the authors and constructed and applied our own keyword list and thus a vocabulary definition of evidence resp. intuition based on the language used in the reddit forums. Lastly, we experimented with a different latent representation of the posts by applying BERT instead of the word2vec algorithm to the long posts.
 
 ## Dataset
 
