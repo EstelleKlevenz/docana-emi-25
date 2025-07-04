@@ -220,53 +220,54 @@ https://www.nltk.org/api/nltk.tokenize.word_tokenize.html [Source-3]
   </thead>
   <tbody>
     <tr><td>accurate</td><td>accurate</td><td>advice</td><td>advice</td></tr>
-    <tr><td>analyse</td><td>admit</td><td>belief</td><td>believe</td></tr>
-    <tr><td>analysis</td><td>analysis</td><td>believe</td><td>conceive</td></tr>
-    <tr><td>correct</td><td>announce</td><td>bogus</td><td>doubt</td></tr>
-    <tr><td>correction</td><td>argument</td><td>common sense</td><td>dunno</td></tr>
-    <tr><td>data</td><td>article</td><td>deceive</td><td>fake</td></tr>
-    <tr><td>dossier</td><td>calculate</td><td>deception</td><td>feel</td></tr>
-    <tr><td>education</td><td>certain</td><td>dishonest</td><td>feeling</td></tr>
-    <tr><td>evidence</td><td>clear</td><td>dishonesty</td><td>genuine</td></tr>
-    <tr><td>evident</td><td>correct</td><td>distrust</td><td>guess</td></tr>
-    <tr><td>exact</td><td>counter-argument</td><td>doubt</td><td>gut</td></tr>
-    <tr><td>examination</td><td>data</td><td>fake</td><td>idea</td></tr>
-    <tr><td>examine</td><td>education</td><td>fake news</td><td>instinct</td></tr>
-    <tr><td>expert</td><td>evidence</td><td>feeling</td><td>mind</td></tr>
+    <tr><td><b>analyse</b></td><td><b>admit</b></td><td><b>belief</b></td><td>believe</td></tr>
+    <tr><td>analysis</td><td>analysis</td><td>believe</td><td><b>conceive</b></td></tr>
+    <tr><td>correct</td><td><b>announce</b></td><td><b>bogus</b></td><td>doubt</td></tr>
+    <tr><td><b>correction</b></td><td><b>argument</b></td><td><b>common sense</b></td><td><b>dunno</b></td></tr>
+    <tr><td>data</td><td><b>article</b></td><td><b>deceive</b></td><td>fake</td></tr>
+    <tr><td><b>dossier</b></td><td><b>calculate</b></td><td><b>deception</b></td><td><b>feel</b></td></tr>
+    <tr><td>education</td><td><b>certain</b></td><td><b>dishonest</b></td><td>feeling</td></tr>
+    <tr><td>evidence</td><td><b>clear</b></td><td><b>dishonesty</b></td><td>genuine</td></tr>
+    <tr><td><b>evident</b></td><td>correct</td><td><b>distrust</b></td><td>guess</td></tr>
+    <tr><td>exact</td><td><b>counter-argument</b></td><td>doubt</td><td>gut</td></tr>
+    <tr><td><b>examination</b></td><td>data</td><td>fake</td><td><b>idea</b></td></tr>
+    <tr><td><b>examine</b></td><td>education</td><td><b>fake news</b></td><td>instinct</td></tr>
+    <tr><td>expert</td><td>evidence</td><td>feeling</td><td><b>mind</b></td></tr>
     <tr><td>explore</td><td>exact</td><td>genuine</td><td>opinion</td></tr>
     <tr><td>fact</td><td>expert</td><td>guess</td><td>perspective</td></tr>
-    <tr><td>find</td><td>explain</td><td>gut</td><td>remember</td></tr>
-    <tr><td>findings</td><td>explore</td><td>instinct</td><td>suggest</td></tr>
-    <tr><td>information</td><td>fact</td><td>intuition</td><td>suggestion</td></tr>
-    <tr><td>inquiry</td><td>incorrect</td><td>lie</td><td>suppose</td></tr>
-    <tr><td>intelligence</td><td>information</td><td>mislead</td><td>suspect</td></tr>
-    <tr><td>investigate</td><td>intelligence</td><td>mistaken</td><td>suspicion</td></tr>
-    <tr><td>investigation</td><td>investigation</td><td>mistrust</td><td>think</td></tr>
-    <tr><td>knowledge</td><td>knowledge</td><td>opinion</td><td>thought</td></tr>
+    <tr><td><b>find</b></td><td><b>explain</b></td><td>gut</td><td><b>remember</b></td></tr>
+    <tr><td><b>findings</b></td><td>explore</td><td>instinct</td><td>suggest</td></tr>
+    <tr><td>information</td><td>fact</td><td><b>intuition</b></td><td>suggestion</td></tr>
+    <tr><td><b>inquiry</b></td><td><b>incorrect</b></td><td><b>lie</td><td><b>suppose</b></td></tr>
+    <tr><td>intelligence</td><td>information</td><td><b>mislead</b></td><td><b>suspect</b></td></tr>
+    <tr><td><b>investigate</b></td><td>intelligence</td><td><b>mistaken</b></td><td>suspicion</td></tr>
+    <tr><td>investigation</td><td>investigation</td><td><b>mistrust</b></td><td><b>think</b></td></tr>
+    <tr><td>knowledge</td><td>knowledge</td><td>opinion</td><td><b>thought</b></td></tr>
     <tr><td>lab</td><td>lab</td><td>perspective</td><td>view</td></tr>
-    <tr><td>learn</td><td>learn</td><td>phony</td><td>viewpoint</td></tr>
-    <tr><td>logic</td><td>logic</td><td>point of view</td><td></td></tr>
-    <tr><td>logical</td><td>logical</td><td>propaganda</td><td></td></tr>
-    <tr><td>method</td><td>method</td><td>sense</td><td></td></tr>
-    <tr><td>pinpoint</td><td>procedure</td><td>suggest</td><td></td></tr>
-    <tr><td>precise</td><td>process</td><td>suggestion</td><td></td></tr>
+    <tr><td>learn</td><td>learn</td><td><b>phony</b></td><td>viewpoint</td></tr>
+    <tr><td>logic</td><td>logic</td><td><b>point of view</b></td><td></td></tr>
+    <tr><td>logical</td><td>logical</td><td><b>propaganda</b></td><td></td></tr>
+    <tr><td>method</td><td>method</td><td><b>sense</b></td><td></td></tr>
+    <tr><td><b>pinpoint</b></td><td>procedure</td><td>suggest</td><td></td></tr>
+    <tr><td><b>precise</b></td><td>process</td><td>suggestion</td><td></td></tr>
     <tr><td>procedure</td><td>proof</td><td>suspicion</td><td></td></tr>
     <tr><td>process</td><td>question</td><td>view</td><td></td></tr>
     <tr><td>proof</td><td>read</td><td>viewpoint</td><td></td></tr>
-    <tr><td>question</td><td>real</td><td>wrong</td><td></td></tr>
+    <tr><td>question</td><td>real</td><td><b>wrong</b></td><td></td></tr>
     <tr><td>read</td><td>reason</td><td></td><td></td></tr>
     <tr><td>real</td><td>research</td><td></td><td></td></tr>
     <tr><td>reason</td><td>science</td><td></td><td></td></tr>
     <tr><td>research</td><td>scientific</td><td></td><td></td></tr>
     <tr><td>science</td><td>statistics</td><td></td><td></td></tr>
     <tr><td>scientific</td><td>study</td><td></td><td></td></tr>
-    <tr><td>search</td><td>true</td><td></td><td></td></tr>
-    <tr><td>show</td><td>truth</td><td></td><td></td></tr>
+    <tr><td><b>search</b></td><td>true</td><td></td><td></td></tr>
+    <tr><td><b>show</b></td><td>truth</td><td></td><td></td></tr>
     <tr><td>statistics</td><td>truthful</td><td></td><td></td></tr>
-    <tr><td>study</td><td>understand</td><td></td><td></td></tr>
-    <tr><td>trial</td><td></td><td></td><td></td></tr>
+    <tr><td>study</td><td><b>understand</b></td><td></td><td></td></tr>
+    <tr><td><b>trial</b></td><td></td><td></td><td></td></tr>
     <tr><td>true</td><td></td><td></td><td></td></tr>
     <tr><td>truth</td><td></td><td></td><td></td></tr>
     <tr><td>truthful</td><td></td><td></td><td></td></tr>
+    <tr><td>49</td><td>45</td><td>35</td><td>26</td></tr>
   </tbody>
 </table>
