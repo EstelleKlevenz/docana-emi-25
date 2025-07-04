@@ -209,51 +209,64 @@ https://www.nltk.org/api/nltk.tokenize.word_tokenize.html [Source-3]
 
 
 ## Appendix
-
-Keyword Lists:
-| **Original Evidence 1** | **Original Evidence 2** | **New Evidence 1** | **New Evidence 2** | **Original Intuition 1** | **Original Intuition 2** | **New Intuition 1** | **New Intuition 2** |
-|-------------------------|-------------------------|--------------------|--------------------|---------------------------|--------------------------|----------------------|----------------------|
-| accurate                | investigate             | accurate           | logic              | advice                    | phony                   | advice               | perspective          |
-| analysis                | investigation           | admit              | logical            | belief                    | point of view           | believe              | remember             |
-| analyse                 | knowledge               | analysis           | method             | bogus                     | propaganda              | conceive             | suggest              |
-| correct                 | lab                     | announce           | procedure          | common sense              | suggestion              | doubt                | suggestion           |
-| correction              | learn                   | argument           | process            | deceive                   | suspicion               | dunno                | suppose              |
-| data                    | logic                   | article            | proof              | deception                 | think                   | fake                 | suspect              |
-| dossier                 | logical                 | calculate          | question           | dishonest                 | thought                 | feel                 | suspicion            |
-| education               | method                  | certain            | read               | dishonesty                | view                    | feeling              | think                |
-| evidence                | procedure               | clear              | real               | distrust                  | viewpoint               | genuine              | thought              |
-| examine                 | process                 | correct            | reason             | doubt                     | wrong                   | guess                | view                 |
-| examination             | proof                   | counter-argument   | research           | fake                      |                          | gut                  | viewpoint            |
-| expert                  | question                | data               | science            | fake news                 |                          | idea                 |                      |
-| explore                 | read                    | education          | scientific         | feeling                   |                          | instinct             |                      |
-| fact                    | real                    | exact              | statistics         | guess                     |                          | mind                 |                      |
-| findings                | reason                  | expert             | study              | gut                       |                          | opinion              |                      |
-| information             | research                | explain            | true               | idea                      |                          | perspective          |                      |
-| investigate             | science                 | explore            | truth              | instinct                  |                          | suggest              |                      |
-| knowledge               | scientific              | fact               | truthful           | intuition                 |                          | suggestion           |                      |
-| lab                     | search                  | incorrect          | understand         | lie                       |                          | suppose              |                      |
-| learn                   | show                    | information        |                    | mind                      |                          | suspect              |                      |
-| logic                   | statistics              | intelligence       |                    | mislead                   |                          | suspicion            |                      |
-| logical                 | study                   | investigation      |                    | mistaken                  |                          | think                |                      |
-| method                  | truth                   | knowledge          |                    | mistrust                  |                          | view                 |                      |
-| procedure               | truthful                | lab                |                    | opinion                   |                          | viewpoint            |                      |
-| process                 |                         | learn              |                    | perspective               |                          |                      |                      |
-| proof                   |                         | logic              |                    | phony                     |                          |                      |                      |
-| question                |                         | logical            |                    | point of view             |                          |                      |                      |
-| read                    |                         | method             |                    | propaganda                |                          |                      |                      |
-| real                    |                         | procedure          |                    | suggestion                |                          |                      |                      |
-| reason                  |                         | process            |                    | suspicion                 |                          |                      |                      |
-| research                |                         | proof              |                    | think                     |                          |                      |                      |
-| science                 |                         | question           |                    | thought                   |                          |                      |                      |
-| scientific              |                         | read               |                    | view                      |                          |                      |                      |
-| search                  |                         | real               |                    | viewpoint                 |                          |                      |                      |
-| show                   |                         | reason             |                    | wrong                     |                          |                      |                      |
-| statistics              |                         | research           |                    |                           |                          |                      |                      |
-| study                   |                         | science            |                    |                           |                          |                      |                      |
-| truth                   |                         | scientific         |                    |                           |                          |                      |                      |
-| truthful                |                         | statistics         |                    |                           |                          |                      |                      |
-|                         |                         | study              |                    |                           |                          |                      |                      |
-|                         |                         | true               |                    |                           |                          |                      |                      |
-|                         |                         | truth              |                    |                           |                          |                      |                      |
-|                         |                         | truthful           |                    |                           |                          |                      |                      |
-|                         |                         | understand         |                    |                           |                          |                      |                      |
+<table border="1">
+  <thead>
+    <tr>
+      <th>Original Evidence</th>
+      <th>New Evidence</th>
+      <th>Original Intuition</th>
+      <th>New Intuition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>accurate</td><td>accurate</td><td>advice</td><td>advice</td></tr>
+    <tr><td>analyse</td><td>admit</td><td>belief</td><td>believe</td></tr>
+    <tr><td>analysis</td><td>analysis</td><td>believe</td><td>conceive</td></tr>
+    <tr><td>correct</td><td>announce</td><td>bogus</td><td>doubt</td></tr>
+    <tr><td>correction</td><td>argument</td><td>common sense</td><td>dunno</td></tr>
+    <tr><td>data</td><td>article</td><td>deceive</td><td>fake</td></tr>
+    <tr><td>dossier</td><td>calculate</td><td>deception</td><td>feel</td></tr>
+    <tr><td>education</td><td>certain</td><td>dishonest</td><td>feeling</td></tr>
+    <tr><td>evidence</td><td>clear</td><td>dishonesty</td><td>genuine</td></tr>
+    <tr><td>evident</td><td>correct</td><td>distrust</td><td>guess</td></tr>
+    <tr><td>exact</td><td>counter-argument</td><td>doubt</td><td>gut</td></tr>
+    <tr><td>examination</td><td>data</td><td>fake</td><td>idea</td></tr>
+    <tr><td>examine</td><td>education</td><td>fake news</td><td>instinct</td></tr>
+    <tr><td>expert</td><td>evidence</td><td>feeling</td><td>mind</td></tr>
+    <tr><td>explore</td><td>exact</td><td>genuine</td><td>opinion</td></tr>
+    <tr><td>fact</td><td>expert</td><td>guess</td><td>perspective</td></tr>
+    <tr><td>find</td><td>explain</td><td>gut</td><td>remember</td></tr>
+    <tr><td>findings</td><td>explore</td><td>instinct</td><td>suggest</td></tr>
+    <tr><td>information</td><td>fact</td><td>intuition</td><td>suggestion</td></tr>
+    <tr><td>inquiry</td><td>incorrect</td><td>lie</td><td>suppose</td></tr>
+    <tr><td>intelligence</td><td>information</td><td>mislead</td><td>suspect</td></tr>
+    <tr><td>investigate</td><td>intelligence</td><td>mistaken</td><td>suspicion</td></tr>
+    <tr><td>investigation</td><td>investigation</td><td>mistrust</td><td>think</td></tr>
+    <tr><td>knowledge</td><td>knowledge</td><td>opinion</td><td>thought</td></tr>
+    <tr><td>lab</td><td>lab</td><td>perspective</td><td>view</td></tr>
+    <tr><td>learn</td><td>learn</td><td>phony</td><td>viewpoint</td></tr>
+    <tr><td>logic</td><td>logic</td><td>point of view</td><td></td></tr>
+    <tr><td>logical</td><td>logical</td><td>propaganda</td><td></td></tr>
+    <tr><td>method</td><td>method</td><td>sense</td><td></td></tr>
+    <tr><td>pinpoint</td><td>procedure</td><td>suggest</td><td></td></tr>
+    <tr><td>precise</td><td>process</td><td>suggestion</td><td></td></tr>
+    <tr><td>procedure</td><td>proof</td><td>suspicion</td><td></td></tr>
+    <tr><td>process</td><td>question</td><td>view</td><td></td></tr>
+    <tr><td>proof</td><td>read</td><td>viewpoint</td><td></td></tr>
+    <tr><td>question</td><td>real</td><td>wrong</td><td></td></tr>
+    <tr><td>read</td><td>reason</td><td></td><td></td></tr>
+    <tr><td>real</td><td>research</td><td></td><td></td></tr>
+    <tr><td>reason</td><td>science</td><td></td><td></td></tr>
+    <tr><td>research</td><td>scientific</td><td></td><td></td></tr>
+    <tr><td>science</td><td>statistics</td><td></td><td></td></tr>
+    <tr><td>scientific</td><td>study</td><td></td><td></td></tr>
+    <tr><td>search</td><td>true</td><td></td><td></td></tr>
+    <tr><td>show</td><td>truth</td><td></td><td></td></tr>
+    <tr><td>statistics</td><td>truthful</td><td></td><td></td></tr>
+    <tr><td>study</td><td>understand</td><td></td><td></td></tr>
+    <tr><td>trial</td><td></td><td></td><td></td></tr>
+    <tr><td>true</td><td></td><td></td><td></td></tr>
+    <tr><td>truth</td><td></td><td></td><td></td></tr>
+    <tr><td>truthful</td><td></td><td></td><td></td></tr>
+  </tbody>
+</table>
