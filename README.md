@@ -136,7 +136,7 @@ To gain insight into the language used in the subs, we plotted the most used wor
   <img src="/figures/PCA_Subreddit.png" width="95%" />
 </p>
 
-
+The PCA of each sub's average vector and the concept vectors shows in simplified form the spatial relationship between the subs and the concepts. As in the histograms, advice though colored green shows more similarity (=smaller distance) to the intuition subs than the other evidence subs. r/losit also strikes with a bigger gap to the other evidence subs. Apart from that the general classification seems to work, as you can lay a hyperplane through the space and separate the two groups along the "EMI of 0".
 
 <p float="left">
   <img src="/figures/comp_tldr_post.png" width="45%" />
@@ -145,8 +145,6 @@ To gain insight into the language used in the subs, we plotted the most used wor
 
 
 
-- PCA
-    - subreddit vector representation
 
 works generally
 
