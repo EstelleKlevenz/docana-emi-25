@@ -116,7 +116,7 @@ mean über Posts
 - normalisiert
 - correlation with regular
 
-## Results and Discussion XX
+## Results
 _Present the findings from your experiments, supported by visual or statistical evidence. Discuss how these results address your main research question._
 
 <p float="left">
@@ -143,21 +143,16 @@ The PCA of each sub's average vector and the concept vectors shows in simplified
   <img src="/figures/comp_dict_post.png" width="45%" />
 </p>
 
-
-
-
-works generally
+### Long post vs. Summary
+### Original vs. Customized Keyword Lists
+The influence of the new keyword lists in comparison to the 
+### Word2Evc vs. BERT
 
 comparison long vs. short
 - histogram comparison
 - what is interesting?
 
-To explore the calculated results we created binned histograms of the distribution of EMI scores of the posts over a subreddit, colored according to whether their mean is a positive score (green) or a negative score (purple). We then created wordclouds that show the top occuring words per subreddit, colored accordingly to the EMI of the single term.
-
-
-
-### Main Analysis
-- kinda works
+## Discussion XX
 ### Long post vs. Summary
 ### Original vs. Customized Keyword Lists
 - intuition lists tend to have negative connotations ("wrong" ,"dishonest")
@@ -211,3 +206,54 @@ https://www.nltk.org/api/nltk.tokenize.word_tokenize.html [Source-3]
 [huggingface Data](https://huggingface.co/datasets/webis/tldr-17/viewer/default) [Source-4]
 
 [CLICS3](https://clics.clld.org/parameters) [Source-5]
+
+
+## Appendix
+
+Keyword Lists:
+| **Original Evidence 1** | **Original Evidence 2** | **New Evidence 1** | **New Evidence 2** | **Original Intuition 1** | **Original Intuition 2** | **New Intuition 1** | **New Intuition 2** |
+|-------------------------|-------------------------|--------------------|--------------------|---------------------------|--------------------------|----------------------|----------------------|
+| accurate                | investigate             | accurate           | logic              | advice                    | phony                   | advice               | perspective          |
+| analysis                | investigation           | admit              | logical            | belief                    | point of view           | believe              | remember             |
+| analyse                 | knowledge               | analysis           | method             | bogus                     | propaganda              | conceive             | suggest              |
+| correct                 | lab                     | announce           | procedure          | common sense              | suggestion              | doubt                | suggestion           |
+| correction              | learn                   | argument           | process            | deceive                   | suspicion               | dunno                | suppose              |
+| data                    | logic                   | article            | proof              | deception                 | think                   | fake                 | suspect              |
+| dossier                 | logical                 | calculate          | question           | dishonest                 | thought                 | feel                 | suspicion            |
+| education               | method                  | certain            | read               | dishonesty                | view                    | feeling              | think                |
+| evidence                | procedure               | clear              | real               | distrust                  | viewpoint               | genuine              | thought              |
+| examine                 | process                 | correct            | reason             | doubt                     | wrong                   | guess                | view                 |
+| examination             | proof                   | counter-argument   | research           | fake                      |                          | gut                  | viewpoint            |
+| expert                  | question                | data               | science            | fake news                 |                          | idea                 |                      |
+| explore                 | read                    | education          | scientific         | feeling                   |                          | instinct             |                      |
+| fact                    | real                    | exact              | statistics         | guess                     |                          | mind                 |                      |
+| findings                | reason                  | expert             | study              | gut                       |                          | opinion              |                      |
+| information             | research                | explain            | true               | idea                      |                          | perspective          |                      |
+| investigate             | science                 | explore            | truth              | instinct                  |                          | suggest              |                      |
+| knowledge               | scientific              | fact               | truthful           | intuition                 |                          | suggestion           |                      |
+| lab                     | search                  | incorrect          | understand         | lie                       |                          | suppose              |                      |
+| learn                   | show                    | information        |                    | mind                      |                          | suspect              |                      |
+| logic                   | statistics              | intelligence       |                    | mislead                   |                          | suspicion            |                      |
+| logical                 | study                   | investigation      |                    | mistaken                  |                          | think                |                      |
+| method                  | truth                   | knowledge          |                    | mistrust                  |                          | view                 |                      |
+| procedure               | truthful                | lab                |                    | opinion                   |                          | viewpoint            |                      |
+| process                 |                         | learn              |                    | perspective               |                          |                      |                      |
+| proof                   |                         | logic              |                    | phony                     |                          |                      |                      |
+| question                |                         | logical            |                    | point of view             |                          |                      |                      |
+| read                    |                         | method             |                    | propaganda                |                          |                      |                      |
+| real                    |                         | procedure          |                    | suggestion                |                          |                      |                      |
+| reason                  |                         | process            |                    | suspicion                 |                          |                      |                      |
+| research                |                         | proof              |                    | think                     |                          |                      |                      |
+| science                 |                         | question           |                    | thought                   |                          |                      |                      |
+| scientific              |                         | read               |                    | view                      |                          |                      |                      |
+| search                  |                         | real               |                    | viewpoint                 |                          |                      |                      |
+| show                   |                         | reason             |                    | wrong                     |                          |                      |                      |
+| statistics              |                         | research           |                    |                           |                          |                      |                      |
+| study                   |                         | science            |                    |                           |                          |                      |                      |
+| truth                   |                         | scientific         |                    |                           |                          |                      |                      |
+| truthful                |                         | statistics         |                    |                           |                          |                      |                      |
+|                         |                         | study              |                    |                           |                          |                      |                      |
+|                         |                         | true               |                    |                           |                          |                      |                      |
+|                         |                         | truth              |                    |                           |                          |                      |                      |
+|                         |                         | truthful           |                    |                           |                          |                      |                      |
+|                         |                         | understand         |                    |                           |                          |                      |                      |
