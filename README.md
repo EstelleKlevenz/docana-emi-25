@@ -140,9 +140,7 @@ The PCA of each sub's average vector and the concept vectors shows in simplified
 
 ### Long post vs. Summary
 
-comparison long vs. short
-- histogram comparison
-- what is interesting?
+As shown in Figure XX, there are notable differences between long and short posts regarding their EMI scores. For most evidence-based subs, long posts tend to be more evidence-based than their respective summaries. The distribution of EMI scores is broader for summaries than for long posts, indicating a greater variability in summaries. These differences are substantial and not just random fluctuations — the correlation between long posts and summary EMI scores is weak or non-existent (see Figure XX), underlining the difference between the two formats.
 
 <p float="left">
   <img src="/figures/comp_tldr_post.png" width="45%" />
@@ -158,9 +156,7 @@ The influence of the new keyword lists on the EMI in comparison to the original 
 
 ### Word2Evc vs. BERT
 
-comparison long vs. short
-- histogram comparison
-- what is interesting?
+XX - Liane
 
 ## Discussion XX
 ### Long post vs. Summary
