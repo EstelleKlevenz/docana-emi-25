@@ -117,27 +117,34 @@ mean über Posts
 - correlation with regular
 
 ## Results and Discussion XX
+_Present the findings from your experiments, supported by visual or statistical evidence. Discuss how these results address your main research question._
 
 <p float="left">
   <img src="/figures/subreddit_emi_dist.png" width="95%" />
 </p>
 
-To explore the calculated results we created binned histograms of the distribution of EMI scores of the posts over a sub, colored according to whether their mean is a positive score (green) or a negative score (purple). We can tell that 10/16 subs tend to have more evidence-based language whereas 6/10 lean more towards intuition-based rethoric. With exception of r/talesfromtechsupport, most of the distribution are right-skewed.
+We created binned histograms of the distribution of EMI scores of the posts over a sub, colored according to whether their mean is a positive score (green) or a negative score (purple). We can tell that 10/16 subs tend to have more evidence-based language whereas 6/10 lean more towards intuition-based rethoric. With exception of r/talesfromtechsupport, most of the distribution are right-skewed.
 The EMI ranges from -2 to 8, having a wider range of values on the positive side. Of particular note is r/advice, the only distribution where there is a sign change between mean and mode. For the other subs, color and mean correspond in the sign of the EMI scores. Advice is colored green, with a slightly positive mean, but the mode is on the intuitive side.
 
 <p float="center">
   <img src="/figures/composed_wc.png" width="95%" />
 </p>
 
+To gain insight into the language used in the subs, we plotted the most used words and their individual EMI score. The darker the color the closer the word is to either the evidence or the intuition benchmark. It is interesting that whereas most of the subs show generic words like "people", "like", "would, "im" (two examples shown on the left side of Figure XX), some subs have more tailored language, which even shows in the most occuring terms, this holds for r/loseit, a sub about weight-loss, where "weight" indeed is the most occuring term and r/talesformtechsupport that shows different vocabular with "back", "one", "get" and "work". 
+
+<p float="center">
+  <img src="/figures/PCA_Subreddit.png" width="95%" />
+</p>
+
+
+
 <p float="left">
   <img src="/figures/comp_tldr_post.png" width="45%" />
   <img src="/figures/comp_dict_post.png" width="45%" />
 </p>
 
-_Present the findings from your experiments, supported by visual or statistical evidence. Discuss how these results address your main research question._
 
-- histogram of subreddits
-- EMI in a range of XX to XX
+
 - PCA
     - subreddit vector representation
 
