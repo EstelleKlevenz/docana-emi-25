@@ -130,6 +130,19 @@ To exploe the calcuöated results we created histograms of the distribution
     
 ## Results and Discussion XX
 
+<p float="left">
+  <img src="/figures/subreddit_emi_dist.png" width="45%" />
+  <img src="/figures/PCA_Subreddit.png" width="45%" />
+</p>
+
+<p float="center">
+  <img src="/figures/composed_wc.png" width="95%" />
+</p>
+
+<p float="left">
+  <img src="/figures/comp_tldr_post.png" width="95%" />
+</p>
+
 _Present the findings from your experiments, supported by visual or statistical evidence. Discuss how these results address your main research question._
 
 ### Main Analysis
