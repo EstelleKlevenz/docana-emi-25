@@ -6,6 +6,10 @@ beim durchlesen:
 XX - subs oder subreddits -> am anfang definieren
 XX - which paper is which - klarmachen im text
 
+at last:
+XX - sources
+XX - figures
+
 ## Introduction
 
 How do you say it?
@@ -39,6 +43,11 @@ The fact that bot posts were filtered is also important, as our analysis focuses
 
 To make the dataload manageable we filtered for the subreddits that contain more than 10'000 posts. We then did a manual selection of subreddits we expected to show either strong evidence-based language or intuition-based language. After an initial inspection we eliminated those, whose mean value of the EMI was closest to zero.
 
+<figure float="left">
+<img src="figures/postcount.png" width="45%" />
+<figcaption>Figure 1 - Caption goes here</figcaption>
+
+</figure>
 <p float="left">
   <img src="figures/postcount.png" width="45%" />
 </p>
