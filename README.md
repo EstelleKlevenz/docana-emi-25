@@ -241,10 +241,10 @@ Another possibility to improve the BERT model on our data woudl have been to fin
 
 Overall it has to be noted that the comparability between the BERT EMI-scores and the other results is limited thorugh several factors: First BERT requried a different preprocessing - with an interal tokenization, we then used different keyphrases and finally we could run BERT only on a sample of 222'600 of 615'392 posts as the computational resources needed for the whole dataset exceeded our means.
 
-##### thoughts xx
+## Conclusion
 
+At the end of our 
 - REMINDER: only analyses rhetoric and it can only be speculated to which extent it is a statement about the actual methods and rigor to the claims of the postee.
-(marker words possibly change over time - longevity of the dictionary)
 
 XX - top 10 evidence -> conspiracy drin
 
