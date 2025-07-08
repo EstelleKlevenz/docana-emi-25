@@ -163,8 +163,10 @@ XX - all emi figure
 As shown in Figure XX, there are notable differences between long and short posts regarding their EMI scores. For most evidence-based subs, long posts tend to be more evidence-based than their respective summaries. The distribution of EMI scores is broader for summaries than for long posts, indicating a greater variability in summaries. These differences are substantial and not just random fluctuations — the correlation between long posts and summary EMI scores is weak or non-existent (see Figure XX), underlining the difference between the two formats.
 
 <figure float="left">
+<p>
   <img src="/figures/comp_tldr_post.png" width="45%" />
   <img src="/figures/comp_dict_post.png" width="45%" />
+</p>
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
 
