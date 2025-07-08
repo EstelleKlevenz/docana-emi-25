@@ -185,8 +185,6 @@ XX - Liane
 
 The results show that our approach to answer the proposed research quest generally worked quite well. The transfer of the EMI to reddit data succeeded. How the subreddits behave linguistically compared to our expectations is interesting (see Table 1). 13 out of 16 of our expectations were confirmed by the main model. The results deviated for r/Advice, r/loseit and r/talesfromtechsupport, where we guessed intuition. Even though the subreddits discuss personal experiences and advice, they seem to do so in a way, our models detect as evidence-based. Especially for r/talesfromtechsupport this is interesting, as the title of the subreddit already gives away, that there is no "fact-claim" in this subreddit, and we would expect stories that do not have a particular "fact-based" focus in their language.
 
-Within the results of our models it is noteworthy, that they mostly give the same language-indication. The goal of the different experiments was to test the robustness of the score. This assessment is therefore positive.
-
 <table border="1">
   <thead>
     <tr>
@@ -219,31 +217,19 @@ Within the results of our models it is noteworthy, that they mostly give the sam
   </tbody>
 </table>
 
-Since language is all about the details, the preprocessing, the editing of the language, must be evaluated when reflecting on the entire approach. One limitation we find in our approach is for example that the selection of excluded stop words could have influenced the embeddings. Another one is that misspelled versions of words have been excluded from the keyword lists. This seems appropriate for official political speeches. For the application to social media data, however, the question arises as to whether “typos” are not much more part of authentic content and should therefore have been taken into account when classifying a post against the concepts.
+Within the results of our models it is noteworthy, that they mostly give the same language-indication. The goal of the different experiments was to test the robustness of the score. This assessment is therefore positive.
 
 ### Long post vs. Summary
 
-One exception is r/depression, where the emi on the summaries gives a slightly positive emi score, whereas the other 
-
-
-umso kürzer der post umso gewichtigter die wörter, instabiler, schwanken mehr
-wollen funny sein / gerade nach einem heavy post - meinung sehr differenziert, bottomline eher pragmatisch 
---> keine hohe correlation
-  - A) instabiler 
-  - B) mit anderer intention geschrieben -> andere rhetorik, oft keine neutrale zusammenfassung
+For the EMI scores on the summaries we found values that are significantly deviating from the base EMI score we obtained. This can be explained as firstly, the shorter the post, the weightier the words, therefore the more unstable and fluctuating are the scores. Secondly, a summary does not have to be written with the same attitude as the long post. It is often written with another intention than being a neutral summary and therefore has a different rhetoric. Especially after a long and content-wise potentially serious post, a summary could be phrased more unserious. Or the other way around: a detailed experience is summarised with a pointed fact.
+This could exlain how for r/depression the EMI on the summaries gives a slightly positive averaged EMI score, whereas the main EMI score is on the negative side.
 
 ### Original vs. Customized Keyword Lists
-- concept robust with slightely different keywords
-- intuition lists tend to have negative connotations ("wrong" ,"dishonest")
-- not intented to judge content
-  -> extra raus
-- übertragbarkeit auch von keywords - language not matching for reddit / social media
-The provided dictionary is specialized to political talk (vs general online dialogue in reddit)
-adapted keyword list not differing significantly though
--> test sagt es passt so
--- hohe korrelation
 
-2 ansätze von wahrheitsverständnis offenbar nicht themenabhängig sondern allgemein
+The high correlation between the EMI scores calculated with respect to the original keyword-lists and the EMI scores based on the adapted concept definitions shows a high robustness of the concept capture. 
+To us it was important to clean the intuition lists of negative connotations (with terms such as "wrong" ,"dishonest")as intuition is not meant to be negatively judged and the measure is not intended to judge the content of a post. This adapted did not affect the result significantly.
+
+We see a high transferability, even with keywords that are not matching the language used in social media. The provided dictionary is specialized to political talk (with terms such as "investigate", "dossier", "inquiry") but works well even on general online dialogue. The two approach to honesty and truthfulness, proposed for political communication [Source-1] are, absed on our findings, not constrained to the domain but can be found in general speech. The EMI score is well generalizable, accoring to our results.
 
 ### Word2Evc vs. BERT
 
@@ -282,6 +268,7 @@ XX - top 10 evidence -> conspiracy drin
 
 - next steps: Comparison social science paper and computer science / chemistry technical papers
 
+Since language is all about the details, the preprocessing, the editing of the language, must be evaluated when reflecting on the entire approach. One limitation we find in our approach is for example that the selection of excluded stop words could have influenced the embeddings. Another one is that misspelled versions of words have been excluded from the keyword lists. This seems appropriate for official political speeches. For the application to social media data, however, the question arises as to whether “typos” are not much more part of authentic content and should therefore have been taken into account when classifying a post against the concepts.
 
 ## Conclusion XX
 
