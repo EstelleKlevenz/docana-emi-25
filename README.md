@@ -177,9 +177,8 @@ The influence of the new keyword lists on the EMI in comparison to the original 
 
 <figure float="left">
   <img src="/figures/PCA_Sub_dict.png" width="95%" />
-<figcaption>Figure XX - Caption goes here</figcaption>
+<figcaption>Figure XX - Caption goes here<br></figcaption>
 </figure>
-<br>
 ### Word2Evc vs. BERT
 
 XX - Liane
