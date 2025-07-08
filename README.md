@@ -2,13 +2,11 @@
 # "Trust me, Bro": A Reddit Rhetoric Study
 _by Cicero's analysts: Nina Geyer, Estelle Klevenz, Liane Strauch_
 
+beim durchlesen:
 XX - subs oder subreddits -> am anfang definieren
 XX - which paper is which - klarmachen im text
-XX- für auflistungen 1.2. in klammern
 
 ## Introduction
-
-_Start off by setting the stage for your project. Give a brief overview of relevant studies or work that have tackled similar issues. Then, clearly describe the main question or problem your project is designed to solve._
 
 How do you say it?
 Recent studies in the realm of the political sciences have shown a shift in the rethoric of politicians. They propose that the current spread of misinformation in political discourse is linked to an "alternative understanding of truth and honesty that emphasizes invocation of subjective belief at the expense of reliance on evidence" [Source-2]. This can be seen and measured through the language that politicians use.
@@ -34,8 +32,6 @@ To validate our findings and test them for their robustness we conducted several
 
 ## Dataset
 
-_Provide a short description of the dataset used in your project. Focus on highlighting the aspects that are particularly relevant to your work._
-
 The dataset contains Reddit subreddit posts containing "TL;DR" from 2006 to 2016. "TL;DR" is short for "too long, didn't read" and indicates a summary to a given post (either written by the author of the post or someone in the comments). The posts in the datasets are submissions and comments but only human produced, as bot-posts were filtered out. The original dataset contains 3,848,330 posts of 29'651 subreddits. For each posts the dataset has information on the author, the text body (raw and normalized), content, summary, subreddit and subreddit ID. The data is available on hugging face as hugging face dataset[Source-4].
 
 The dataset was originally intended to train summary-prediciton but it is suitable for our task as well as working with "TL;DR" posts ensures a certain length of the posts which helps with consistent quality of the computed EMI scores and relativizes the influence of single words. 
@@ -43,10 +39,11 @@ The fact that bot posts were filtered is also important, as our analysis focuses
 
 To make the dataload manageable we filtered for the subreddits that contain more than 10'000 posts. We then did a manual selection of subreddits we expected to show either strong evidence-based language or intuition-based language. After an initial inspection we eliminated those, whose mean value of the EMI was closest to zero.
 
-XX - graphic w. post counts of subs
+<p float="left">
+  <img src="figures/postcount.png" width="45%" />
+</p>
 
-16 subreddits remained in our selection, which meant 615392 posts to analyze. The subreddits are: r/relationships,  r/relationship_advice,  r/explainlikeimfive, r/todayilearned, r/worldnews, r/offmychest, r/buildapc, r/askmen, r/technology, r/dating_advice, r/askscience, r/news, r/talesfromtechsupport, r/depression, r/loseit,
-and r/advice.
+16 subreddits remained in our selection, which meant 615392 posts to analyze. The subreddits and their prevalnênce in the dataset can be seen in Figure XX.
 
 Processing and analysis happened mostly on the content column and the summary, grouped by subreddit.
 
@@ -107,6 +104,9 @@ We then ran again the main analysis with the new keyword lists. Expect for excha
    
 3. different model (BERT)
 motivation:
+- static vs contextualized
+  - allgemeine klausurantwort warum context besser
+ cls embeddings erklären
 
 embeddings rausgeholt, CLS
 512 Tokens pro input
@@ -147,6 +147,8 @@ To gain insight into the language used in the subs, we plotted the most used wor
 
 The PCA of each sub's average vector and the concept vectors shows in simplified form the spatial relationship between the subs and the concepts. As in the histograms, advice though colored green shows more similarity (=smaller distance) to the intuition subs than the other evidence subs. r/losit also strikes with a bigger gap to the other evidence subs. Apart from that the general classification seems to work, as you can lay a hyperplane through the space and separate the two groups along the "EMI of 0".
 
+XX - all emi figure
+
 ### Long post vs. Summary
 
 As shown in Figure XX, there are notable differences between long and short posts regarding their EMI scores. For most evidence-based subs, long posts tend to be more evidence-based than their respective summaries. The distribution of EMI scores is broader for summaries than for long posts, indicating a greater variability in summaries. These differences are substantial and not just random fluctuations — the correlation between long posts and summary EMI scores is weak or non-existent (see Figure XX), underlining the difference between the two formats.
@@ -166,37 +168,80 @@ The influence of the new keyword lists on the EMI in comparison to the original 
 ### Word2Evc vs. BERT
 
 XX - Liane
+- es ist weird
 
 ## Discussion XX
-### Long post vs. Summary
-### Original vs. Customized Keyword Lists
-- concept robust with slightely different keywords
-- imbalance in values bc of keywords length diff?
-- intuition lists tend to have negative connotations ("wrong" ,"dishonest")
-- language not matching for reddit / social media
-- not intented to judge content
-- interesting: talesfromtechsupport very evidency
-- advice has an evidence mean but intuition mode
 
-### Word2Evc vs. BERT
+- kinda works
+- ist übertragbar
+- erwartung bestätigt
+- warum nicht so wie erwartet?
 
 - interesting: talesfromtechsupport very evidency
 - advice has an evidence mean but intuition mode
 
-##### thoughts xx
-- does it mirror the cliff between social and natural sciences?
 - limit in preprocessing/approach
     Is the Preprocessing valid (how does it change the result?)
     Stopword debate
     Loss of words through spelling mistakes (spelling in itself might be a predictor)
 
-- REMINDER: only analyses rhetoric and it can only be speculated to which extent it is a statement about the actual methods and rigor to the claims of the postee.
-(marker words possibly change over time - longevity of the dictionary)
-- next steps: Comparison social science paper and computer science / chemistry technical papers
-Keywords
-- intuition tied to negative in language - in original keywords_ "fake", "wrong" - how are those intuitive more than evidency words? gives intuition bad light
+### Long post vs. Summary
+
+umso kürzer der post umso gewichtigter die wörter, instabiler, schwanken mehr
+wollen funny sein / gerade nach einem heavy post - meinung sehr differenziert, bottomline eher pragmatisch 
+--> keine hohe correlation
+  - A) instabiler 
+  - B) mit anderer intention geschrieben -> andere rhetorik, oft keine neutrale zusammenfassung
+
+### Original vs. Customized Keyword Lists
+- concept robust with slightely different keywords
+- intuition lists tend to have negative connotations ("wrong" ,"dishonest")
+- not intented to judge content
+  -> extra raus
+- übertragbarkeit auch von keywords - language not matching for reddit / social media
 The provided dictionary is specialized to political talk (vs general online dialogue in reddit)
 adapted keyword list not differing significantly though
+-> test sagt es passt so
+-- hohe korrelation
+
+2 ansätze von wahrheitsverständnis offenbar nicht themenabhängig sondern allgemein
+
+### Word2Evc vs. BERT
+
+- nur ein sample
+  - nicht stratified - war trotzem ok?
+
+- prozess embeddings zu machen optimierbar:
+  - aktuell chatgpt sätze
+  - testen mit einfachen standardsätzen / satzschablonen
+  - einzelne wörter reingeben? -> defeated context
+  - eigentlich context gut in CHatGPT - wäre besser gewesen mit simpler?
+
+  - oder noch komplexer? pilots mit mehreren concept list approaches
+  -  wörter, simepl, komplex, komplex2
+  - validierung unter team
+  - run auf sample
+  - haben nur einen ansatz verfolgt und sehen dass der nicht gut funktionert hat
+
+  - BERT finetuning
+
+  - insgesamt vergleichbarkeit reduziert
+    - andere keywords
+    - andere preprocessing
+    - full vs sample
+
+##### thoughts xx
+
+- REMINDER: only analyses rhetoric and it can only be speculated to which extent it is a statement about the actual methods and rigor to the claims of the postee.
+(marker words possibly change over time - longevity of the dictionary)
+
+XX - top 10 evidence -> conspiracy drin
+
+- latent construct was wir angeblich messen: wahrheitsverständnisse
+- vlt messen wir uncertainty in language
+    - does it mirror the cliff between social and natural sciences?
+
+- next steps: Comparison social science paper and computer science / chemistry technical papers
 
 
 ## Conclusion XX
