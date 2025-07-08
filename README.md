@@ -43,7 +43,7 @@ The fact that bot posts were filtered is also important, as our analysis focuses
 
 To make the dataload manageable we filtered for the subreddits that contain more than 10'000 posts. We then did a manual selection of subreddits we expected to show either strong evidence-based language or intuition-based language. After an initial inspection we eliminated those, whose mean value of the EMI was closest to zero.
 
-16 subreddits remained in our selection, which meant 615392 posts to analyze. The subreddits and their prevalence in the dataset can be seen in Figure XX.
+16 subreddits remained in our selection, which meant 615'392 posts to analyze. The subreddits and their prevalence in the dataset can be seen in Figure XX.
 
 <figure float="left">
 <img src="figures/postcount.png" width="95%" />
@@ -233,27 +233,13 @@ We see a high transferability, even with keywords that are not matching the lang
 
 ### Word2Evc vs. BERT
 
-- nur ein sample
-  - nicht stratified - war trotzem ok?
+As contextualized embeddings can capture more nuances and layers of meaning we were interested, how well our approach would work employing BERT for the embeddings. To learn this mentioned context, BERT required sentences that represented the concepts, more than just keyword lists. One limitation of our approach, and possible explanation for the big diffrence in performance on the data, is that we did miss to test several different ways of providing concept-context for the model.
 
-- prozess embeddings zu machen optimierbar:
-  - aktuell chatgpt sätze
-  - testen mit einfachen standardsätzen / satzschablonen
-  - einzelne wörter reingeben? -> defeated context
-  - eigentlich context gut in CHatGPT - wäre besser gewesen mit simpler?
+We kept the initial approach, where we prompted ChatGPT to give a sentence to each keyword. It would have been interesting to compare this to the raw keyword lists, and customised sentences that are a) simpler and b) more complex than the ones ChatGPT provided us with. We could have validated them within the team and could have had them run on a small sample of the BERT model to see their influence on the embeddings. Instead we have only pursued one approach and see that it has not been effective.
 
-  - oder noch komplexer? pilots mit mehreren concept list approaches
-  -  wörter, simepl, komplex, komplex2
-  - validierung unter team
-  - run auf sample
-  - haben nur einen ansatz verfolgt und sehen dass der nicht gut funktionert hat
+Another possibility to improve the BERT model on our data woudl have been to finetune it. We chose to apply it out of the box which might have been inadequate for our case.
 
-  - BERT finetuning
-
-  - insgesamt vergleichbarkeit reduziert
-    - andere keywords
-    - andere preprocessing
-    - full vs sample
+Overall it has to be noted that the comparability between the BERT EMI-scores and the other results is limited thorugh several factors: First BERT requried a different preprocessing - with an interal tokenization, we then used different keyphrases and finally we could run BERT only on a sample of 222'600 of 615'392 posts as the computational resources needed for the whole dataset exceeded our means.
 
 ##### thoughts xx
 
