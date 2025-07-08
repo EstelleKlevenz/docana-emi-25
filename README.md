@@ -219,6 +219,9 @@ The results show that our approach to answer the proposed research quest general
 
 Within the results of our models it is noteworthy, that they mostly give the same language-indication. The goal of the different experiments was to test the robustness of the score. This assessment is therefore positive.
 
+Since language is all about the details, when reflecting on the entire approach, the preprocessing, the editing of the language, must be evaluated. One limitation we find in our approach is that the selection of excluded stop words could have influenced the embeddingsW we did a crosschecking with not removing the words, which did not make a big difference on the sample tested, but we did not check with different sets of stopwords. 
+Another one is that misspelled versions of words have been excluded from the keyword lists. This seems appropriate for official political speeches. For the application to social media data, however, the question arises as to whether “typos” are not much more part of authentic content and should therefore have been taken into account when classifying a post against the concepts.
+
 ### Long post vs. Summary
 
 For the EMI scores on the summaries we found values that are significantly deviating from the base EMI score we obtained. This can be explained as firstly, the shorter the post, the weightier the words, therefore the more unstable and fluctuating are the scores. Secondly, a summary does not have to be written with the same attitude as the long post. It is often written with another intention than being a neutral summary and therefore has a different rhetoric. Especially after a long and content-wise potentially serious post, a summary could be phrased more unserious. Or the other way around: a detailed experience is summarised with a pointed fact.
