@@ -183,18 +183,9 @@ XX - Liane
 
 ## Discussion
 
-_The data employed are Reddit posts from different subreddits, subforums on the platform. We expect some to have more evidence based language and other to rely more on intuition in how contents are discussed. More evidence-based language we expect in subreddits that explicitely have real-world facts as content, as news pages or "funfacts" people share. In our selection this would correspond to the r/worldnews, r/news, r/explainlikeimfive and r/todayilearned. We also expect evidence based communication in subreddits that have a defined topic that is supposed to be discussed seriously and or subreddits that explicitely focus on science, as in r/buildapc, r/technology and r/askscience._
-_Intuition-based language on the other hand we expect in subreddits that regard personal experience, like in r/relationships, r/offmychest, r/talesfromtechsupport and r/depression, and advice: r/relationship_advice, r/askmen, r/dating_advice, r/loseit, r/advice._
+The results show that our approach to answer the proposed research quest generally worked quite well. The transfer of the EMI to reddit data succeeded. How the subreddits behave linguistically compared to our expectations is interesting (see Table 1). 13 out of 16 of our expectations were confirmed by the main model. The results deviated for r/Advice, r/loseit and r/talesfromtechsupport, where we guessed intuition. Even though the subreddits discuss personal experiences and advice, they seem to do so in a way, our models detect as evidence-based. Especially for r/talesfromtechsupport this is interesting, as the title of the subreddit already gives away, that there is no "fact-claim" in this subreddit, and we would expect stories that do not have a particular "fact-based" focus in their language.
 
-_Our research quest is to show that the EMI can be applied to the domain of social-media and to find out how language is used in different subreddits._
-
-### Roadmap
-
-_After preprocessing we calculated the EMI score for subreddits, posts and individual words. To do this we followed the approach of the authors of the EMI score, as described in their paper from 2024 [Source-1]. The results were visually explored in histograms, wordclouds and PCA._
-
-_To validate our findings and test them for their robustness we conducted several "experiments" changing different settings of the approach. As a first experiment we compared the EMI scores for the long posts with those of the corresponding summaries. Secondly, we followed the process described by the authors and constructed and applied our own keyword list and thus a vocabulary definition of evidence resp. intuition based on the language used in the reddit forums. Lastly, we experimented with a different latent representation of the posts by applying BERT instead of the word2vec algorithm to the long posts._
-
-The results show that our approach to answer the proposed research quest generally worked quite well. The transfer of the EMI to reddit data succeeded. How the subreddits behave linguistically compared to our expectations is interesting:
+Within the results of our models it is noteworthy, that they mostly give the same language-indication. The goal of the different experiments was to test the robustness of the score. This assessment is therefore positive.
 
 <table border="1">
   <thead>
@@ -228,21 +219,12 @@ The results show that our approach to answer the proposed research quest general
   </tbody>
 </table>
 
-
-- kinda works
-- ist übertragbar
-- erwartung bestätigt
-- warum nicht so wie erwartet?
-
-- interesting: talesfromtechsupport very evidency
-- advice has an evidence mean but intuition mode
-
-- limit in preprocessing/approach
-    Is the Preprocessing valid (how does it change the result?)
-    Stopword debate
-    Loss of words through spelling mistakes (spelling in itself might be a predictor)
+Since language is all about the details, the preprocessing, the editing of the language, must be evaluated when reflecting on the entire approach. One limitation we find in our approach is for example that the selection of excluded stop words could have influenced the embeddings. Another one is that misspelled versions of words have been excluded from the keyword lists. This seems appropriate for official political speeches. For the application to social media data, however, the question arises as to whether “typos” are not much more part of authentic content and should therefore have been taken into account when classifying a post against the concepts.
 
 ### Long post vs. Summary
+
+One exception is r/depression, where the emi on the summaries gives a slightly positive emi score, whereas the other 
+
 
 umso kürzer der post umso gewichtigter die wörter, instabiler, schwanken mehr
 wollen funny sein / gerade nach einem heavy post - meinung sehr differenziert, bottomline eher pragmatisch 
