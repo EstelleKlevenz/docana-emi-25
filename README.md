@@ -244,7 +244,9 @@ Another possibility to improve the BERT model on our data woudl have been to fin
 
 Overall it has to be noted that the comparability between the BERT EMI-scores and the other results is limited thorugh several factors: First BERT requried a different preprocessing - with an interal tokenization, we then used different keyphrases and finally we could run BERT only on a sample of 222'600 of 615'392 posts as the computational resources needed for the whole dataset exceeded our means.
 
-## Conclusion
+## Conclusion XX
+
+_Summarize the major outcomes of your project, reflect on the research findings, and clearly state the conclusions you've drawn from the study._
 
 At the end of our 
 - REMINDER: only analyses rhetoric and it can only be speculated to which extent it is a statement about the actual methods and rigor to the claims of the postee.
@@ -258,10 +260,6 @@ XX - top 10 evidence -> conspiracy drin
 - next steps: Comparison social science paper and computer science / chemistry technical papers
 
 Since language is all about the details, the preprocessing, the editing of the language, must be evaluated when reflecting on the entire approach. One limitation we find in our approach is for example that the selection of excluded stop words could have influenced the embeddings. Another one is that misspelled versions of words have been excluded from the keyword lists. This seems appropriate for official political speeches. For the application to social media data, however, the question arises as to whether “typos” are not much more part of authentic content and should therefore have been taken into account when classifying a post against the concepts.
-
-## Conclusion XX
-
-_Summarize the major outcomes of your project, reflect on the research findings, and clearly state the conclusions you've drawn from the study._
 
 ## Contributions
 
