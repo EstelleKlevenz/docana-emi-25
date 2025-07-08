@@ -1,6 +1,6 @@
 
-# XX
-
+# "Trust me, Bro": A Reddit Rhetoric Study
+by Cicero's analysts
 _Group members: Nina Geyer, Estelle Klevenz, Liane Strauch_
 
 ## Introduction
