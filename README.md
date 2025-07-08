@@ -43,7 +43,7 @@ To make the dataload manageable we filtered for the subreddits that contain more
   <img src="figures/postcount.png" width="45%" />
 </p>
 
-16 subreddits remained in our selection, which meant 615392 posts to analyze. The subreddits and their prevalnênce in the dataset can be seen in Figure XX.
+16 subreddits remained in our selection, which meant 615392 posts to analyze. The subreddits and their prevalence in the dataset can be seen in Figure XX.
 
 Processing and analysis happened mostly on the content column and the summary, grouped by subreddit.
 
