@@ -49,7 +49,7 @@ To make the dataload manageable we filtered for the subreddits that contain more
 <img src="figures/postcount.png" width="95%" />
 <figcaption>Figure 1 - Caption goes here</figcaption>
 </figure>
-<br>
+
 Processing and analysis happened mostly on the content column and the summary, grouped by subreddit.
 
 ## Methods - Setup
@@ -62,9 +62,6 @@ Tools:
 - run in an conda environment can be recreated via the req. that contains packages and their versions used
 
 ## Method - Experiments
-
-_Report how you conducted the experiments. We suggest including detailed explanations of the preprocessing steps and model training in your project. For the preprocessing, describe  data cleaning, normalization, or transformation steps you applied to prepare the dataset, along with the reasons for choosing these methods. In the section on model training, explain the methodologies and algorithms you used, detail the parameter settings and training protocols, and describe any measures taken to ensure the validity of the models._
-
 ### Main Analysis - EMI
 #### Preprocessing
 
@@ -96,7 +93,7 @@ The keyword lists define the benchmark for each of the concepts. As the keyword 
 </p>
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
-<br>
+
 The keyword approach of Lasser et al. involved: (1.) starting out with a set of initial keywords, (2.) expaning them computationally using fasttext embeddings and colexification networks, (3.) filtering for duplicates, overlapping terms (in both lists) and lemma inflections. Subsequently, they validated their keyword lists through an online survey where paricipants rated the terms in how the represent the concpets and used a t-test to examine the results. We adapted their approach but waived the validation.
 
 As initial keywords we used those of the original keywords used in the main analysis that had a word count of over 1000 in our data. The frequency charts can be seen in Figure 1. We manually excluded "true" from the evidence seed-list and "wrong" from the intuition list to remove initial bias. we also removed "find" from the evidence list, as the termn is ambiguous, with different meanings in different contexts (E: "The study finds..." / I: "I find it to be challenging..."). we added to the evidence list the terms "article" and "argument" as we expect them to be prevalent in contexts such as: "This article shows..." and "An argument against this.." both showing evidence based language.
@@ -134,13 +131,12 @@ mean über Posts
 - correlation with regular
 
 ## Results
-_Present the findings from your experiments, supported by visual or statistical evidence. Discuss how these results address your main research question._
 
 <figure float="left">
   <img src="/figures/subreddit_emi_dist.png" width="95%" />
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
-<br>
+
 We created binned histograms of the distribution of EMI scores of the posts over a sub, colored according to whether their mean is a positive score (green) or a negative score (purple). We can tell that 10/16 subs tend to have more evidence-based language whereas 6/10 lean more towards intuition-based rethoric. With exception of r/talesfromtechsupport, most of the distribution are right-skewed.
 The EMI ranges from -2 to 8, having a wider range of values on the positive side. Of particular note is r/advice, the only distribution where there is a sign change between mean and mode. For the other subs, color and mean correspond in the sign of the EMI scores. Advice is colored green, with a slightly positive mean, but the mode is on the intuitive side.
 
@@ -148,14 +144,14 @@ The EMI ranges from -2 to 8, having a wider range of values on the positive side
   <img src="/figures/composed_wc.png" width="95%" />
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
-<br>
+
 To gain insight into the language used in the subs, we plotted the most used words and their individual EMI score. The darker the color the closer the word is to either the evidence or the intuition benchmark. It is interesting that whereas most of the subs show generic words like "people", "like", "would, "im" (two examples shown on the left side of Figure XX), some subs have more tailored language, which even shows in the most occuring terms, this holds for r/loseit, a sub about weight-loss, where "weight" indeed is the most occuring term and r/talesformtechsupport that shows different vocabular with "back", "one", "get" and "work". 
 
 <figure float="center">
   <img src="/figures/PCA_Subreddit.png" width="95%" />
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
-<br>
+
 The PCA of each sub's average vector and the concept vectors shows in simplified form the spatial relationship between the subs and the concepts. As in the histograms, advice though colored green shows more similarity (=smaller distance) to the intuition subs than the other evidence subs. r/losit also strikes with a bigger gap to the other evidence subs. Apart from that the general classification seems to work, as you can lay a hyperplane through the space and separate the two groups along the "EMI of 0".
 
 XX - all emi figure
@@ -171,20 +167,67 @@ As shown in Figure XX, there are notable differences between long and short post
 </p>
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
-<br>
+
 ### Original vs. Customized Keyword Lists
 The influence of the new keyword lists on the EMI in comparison to the original ones can be seen in Figure XX. As one can see the deviation is minimal, with a global correlation of XX between the scores (see Figure XX). All subs get classified into the same category as before, even though the concept definiton is adjusted. This can also be seen in the corresponding PCA, see Figure XX.
 
 <figure float="left">
   <img src="/figures/PCA_Sub_dict.png" width="95%" />
-<figcaption>Figure XX - Caption goes here<br></figcaption>
+<figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
+
 ### Word2Evc vs. BERT
 
 XX - Liane
 - es ist weird
 
-## Discussion XX
+## Discussion
+
+_The data employed are Reddit posts from different subreddits, subforums on the platform. We expect some to have more evidence based language and other to rely more on intuition in how contents are discussed. More evidence-based language we expect in subreddits that explicitely have real-world facts as content, as news pages or "funfacts" people share. In our selection this would correspond to the r/worldnews, r/news, r/explainlikeimfive and r/todayilearned. We also expect evidence based communication in subreddits that have a defined topic that is supposed to be discussed seriously and or subreddits that explicitely focus on science, as in r/buildapc, r/technology and r/askscience._
+_Intuition-based language on the other hand we expect in subreddits that regard personal experience, like in r/relationships, r/offmychest, r/talesfromtechsupport and r/depression, and advice: r/relationship_advice, r/askmen, r/dating_advice, r/loseit, r/advice._
+
+_Our research quest is to show that the EMI can be applied to the domain of social-media and to find out how language is used in different subreddits._
+
+### Roadmap
+
+_After preprocessing we calculated the EMI score for subreddits, posts and individual words. To do this we followed the approach of the authors of the EMI score, as described in their paper from 2024 [Source-1]. The results were visually explored in histograms, wordclouds and PCA._
+
+_To validate our findings and test them for their robustness we conducted several "experiments" changing different settings of the approach. As a first experiment we compared the EMI scores for the long posts with those of the corresponding summaries. Secondly, we followed the process described by the authors and constructed and applied our own keyword list and thus a vocabulary definition of evidence resp. intuition based on the language used in the reddit forums. Lastly, we experimented with a different latent representation of the posts by applying BERT instead of the word2vec algorithm to the long posts._
+
+The results show that our approach to answer the proposed research quest generally worked quite well. The transfer of the EMI to reddit data succeeded. How the subreddits behave linguistically compared to our expectations is interesting:
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>subreddit</th>
+      <th>emi</th>
+      <th>emi_short</th>
+      <th>emi_dict</th>
+      <th>emi_bert</th>
+      <th>expectation</th>
+      <th>guess</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Advice</td><td>0.339718</td><td>0.006631</td><td>0.333999</td><td>-0.092573</td><td>intuition</td><td>False</td></tr>
+    <tr><td>AskMen</td><td>-0.330552</td><td>-0.330662</td><td>-0.333857</td><td>-0.226084</td><td>intuition</td><td>True</td></tr>
+    <tr><td>askscience</td><td>1.753339</td><td>0.692008</td><td>1.769951</td><td>0.343264</td><td>evidence</td><td>True</td></tr>
+    <tr><td>buildapc</td><td>1.961137</td><td>1.293441</td><td>1.965890</td><td>0.232905</td><td>evidence</td><td>True</td></tr>
+    <tr><td>dating_advice</td><td>-0.324222</td><td>-0.270277</td><td>-0.346307</td><td>-0.172131</td><td>intuition</td><td>True</td></tr>
+    <tr><td>depression</td><td>-0.267058</td><td>0.149373</td><td>-0.268941</td><td>-0.260357</td><td>intuition</td><td>True</td></tr>
+    <tr><td>explainlikeimfive</td><td>1.327834</td><td>0.396334</td><td>1.354175</td><td>0.205109</td><td>evidence</td><td>True</td></tr>
+    <tr><td>loseit</td><td>0.502032</td><td>0.616786</td><td>0.520622</td><td>0.030121</td><td>intuition</td><td>False</td></tr>
+    <tr><td>news</td><td>0.950472</td><td>0.152814</td><td>0.974475</td><td>0.103567</td><td>evidence</td><td>True</td></tr>
+    <tr><td>offmychest</td><td>-0.167925</td><td>-0.067313</td><td>-0.173061</td><td>-0.190736</td><td>intuition</td><td>True</td></tr>
+    <tr><td>relationship_advice</td><td>-0.467262</td><td>-0.211178</td><td>-0.473538</td><td>-0.176722</td><td>intuition</td><td>True</td></tr>
+    <tr><td>relationships</td><td>-0.437910</td><td>-0.151362</td><td>-0.442456</td><td>-0.186816</td><td>intuition</td><td>True</td></tr>
+    <tr><td>talesfromtechsupport</td><td>2.287213</td><td>1.018076</td><td>2.267735</td><td>0.231347</td><td>intuition</td><td>False</td></tr>
+    <tr><td>technology</td><td>1.550219</td><td>0.488868</td><td>1.568976</td><td>0.153894</td><td>evidence</td><td>True</td></tr>
+    <tr><td>todayilearned</td><td>0.845624</td><td>0.191401</td><td>0.863641</td><td>0.076525</td><td>evidence</td><td>True</td></tr>
+    <tr><td>worldnews</td><td>0.882169</td><td>0.118915</td><td>0.904538</td><td>0.121513</td><td>evidence</td><td>True</td></tr>
+  </tbody>
+</table>
+
 
 - kinda works
 - ist übertragbar
