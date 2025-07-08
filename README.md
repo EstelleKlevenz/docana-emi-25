@@ -1,7 +1,10 @@
 
 # "Trust me, Bro": A Reddit Rhetoric Study
-by Cicero's analysts
-_Group members: Nina Geyer, Estelle Klevenz, Liane Strauch_
+_by Cicero's analysts: Nina Geyer, Estelle Klevenz, Liane Strauch_
+
+XX - subs oder subreddits -> am anfang definieren
+XX - which paper is which - klarmachen im text
+XX- für auflistungen 1.2. in klammern
 
 ## Introduction
 
@@ -40,6 +43,8 @@ The fact that bot posts were filtered is also important, as our analysis focuses
 
 To make the dataload manageable we filtered for the subreddits that contain more than 10'000 posts. We then did a manual selection of subreddits we expected to show either strong evidence-based language or intuition-based language. After an initial inspection we eliminated those, whose mean value of the EMI was closest to zero.
 
+XX - graphic w. post counts of subs
+
 16 subreddits remained in our selection, which meant 615392 posts to analyze. The subreddits are: r/relationships,  r/relationship_advice,  r/explainlikeimfive, r/todayilearned, r/worldnews, r/offmychest, r/buildapc, r/askmen, r/technology, r/dating_advice, r/askscience, r/news, r/talesfromtechsupport, r/depression, r/loseit,
 and r/advice.
 
@@ -65,7 +70,7 @@ On the selected subset of the reddit dataset we first applied data cleaning. We 
 
 #### EMI of the long posts
 
-According to the paper, the EMI-procedure includes 1. creating a list of keywords for each of the concepts, 2. training a word2vec model on the cleaned tokens and those lists of keywords, 3. calculating the average vector for each of the keyword lists to have an abstract representation of the concepts, 4. then calculating the cosine similarity between this concept-representation vectors and each post, where for each post the average of the word embeddings for its content words is computed. 5. the cosine similarities are binned and normalized and finally the EMI is obtained by subtracting the intuition score form the evidence score.
+According to the paper, the EMI-procedure includes (1.) creating a list of keywords for each of the concepts, (2.) training a word2vec model on the cleaned tokens and those lists of keywords, (3.) calculating the average vector for each of the keyword lists to have an abstract representation of the concepts, (4.) then calculating the cosine similarity between this concept-representation vectors and each post, where for each post the average of the word embeddings for its content words is computed. (5.) the cosine similarities are binned and normalized and finally (6.) the EMI is obtained by subtracting the intuition score form the evidence score.
 
 We followed this approach and the means used by the original authors. For the main analysis we adopted the keyword lists that were used in [Source-1]. Then we used the word2vec algorithm from the Gensim library and trained 300-dimensional vectors based on a context window of 5 words, as Aroyehun et al. did. Next we applied mean pooling of the word embeddings for each post on the keyword lists and the tokenized posts and then computed the cosine similarity between the resulting post average vectors and the concept (evidence /intuition) vectors. We saved these values and further applied length-based binning to account for variations in the length of posts (binning similarities by length and subtracting the mean-similarity within each bin from the cosine simialrity of each instance, see [Source-1]). As a last step before computing the EMI by subtracting the intuition-score from the evidence-score, we z-transformed the cosine similarities (evidence-similarity and intuition-similarity) of each post to obtain those scores. 
 
@@ -87,7 +92,7 @@ The keyword lists define the benchmark for each of the concepts. As the keyword 
   <img src="/figures/originalintuition.png" width="45%" />
 </p>
 
-The keyword approach of Lasser et al. involved: 1. starting out with a set of initial keywords, 2. expaning them computationally using fasttext embeddings and colexification networks, 3. filtering for duplicates, overlapping terms (in both lists) and lemma inflections. Subsequently, they validated their keyword lists through an online survey where paricipants rated the terms in how the represent the concpets and used a t-test to examine the results. We adapted their approach but waived the validation.
+The keyword approach of Lasser et al. involved: (1.) starting out with a set of initial keywords, (2.) expaning them computationally using fasttext embeddings and colexification networks, (3.) filtering for duplicates, overlapping terms (in both lists) and lemma inflections. Subsequently, they validated their keyword lists through an online survey where paricipants rated the terms in how the represent the concpets and used a t-test to examine the results. We adapted their approach but waived the validation.
 
 As initial keywords we used those of the original keywords used in the main analysis that had a word count of over 1000 in our data. The frequency charts can be seen in Figure 1. We manually excluded "true" from the evidence seed-list and "wrong" from the intuition list to remove initial bias. we also removed "find" from the evidence list, as the termn is ambiguous, with different meanings in different contexts (E: "The study finds..." / I: "I find it to be challenging..."). we added to the evidence list the terms "article" and "argument" as we expect them to be prevalent in contexts such as: "This article shows..." and "An argument against this.." both showing evidence based language.
 
@@ -168,7 +173,7 @@ XX - Liane
 - concept robust with slightely different keywords
 - imbalance in values bc of keywords length diff?
 - intuition lists tend to have negative connotations ("wrong" ,"dishonest")
-- language not matching for 
+- language not matching for reddit / social media
 - not intented to judge content
 - interesting: talesfromtechsupport very evidency
 - advice has an evidence mean but intuition mode
@@ -203,8 +208,8 @@ _Summarize the major outcomes of your project, reflect on the research findings,
 | Team Member      | Contributions                                             |
 |------------------|-----------------------------------------------------------|
 | Nina Geyer       | main word2vec preprocessing & analysis, visualizations    |
-| Estelle Klevenz  | dictionary experiments, webpage                           |
-| Liane Strauch    | model experiments (BERT), theory, slides                  |
+| Estelle Klevenz  | dictionary experiment, webpage                            |
+| Liane Strauch    | model experiment (BERT), slides                           |
 
 ## References
 
