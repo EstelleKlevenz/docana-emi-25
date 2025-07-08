@@ -43,13 +43,13 @@ The fact that bot posts were filtered is also important, as our analysis focuses
 
 To make the dataload manageable we filtered for the subreddits that contain more than 10'000 posts. We then did a manual selection of subreddits we expected to show either strong evidence-based language or intuition-based language. After an initial inspection we eliminated those, whose mean value of the EMI was closest to zero.
 
-<figure float="left">
-<img src="figures/postcount.png" width="90%" />
-<figcaption>Figure 1 - Caption goes here</figcaption>
-</figure>
-
 16 subreddits remained in our selection, which meant 615392 posts to analyze. The subreddits and their prevalence in the dataset can be seen in Figure XX.
 
+<figure float="left">
+<img src="figures/postcount.png" width="95%" />
+<figcaption>Figure 1 - Caption goes here</figcaption>
+</figure>
+<br>
 Processing and analysis happened mostly on the content column and the summary, grouped by subreddit.
 
 ## Methods - Setup
@@ -96,7 +96,7 @@ The keyword lists define the benchmark for each of the concepts. As the keyword 
 </p>
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
-
+<br>
 The keyword approach of Lasser et al. involved: (1.) starting out with a set of initial keywords, (2.) expaning them computationally using fasttext embeddings and colexification networks, (3.) filtering for duplicates, overlapping terms (in both lists) and lemma inflections. Subsequently, they validated their keyword lists through an online survey where paricipants rated the terms in how the represent the concpets and used a t-test to examine the results. We adapted their approach but waived the validation.
 
 As initial keywords we used those of the original keywords used in the main analysis that had a word count of over 1000 in our data. The frequency charts can be seen in Figure 1. We manually excluded "true" from the evidence seed-list and "wrong" from the intuition list to remove initial bias. we also removed "find" from the evidence list, as the termn is ambiguous, with different meanings in different contexts (E: "The study finds..." / I: "I find it to be challenging..."). we added to the evidence list the terms "article" and "argument" as we expect them to be prevalent in contexts such as: "This article shows..." and "An argument against this.." both showing evidence based language.
@@ -140,7 +140,7 @@ _Present the findings from your experiments, supported by visual or statistical 
   <img src="/figures/subreddit_emi_dist.png" width="95%" />
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
-
+<br>
 We created binned histograms of the distribution of EMI scores of the posts over a sub, colored according to whether their mean is a positive score (green) or a negative score (purple). We can tell that 10/16 subs tend to have more evidence-based language whereas 6/10 lean more towards intuition-based rethoric. With exception of r/talesfromtechsupport, most of the distribution are right-skewed.
 The EMI ranges from -2 to 8, having a wider range of values on the positive side. Of particular note is r/advice, the only distribution where there is a sign change between mean and mode. For the other subs, color and mean correspond in the sign of the EMI scores. Advice is colored green, with a slightly positive mean, but the mode is on the intuitive side.
 
@@ -148,14 +148,14 @@ The EMI ranges from -2 to 8, having a wider range of values on the positive side
   <img src="/figures/composed_wc.png" width="95%" />
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
-
+<br>
 To gain insight into the language used in the subs, we plotted the most used words and their individual EMI score. The darker the color the closer the word is to either the evidence or the intuition benchmark. It is interesting that whereas most of the subs show generic words like "people", "like", "would, "im" (two examples shown on the left side of Figure XX), some subs have more tailored language, which even shows in the most occuring terms, this holds for r/loseit, a sub about weight-loss, where "weight" indeed is the most occuring term and r/talesformtechsupport that shows different vocabular with "back", "one", "get" and "work". 
 
 <figure float="center">
   <img src="/figures/PCA_Subreddit.png" width="95%" />
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
-
+<br>
 The PCA of each sub's average vector and the concept vectors shows in simplified form the spatial relationship between the subs and the concepts. As in the histograms, advice though colored green shows more similarity (=smaller distance) to the intuition subs than the other evidence subs. r/losit also strikes with a bigger gap to the other evidence subs. Apart from that the general classification seems to work, as you can lay a hyperplane through the space and separate the two groups along the "EMI of 0".
 
 XX - all emi figure
@@ -171,7 +171,7 @@ As shown in Figure XX, there are notable differences between long and short post
 </p>
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
-
+<br>
 ### Original vs. Customized Keyword Lists
 The influence of the new keyword lists on the EMI in comparison to the original ones can be seen in Figure XX. As one can see the deviation is minimal, with a global correlation of XX between the scores (see Figure XX). All subs get classified into the same category as before, even though the concept definiton is adjusted. This can also be seen in the corresponding PCA, see Figure XX.
 
@@ -179,7 +179,7 @@ The influence of the new keyword lists on the EMI in comparison to the original 
   <img src="/figures/PCA_Sub_dict.png" width="95%" />
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
-
+<br>
 ### Word2Evc vs. BERT
 
 XX - Liane
@@ -287,6 +287,7 @@ https://www.nltk.org/api/nltk.tokenize.word_tokenize.html [Source-3]
 
 style="color: green;"
 ## Appendix
+<figure>
 <table border="1">
   <thead>
     <tr>
@@ -358,3 +359,5 @@ style="color: green;"
     <tr><td>45</td><td>26</td></tr>
   </tbody>
 </table>
+<figcaption>Table 1 - this is the table</figcaption>
+</figure>
