@@ -43,7 +43,7 @@ To make the dataload manageable we filtered for the subreddits that contain more
 
 <figure float="left">
 <img src="figures/postcount.png" width="95%" />
-<figcaption>Figure 1 - Caption goes here</figcaption>
+<figcaption>Figure 1 - Post counts per subreddit</figcaption>
 </figure>
 
 Processing and analysis happened mostly on the content column and the summary, grouped by subreddit.
@@ -83,12 +83,12 @@ The keyword lists define the benchmark for each of the concepts. As the keyword 
   <img src="figures/originalevidence.png" width="45%" />
   <img src="/figures/originalintuition.png" width="45%" />
 </p>
-<figcaption>Figure XX - Caption goes here</figcaption>
+<figcaption>Figure 2 - Frequency of keywords in our data A) Evidence Keywords, B) Intuition Keywords</figcaption>
 </figure>
 
 The keyword approach of Lasser et al. involved: (1.) starting out with a set of initial keywords, (2.) expaning them computationally using fasttext embeddings and colexification networks, (3.) filtering for duplicates, overlapping terms (in both lists) and lemma inflections [Source-2]. Subsequently, they validated their keyword lists through an online survey where paricipants rated the terms in how the represent the concpets and used a t-test to examine the results. We adapted their approach but waived the validation.
 
-As initial keywords we used those of the original keywords used in the main analysis that had a word count of over 1000 in our data. The frequency charts can be seen in Figure 1. We manually excluded "true" from the evidence seed-list and "wrong" from the intuition list to remove initial bias. we also removed "find" from the evidence list, as the termn is ambiguous, with different meanings in different contexts (E: "The study finds..." / I: "I find it to be challenging..."). we added to the evidence list the terms "article" and "argument" as we expect them to be prevalent in contexts such as: "This article shows..." and "An argument against this.." both showing evidence based language.
+As initial keywords we used those of the original keywords used in the main analysis that had a word count of over 1000 in our data. The frequency charts can be seen in Figure 2. We manually excluded "true" from the evidence seed-list and "wrong" from the intuition list to remove initial bias. we also removed "find" from the evidence list, as the termn is ambiguous, with different meanings in different contexts (E: "The study finds..." / I: "I find it to be challenging..."). we added to the evidence list the terms "article" and "argument" as we expect them to be prevalent in contexts such as: "This article shows..." and "An argument against this.." both showing evidence based language.
 
 We expaned this list using a pretrained embedding model, the English fastText word vectors trained on Common Crawl (subword-aware, 300d). The subword modeling makes it well suited for informal language, as can be present on social media. The fasttext model vectors were then translated to Gensim KeyedVectors format for easy handling. We expanded using the top 10'000 neighbors and filtered those with a cosine simialrity greater than / equal to 0.75.
 As an interim step we cleaned the retrieved set from misspellings and lemma inflections.
@@ -126,7 +126,7 @@ mean über Posts
 
 <figure float="left">
   <img src="/figures/subreddit_emi_dist.png" width="95%" />
-<figcaption>Figure XX - Caption goes here</figcaption>
+<figcaption>Figure 3 - Distribution of EMI scores over subreddits</figcaption>
 </figure>
 
 We created binned histograms of the distribution of EMI scores of the posts over a sub, colored according to whether their mean is a positive score (green) or a negative score (purple). We can tell that 10/16 subreddits tend to have more evidence-based language whereas 6/10 lean more towards intuition-based rethoric. With exception of r/talesfromtechsupport, most of the distribution are right-skewed.
@@ -134,38 +134,41 @@ The EMI ranges from -2 to 8, having a wider range of values on the positive side
 
 <figure float="center">
   <img src="/figures/composed_wc.png" width="95%" />
-<figcaption>Figure XX - Caption goes here</figcaption>
+<figcaption>Figure 4 - Wordclouds of selected subreddits</figcaption>
 </figure>
 
-To gain insight into the language used in the subreddits, we plotted the most used words and their individual EMI score. The darker the color the closer the word is to either the evidence or the intuition benchmark. It is interesting that whereas most of the subreddits show generic words like "people", "like", "would, "im" (two examples shown in Figure XX A), some subreddits have more tailored language, which even shows in the most occuring terms, this holds for r/loseit, a sub about weight-loss, where "weight" indeed is the most occuring term and r/talesformtechsupport that shows different vocabular with "back", "one", "get" and "work". 
+To gain insight into the language used in the subreddits, we plotted the most used words and their individual EMI score. The darker the color the closer the word is to either the evidence or the intuition benchmark. It is interesting that whereas most of the subreddits show generic words like "people", "like", "would, "im" (two examples shown on the left side of Figure 4), some subreddits have more tailored language, which even shows in the most occuring terms, this holds for r/loseit, a subreddit about weight-loss, where "weight" indeed is the most occuring term and r/talesformtechsupport that shows different vocabular with "back", "one", "get" and "work" (see right side of Figure 4). 
 
 <figure float="center">
   <img src="/figures/PCA_Subreddit.png" width="95%" />
-<figcaption>Figure XX - Caption goes here</figcaption>
+<figcaption>Figure 5 - PCA of average vectors and concept vectors for the base analysis</figcaption>
 </figure>
 
-The PCA of each sub's average vector and the concept vectors shows in simplified form the spatial relationship between the subreddits and the concepts. As in the histograms, advice though colored green shows more similarity (=smaller distance) to the intuition subreddits than the other evidence subreddits. r/losit also strikes with a bigger gap to the other evidence subreddits. Apart from that the general classification seems to work, as you can lay a hyperplane through the space and separate the two groups along the "EMI of 0".
+The PCA of each subreddit's average vector and the concept vectors shows in simplified form the spatial relationship between the subreddits and the concepts. As in the histograms, advice though colored green shows more similarity (=smaller distance) to the intuition subreddits than the other evidence subreddits. r/losit also strikes with a bigger gap to the other evidence subreddits. Apart from that the general classification seems to work, as you can lay a hyperplane through the space and separate the two groups along the "EMI of 0".
 
-XX - all emi figure
+<figure float="left">
+  <img src="/figures/all_emi.png" width="55%" />
+<figcaption>Figure 6 - Comparison of total EMI distribution for different experiments</figcaption>
+</figure>
 
 ### Long post vs. Summary
 
-As shown in Figure XX, there are notable differences between long and short posts regarding their EMI scores. For most evidence-based subreddits, long posts tend to be more evidence-based than their respective summaries. The distribution of EMI scores is broader for summaries than for long posts, indicating a greater variability in summaries. These differences are substantial and not just random fluctuations — the correlation between long posts and summary EMI scores is weak or non-existent (see Figure XX), underlining the difference between the two formats.
+As shown in Figure 7A, there are notable differences between long and short posts regarding their EMI scores. For most evidence-based subreddits, long posts tend to be more evidence-based than their respective summaries. The distribution of EMI scores is broader for summaries than for long posts, indicating a greater variability in summaries. These differences are substantial and not just random fluctuations — the correlation between long posts and summary EMI scores is weak or non-existent (see Figure XX), underlining the difference between the two formats.
 
 <figure float="left">
 <p>
   <img src="/figures/comp_tldr_post.png" width="45%" />
   <img src="/figures/comp_dict_post.png" width="45%" />
 </p>
-<figcaption>Figure XX - Caption goes here</figcaption>
+<figcaption>Figure 7A - Comparison Distribution of long posts and summaries Figure 7B - Comparison for different keyword lsits</figcaption>
 </figure>
 
 ### Original vs. Customized Keyword Lists
-The influence of the new keyword lists on the EMI in comparison to the original ones can be seen in Figure XX. As one can see the deviation is minimal, with a global correlation of XX between the scores (see Figure XX). All subreddits get classified into the same category as before, even though the concept definiton is adjusted. This can also be seen in the corresponding PCA, see Figure XX.
+The influence of the new keyword lists on the EMI in comparison to the original ones can be seen in Figure 7B. As one can see the deviation is minimal, with a global correlation of XX between the scores (see Figure XX). All subreddits get classified into the same category as before, even though the concept definiton is adjusted. This can also be seen in the corresponding PCA, see Figure 9.
 
 <figure float="left">
   <img src="/figures/PCA_Sub_dict.png" width="95%" />
-<figcaption>Figure XX - Caption goes here</figcaption>
+<figcaption>Figure 9 - PCA of average vectors and tailored concept vectors</figcaption>
 </figure>
 
 ### Word2Evc vs. BERT
