@@ -1,3 +1,5 @@
+# "Trust me, Bro": A Reddit Rhetoric Study
+
 ## Introduction
 
 How do you say it?
@@ -271,7 +273,7 @@ _Include a list of academic and professional sources you cited in your report, u
 
 [3][Völske, M., Potthast, M., Syed, S., & Stein, B. (2017, September). TL;DR: Mining Reddit to learn automatic summarization. In Proceedings of the Workshop on New Frontiers in Summarization (pp. 59–63). Association for Computational Linguistics. https://doi.org/10.18653/v1/W17-4508](https://huggingface.co/datasets/webis/tldr-17/viewer/default)
 
-[4][nltk word tokenizer]https://www.nltk.org/api/nltk.tokenize.word_tokenize.html
+[4][nltk word tokenizer](https://www.nltk.org/api/nltk.tokenize.word_tokenize.html)
 
 [5][CLICS3](https://clics.clld.org/)
 
@@ -289,50 +291,50 @@ style="color: green;"
   </thead>
   <tbody>
     <tr><td>accurate</td><td>advice</td></tr>
-    <tr><td style="color: green;">admit</td><td><s>belief</s></td></tr>
+    <tr><td style="color: green;">admit</td><td style="color: red;"><s>belief</s></td></tr>
     <tr><td style="color: red;"><s>analyse</s></td></td><td>believe</td></tr>
     <tr><td>analysis</td><td><s>bogus</s></td></tr>
-    <tr><td><b>announce</b></td><td style="color: red;"><s>common sense</s></td></tr>
-    <tr><td><b>argument</b></td><td><b>conceive</b></td></tr>
-    <tr><td><b>article</b></td><td><s>deceive</s></td></tr>
-    <tr><td><b>calculate</b></td><td><s>deception</s></td></tr>
-    <tr><td><b>certain</b></td><td><s>dishonest</s></td></tr>
-    <tr><td><b>clear</b></td><td><s>dishonesty</s></td></tr>
-    <tr><td>correct</td><td><s>distrust</s></td></tr>
+    <tr><td style="color: green;">announce</td><td style="color: red;"><s>common sense</s></td></tr>
+    <tr><td style="color: green;">argument</td><td style="color: green;">conceive</td></tr>
+    <tr><td style="color: green;">article</td><td style="color: red;"><s>deceive</s></td></tr>
+    <tr><td style="color: green;">calculate</td><td style="color: red;"><s>deception</s></td></tr>
+    <tr><td style="color: green;">certain</td><td style="color: red;"><s>dishonest</s></td></tr>
+    <tr><td style="color: green;">clear</td><td style="color: red;"><s>dishonesty</s></td></tr>
+    <tr><td>correct</td><td style="color: red;"><s>distrust</s></td></tr>
     <tr><td style="color: red;"><s>correction</s></td><td>doubt</td>
-    <tr><td><b>counter-argument</b></td><td><b>dunno</b></td></tr>
+    <tr><td style="color: green;">counter-argument</td><td style="color: green;">dunno</td></tr>
     <tr><td>data</td><td><s>fake</s></td></tr>
-    <tr><td style="color: red;"><s>dossier</s><td><s>fake news</s></td></td></tr>
-    <tr><td>education</td><td><b>feel</b></td></tr>
+    <tr><td style="color: red;"><s>dossier</s><td style="color: red;"><s>fake news</s></td></td></tr>
+    <tr><td>education</td><td style="color: green;">feel</td></tr>
     <tr><td>evidence</td><td>feeling</td></tr>
     <tr><td style="color: red;"><s>evident</s></td><td>genuine</td></tr>
     <tr><td>exact</td><td>guess</td></tr>
     <tr><td style="color: red;"><s>examination</s></td><td>gut</td></tr>
-    <tr><td style="color: red;"><s>examine</s></td><td><b>idea</b></td></tr>
+    <tr><td style="color: red;"><s>examine</s></td><td style="color: green;">idea</td></tr>
     <tr><td>expert</td><td>instinct</td></tr>
-    <tr><td><b>explain</b></td><td><s>intuition</s></td></tr>
-    <tr><td>explore</td><td><s>lie</s></td></tr>
-    <tr><td>fact</td><td><b>mind</b></td></tr>
-    <tr><td style="color: red;"><s>find</s></td><td><s>mislead</s></td></tr>
+    <tr><td style="color: green;">explain</td><td style="color: red;"><s>intuition</s></td></tr>
+    <tr><td>explore</td><td style="color: red;"><s>lie</s></td></tr>
+    <tr><td>fact</td><td style="color: green;">mind</td></tr>
+    <tr><td style="color: red;"><s>find</s></td><td style="color: red;"><s>mislead</s></td></tr>
     <tr><td style="color: red;"><s>findings</s></td><td style="color: red;"><s>mistaken</s></td></tr>
-    <tr><td><b>incorrect</b></td><td><s>mistrust</s></td></tr>
+    <tr><td style="color: green;">incorrect</td><td style="color: red;"><s>mistrust</s></td></tr>
     <tr><td>information</td><td>opinion</td></tr>
     <tr><td style="color: red;"><s>inquiry</s></td><td>perspective</td></tr>
     <tr><td>intelligence</td><td><s>phony</s></td></tr>
-    <tr><td style="color: red;"><s>investigate</s></td><td><s>point of view</s></td></tr>
+    <tr><td style="color: red;"><s>investigate</s></td><td style="color: red;"><s>point of view</s></td></tr>
     <tr><td>investigation</td><td><s>propaganda</s></td></tr>
-    <tr><td>knowledge</td><td><b>remember</b></td></tr>
-    <tr><td>lab</td><td><s>sense</s></td></tr>
+    <tr><td>knowledge</td><td style="color: green;">remember</td></tr>
+    <tr><td>lab</td><td style="color: red;"><s>sense</s></td></tr>
     <tr><td>learn</td><td>suggest</td></tr>
     <tr><td>logic</td><td>suggestion</td></tr>
-    <tr><td>logical</td><td><b>suppose</b></td></tr>
-    <tr><td>method</td><td><b>suspect</b></td></tr>
+    <tr><td>logical</td><td style="color: green;">suppose</td></tr>
+    <tr><td>method</td><td style="color: green;">suspect</td></tr>
     <tr><td style="color: red;"><s>pinpoint</s></td><td>suspicion</td></tr>
-    <tr><td style="color: red;"><s>precise</s></td><td><b>think</b></td></tr>
-    <tr><td>procedure</td><td><b>thought</b></td></tr>
+    <tr><td style="color: red;"><s>precise</s></td><td style="color: green;"><b>think</b></td></tr>
+    <tr><td>procedure</td><td style="color: green;">thought</td></tr>
     <tr><td>process</td><td>view</td></tr>
     <tr><td>proof</td><td>viewpoint</td></tr>
-    <tr><td>question</td><td><s>wrong</s></td></tr>
+    <tr><td>question</td><td style="color: red;"><s>wrong</s></td></tr>
     <tr><td>read</td><td></td></tr>
     <tr><td>real</td><td></td></tr>
     <tr><td>reason</td><td></td></tr>
@@ -347,7 +349,7 @@ style="color: green;"
     <tr><td>true</td><td></td></tr>
     <tr><td>truth</td><td></td></tr>
     <tr><td>truthful</td><td></td></tr>
-    <tr><td><b>understand</b></td><td></td></tr>
+    <tr><td style="color: green;">understand</td><td></td></tr>
     <tr><td>45</td><td>26</td></tr>
   </tbody>
 </table>
