@@ -10,4 +10,4 @@ include:
   - README.md
   - REPORT.md
 
-theme: jekyll-theme-leap-day
+theme: jekyll-theme-cayman
