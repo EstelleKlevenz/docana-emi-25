@@ -249,10 +249,6 @@ Overall it has to be noted that the comparability between the BERT EMI-scores an
 
 Looking on our results we again want to remind, that our analyses only inspected language, not content. We only analysed rhetoric and it can only be speculated to which extent it is a statement about the actual methods and rigor to the claims of the postee.
 
-To undermine this: We inspected which phrases got the highest evidence score with BERT (?XX). Among the top 10 was the following post:
-
-The post shows s a clear attitude of speculation and conspiracy - still it is ranked in our top of "fact-based" *language*. 
-
 Overall we are happy with how the EMI applied to reddit posts. It shows generalizability beyond the political domain and robustness in its definition of concepts.
 
 The latent construct we aimed to measure with the EMI is different approaches to truth. However, we ask ourselves whether - with the given approach - it is not rather the confidence / absoluteness of the language used that is being measured. This naturally has a high correlation with the pursued understandings of truth: Someone who refers to certain facts can speak with more conviction than someone who holds their own opinion. However, especially in times of misinformation and deliberate disinformation, it is precisely the impression of conviction without the backup of scientific facts that is used to influence opinion. 
