@@ -1,5 +1,5 @@
-title: Document Analysis Semester Project
-description: This repository is a GitHub Pages template for Document Analysis course projects. 
+title: "Trust me, Bro": A Reddit Rhetoric Study
+description: by Cicero’s analysts: Nina Geyer, Estelle Klevenz, Liane Strauch
 show_downloads: True
 plugins:
   - jekyll-relative-links
@@ -10,4 +10,4 @@ include:
   - README.md
   - REPORT.md
 
-theme: jekyll-theme-minimal
+theme: jekyll-theme-slate
