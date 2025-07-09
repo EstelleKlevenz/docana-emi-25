@@ -1,3 +1,11 @@
+<style>
+.page-header {
+  background-color: #159957;
+  background-image: linear-gradient(120deg, #0b5826, #7c368a);
+  color: white;
+}
+</style>
+
 # "Trust me, Bro": A Reddit Rhetoric Study
 
 ## Introduction
