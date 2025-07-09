@@ -148,8 +148,8 @@ The PCA of each subreddit's average vector and the concept vectors shows in simp
 
 <figure float="left">
 <p>
-  <img src="/figures/all_emi.png" width="45%" />
-  <img src="/figures/correlations.png" width="45%" />
+  <img src="/figures/all_emi.png" width="40%" />
+  <img src="/figures/correlations.png" width="55%" />
   </p>
 <figcaption>Figure 6 - Comparison of total EMI distribution for different experiments</figcaption>
 </figure>
@@ -183,6 +183,7 @@ XX - Liane
 
 The results show that our approach to answer the proposed research quest generally worked quite well. The transfer of the EMI to reddit data succeeded. How the subreddits behave linguistically compared to our expectations is interesting (see Table 1). 13 out of 16 of our expectations were confirmed by the main model. The results deviated for r/Advice, r/loseit and r/talesfromtechsupport, where we guessed intuition. Even though the subreddits discuss personal experiences and advice, they seem to do so in a way, our models detect as evidence-based. Especially for r/talesfromtechsupport this is interesting, as the title of the subreddit already gives away, that there is no "fact-claim" in this subreddit, and we would expect stories that do not have a particular "evidence-based" focus in their language.
 
+<figure>
 <table border="1">
   <thead>
     <tr>
@@ -214,6 +215,8 @@ The results show that our approach to answer the proposed research quest general
     <tr><td>worldnews</td><td>0.882169</td><td>0.118915</td><td>0.904538</td><td>0.121513</td><td>evidence</td><td>True</td></tr>
   </tbody>
 </table>
+<figcaption>Table 1 - Comparison EMI scored to expectations</figcaption>
+</figure>
 
 Within the results of our models it is noteworthy, that they mostly give the same language-indication. The goal of the different experiments was to test the robustness of the score. This assessment is therefore positive.
 
