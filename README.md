@@ -118,7 +118,7 @@ mean über Posts
 - sätze statt wörter als dict
 	- better for contextualization
 - durch bert
-- pCA
+- PCA
 - normalisiert
 - correlation with regular
 
