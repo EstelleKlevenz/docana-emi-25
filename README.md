@@ -97,11 +97,15 @@ We then ran again the main analysis with the new keyword lists. Except for excha
 A prevalent limitation of Word2vec models is their inability to handle polysemies. Every possible meaning of a polysemous word is aggregated in the embedding of one token. A model that does consider different embeddings for each meaning of a given token is the bidirectional encoder representation from transformers (BERT) a contextual language model create by Google. 
 In order to harvest the ability to consider context this experiment used BERT, instead of word2vec to encode the reddit posts.
 
-Since the dataset contains only posts in English and to limit the running time of the model, we used 'bert-base-uncased' (richtiges Markdown Format? XX) with 110 million parameters (12 layers of self attention, 12 attention heads and 768 dimensions). 
+Since the dataset contains only posts in English and to limit the running time of the model, we used `bert-base-uncased` with 110 million parameters (12 layers of self attention, 12 attention heads and 768 dimensions). 
 To achieve comparable results to the word2vec experiment, two major steps needed to be tackled. First, create an embedding for each post and second create an evidence and an intuition vector in the same latent space as the post embeddings.
+
 For the first step, since BERT is build to take on one or more full sentences as input, we considered each input to be a complete posts (tokenized) and use the average of the last four layers CLS-vector as post embedding. Unfortunately, the BERT's input is limited to 512 tokens and many posts exceeded this number. Therefore we adapted the approach. We split each post into its sentences, retrieved their average CLS-emebdding in the last four layers and once we had every sentences CLS embeding of the post we averaged them again to retain one final embedding for the whole post.
+
 For the second step we used ChatGPT to create examplatory sentences for the words in the dictionaries and manually checked and adapted a few if necessary. The evidence and intuition vectors are the average embeddings of all the sentences derived from their respective dictionary.
-Once those embeddings where obtain, the same steps are taken to calcualte the EMI score as described in the word2vec approach.
+
+Once those embeddings where obtain, the same steps are taken to calcualte the EMI score as described in the word2vec approach.   
+Due to the long processing time the post embeddings for the BERT experiment are only calculated for a sample (37%) of all the posts we considered in this study. 
 
 ## Results
 
@@ -159,8 +163,11 @@ The influence of the new keyword lists on the EMI in comparison to the original 
 
 ### Word2Evc vs. BERT
 
-XX - Liane
-- es ist weird
+As seen in figure XX the dispersion of the average EMI score per post is higher when the EMI is calcualted using word2vec vs BERT embeddings. For twelve of the sixteen analysed subreddits the mean of the avverage EMI distribution is closer to zero for the ones calculated with BERT (r/relationship_advice, r/explainlikeimfive, r/todayilearned, r/technology, r/worldnews, r/talesfromtechsupport, r/relationships, r/buildapc, r/dating_advice, r/loseit, r/askscience, r/news) for three it is visaully barely distinguishly (r/AskMen, r/offmychest, r/depression) and in one case it flipped the sign (r/Advice). In the last 4 ccases mentioned the mean of the base approach (wor2vec) is already relatively close to zero.
+<figure float="left">
+  <img src="figures/hist_bert_w2v.png" width="100%" />
+<figcaption>Figure XX - Distribution of EMI scores over subreddits (word2vec vs BERT) </figcaption>
+</figure>
 
 ## Discussion
 
@@ -226,7 +233,7 @@ As contextualized embeddings can capture more nuances and layers of meaning we w
 
 We kept the initial approach, where we prompted ChatGPT to give a sentence to each keyword. It would have been interesting to compare this to the raw keyword lists, and customised sentences that are a) simpler and b) more complex than the ones ChatGPT provided us with. We could have validated them within the team and could have had them run on a small sample of the BERT model to see their influence on the embeddings. Instead we have only pursued one approach and see that it has not been effective.
 
-Another possibility to improve the BERT model on our data woudl have been to finetune it. We chose to apply it out of the box which might have been inadequate for our case.
+Another possibility to improve the BERT model on our data would have been to finetune it. We chose to apply it out of the box which might have been inadequate for our case.
 
 Overall it has to be noted that the comparability between the BERT EMI-scores and the other results is limited thorugh several factors: First BERT requried a different preprocessing with its own interal tokenization, we then used different keyphrases and finally we could run BERT only on a sample of 222'600 of 615'392 posts as the computational resources needed for the whole dataset exceeded our means.
 
