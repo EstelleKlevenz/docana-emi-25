@@ -2,10 +2,6 @@
 # "Trust me, Bro": A Reddit Rhetoric Study
 _by Cicero's analysts: Nina Geyer, Estelle Klevenz, Liane Strauch_
 
-beim durchlesen:
-XX - subs oder subreddits -> am anfang definieren
-XX - which paper is which - klarmachen im text
-
 at last:
 XX - sources
 XX - figures
@@ -14,16 +10,16 @@ XX - figures
 
 How do you say it?
 Recent studies in the realm of the political sciences have shown a shift in the rethoric of politicians. They propose that the current spread of misinformation in political discourse is linked to an "alternative understanding of truth and honesty that emphasizes invocation of subjective belief at the expense of reliance on evidence" [Source-2]. This can be seen and measured through the language that politicians use.
-As social media is cited as a key medium for spreading misinformation [Source-2], it is interesting to have a look, not only *what* kind of information is spread, but also *how?*.
+As social media is cited as a key medium for spreading misinformation [Source-2], it is interesting to have a look, not only *what* kind of information is spread, but also *how*. 
 
 ### Evidence minus Intuition (EMI)
 
-To explore that we employ the EMI-Score. The Evidence-minus-Intuition measure was created in the context of US congressional speeches and the communication of politicians. It aims to capture how much of their language is "evidence-based" opposed to "intuition-based" to give insight into their approach to honesty and truthfulness [Source-1]. "Evidence-based" reasoning apporaches truth "by relying on evidence, facts, data and other elements of external reality" [Source-1] whereas the "intuition-based" approach relies "on feelings, instincts, personal values and other elements drawn mainly from a person’s internal experiences." in its conception of truth [Source-1]. 
+To explore this we employ the EMI-Score. The Evidence-minus-Intuition measure was created in the context of US congressional speeches and the communication of politicians. It aims to capture how much of their language is "evidence-based" opposed to "intuition-based" to give insight into their approach to honesty and truthfulness [Source-1]. "Evidence-based" reasoning apporaches truth "by relying on evidence, facts, data and other elements of external reality" [Source-1] whereas the "intuition-based" approach relies "on feelings, instincts, personal values and other elements drawn mainly from a person’s internal experiences" in its conception of truth [Source-1]. 
 The EMI is not concerned with the actual truth value of the content it is applied on but only considers the rhetoric. Therefore, we cannot infer anything about the actual quality of posts. But we assume that the concept can be transferred from political speech to the diverse content of Reddit forums - the social-media data to be analyzed - and can be employed to gain insight about the present language.
 
 ### Hypotheses
 
-The data employed are Reddit posts from different subreddits, subforums on the platform. We expect some to have more evidence based language and other to rely more on intuition in how contents are discussed. More evidence-based language we expect in subreddits that explicitely have real-world facts as content, as news pages or "funfacts" people share. In our selection this would correspond to the r/worldnews, r/news, r/explainlikeimfive and r/todayilearned. We also expect evidence based communication in subreddits that have a defined topic that is supposed to be discussed seriously and or subreddits that explicitely focus on science, as in r/buildapc, r/technology and r/askscience.
+The data used are long Reddit posts from different subreddits, subforums on the platform. We expect some to have more evidence based language and other to rely more on intuition in how topics are discussed. More evidence-based language we expect in subreddits that explicitely have real-world facts as content, as news pages or "funfacts" people share. In our selection this would correspond to the r/worldnews, r/news, r/explainlikeimfive and r/todayilearned. We also expect evidence based communication in subreddits that have a defined topic that is supposed to be discussed seriously and or subreddits that explicitely focus on science, as in r/buildapc, r/technology and r/askscience.
 Intuition-based language on the other hand we expect in subreddits that regard personal experience, like in r/relationships, r/offmychest, r/talesfromtechsupport and r/depression, and advice: r/relationship_advice, r/askmen, r/dating_advice, r/loseit, r/advice. 
 
 Our research quest is to show that the EMI can be applied to the domain of social-media and to find out how language is used in different subreddits.
@@ -43,7 +39,7 @@ The fact that bot posts were filtered is also important, as our analysis focuses
 
 To make the dataload manageable we filtered for the subreddits that contain more than 10'000 posts. We then did a manual selection of subreddits we expected to show either strong evidence-based language or intuition-based language. After an initial inspection we eliminated those, whose mean value of the EMI was closest to zero.
 
-16 subreddits remained in our selection, which meant 615'392 posts to analyze. The subreddits and their prevalence in the dataset can be seen in Figure XX.
+16 subreddits remained in our selection, which meant 615'392 posts to analyze. The subreddits and their prevalence in the dataset can be seen in Figure 1.
 
 <figure float="left">
 <img src="figures/postcount.png" width="95%" />
@@ -54,12 +50,8 @@ Processing and analysis happened mostly on the content column and the summary, g
 
 ## Methods - Setup
 
-XX - FR
-_Outline the tools, software, and hardware environment, along with configurations used for conducting your experiments. Be sure to document the Python version and other dependencies clearly. Provide step-by-step instructions on how to recreate your environment, ensuring anyone can replicate your setup with ease:_
-Tools:
-- Python 3.9.21
-- CLICS3 web interface
-- run in an conda environment can be recreated via the req. that contains packages and their versions used
+All analysis was done using Pythona and Python libraries. Our code ran with a Python 3.9.21 kernel in its own conda environment. To replicate our analysis we provide the requirements.txt to replicate the environment. All code-files can be found on our Github under "code". Consult the README in the code directory for details on the script management and usage.
+Tools that were used in addition to Python libraries were the CLICS3 web interface for colexifications (see the subsection "Tailored keyword lists") and ChatGPT for the generation of keyphrases (see the subsection "BERT XX")
 
 ## Method - Experiments
 ### Main Analysis - EMI
@@ -78,13 +70,13 @@ If the resulting EMI score is now a positive value, it indicates that evidence-b
 ### Extensions
 #### EMI of the summaries
 
-motivation: XX
+As proposed in the introduction we expect the EMI to work much better on long posts than on short ones. To check if this assumption holds for our data we employ the provided summaries to the posts and run the EMI score computation on them as well.
 
 To compute the EMI of the post summaries we applied the same cleaning as for the long posts on the summaries and the same computations. We saved the similarities and EMI score into the dataset for later analysis.
 
 #### Tailored keyword lists
 
-The keyword lists define the benchmark for each of the concepts. As the keyword lists used in the main analysis were originally developed in the context of political speech, the question occured, if their performance on social-media-language was equally good. To examine this, we analyzed what of the original vocabulary was actually used in the reddit posts and developed our own keyword lists based on the most common terms. In doing so, we again followed the approach of the developers of the original keyword lists.
+The keyword lists define the benchmark for each of the concepts. As the keyword lists used in the main analysis were originally developed in the context of political speech, the question occured, if their performance on social-media-language was equally good. To examine this, we analyzed what of the original vocabulary was actually used in the reddit posts and developed our own keyword lists based on the most common terms. In doing so, we again followed the approach of the developers of the original keyword lists. They themselves followed the apporach of an earlier publication which we adapted [Source-1].
 
 <figure float="left">
 <p>
@@ -94,16 +86,16 @@ The keyword lists define the benchmark for each of the concepts. As the keyword 
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
 
-The keyword approach of Lasser et al. involved: (1.) starting out with a set of initial keywords, (2.) expaning them computationally using fasttext embeddings and colexification networks, (3.) filtering for duplicates, overlapping terms (in both lists) and lemma inflections. Subsequently, they validated their keyword lists through an online survey where paricipants rated the terms in how the represent the concpets and used a t-test to examine the results. We adapted their approach but waived the validation.
+The keyword approach of Lasser et al. involved: (1.) starting out with a set of initial keywords, (2.) expaning them computationally using fasttext embeddings and colexification networks, (3.) filtering for duplicates, overlapping terms (in both lists) and lemma inflections [Source-2]. Subsequently, they validated their keyword lists through an online survey where paricipants rated the terms in how the represent the concpets and used a t-test to examine the results. We adapted their approach but waived the validation.
 
 As initial keywords we used those of the original keywords used in the main analysis that had a word count of over 1000 in our data. The frequency charts can be seen in Figure 1. We manually excluded "true" from the evidence seed-list and "wrong" from the intuition list to remove initial bias. we also removed "find" from the evidence list, as the termn is ambiguous, with different meanings in different contexts (E: "The study finds..." / I: "I find it to be challenging..."). we added to the evidence list the terms "article" and "argument" as we expect them to be prevalent in contexts such as: "This article shows..." and "An argument against this.." both showing evidence based language.
 
 We expaned this list using a pretrained embedding model, the English fastText word vectors trained on Common Crawl (subword-aware, 300d). The subword modeling makes it well suited for informal language, as can be present on social media. The fasttext model vectors were then translated to Gensim KeyedVectors format for easy handling. We expanded using the top 10'000 neighbors and filtered those with a cosine simialrity greater than / equal to 0.75.
 As an interim step we cleaned the retrieved set from misspellings and lemma inflections.
 
-For colexifications we employed the Database of Cross-Linguistic Colexifications [Source-5]. As there is currently no API to their concept database available, we manually retrieved related concepts via the web interface. Further we removed the intersection between the evidence and intuition list and manually excluded the terms that were not satisfactory associated with the pursued definiton of evidence and intuition.
+For colexifications we employed the Database of Cross-Linguistic Colexifications [Source-5]. As there is currently no API to their concept database available, we manually retrieved related concepts via the web interface [Link]. Further we removed the intersection between the evidence and intuition list and manually excluded the terms that were not satisfactory associated with the pursued definiton of evidence and intuition.
 
-We then ran again the main analysis with the new keyword lists. Expect for exchanging the lists, all other steps of analysis stayed identical. The new keyword lists were applied on the long posts, thus on the cleaned content feature.
+We then ran again the main analysis with the new keyword lists. Except for exchanging the lists, all other steps of analysis stayed identical. The new keyword lists were applied on the long posts, thus on the cleaned content feature.
 
 #### BERT XX
    
@@ -137,28 +129,28 @@ mean über Posts
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
 
-We created binned histograms of the distribution of EMI scores of the posts over a sub, colored according to whether their mean is a positive score (green) or a negative score (purple). We can tell that 10/16 subs tend to have more evidence-based language whereas 6/10 lean more towards intuition-based rethoric. With exception of r/talesfromtechsupport, most of the distribution are right-skewed.
-The EMI ranges from -2 to 8, having a wider range of values on the positive side. Of particular note is r/advice, the only distribution where there is a sign change between mean and mode. For the other subs, color and mean correspond in the sign of the EMI scores. Advice is colored green, with a slightly positive mean, but the mode is on the intuitive side.
+We created binned histograms of the distribution of EMI scores of the posts over a sub, colored according to whether their mean is a positive score (green) or a negative score (purple). We can tell that 10/16 subreddits tend to have more evidence-based language whereas 6/10 lean more towards intuition-based rethoric. With exception of r/talesfromtechsupport, most of the distribution are right-skewed.
+The EMI ranges from -2 to 8, having a wider range of values on the positive side. Of particular note is r/advice, the only distribution where there is a sign change between mean and mode. For the other subreddits, color and mean correspond in the sign of the EMI scores. Advice is colored green, with a slightly positive mean, but the mode is on the intuitive side.
 
 <figure float="center">
   <img src="/figures/composed_wc.png" width="95%" />
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
 
-To gain insight into the language used in the subs, we plotted the most used words and their individual EMI score. The darker the color the closer the word is to either the evidence or the intuition benchmark. It is interesting that whereas most of the subs show generic words like "people", "like", "would, "im" (two examples shown on the left side of Figure XX), some subs have more tailored language, which even shows in the most occuring terms, this holds for r/loseit, a sub about weight-loss, where "weight" indeed is the most occuring term and r/talesformtechsupport that shows different vocabular with "back", "one", "get" and "work". 
+To gain insight into the language used in the subreddits, we plotted the most used words and their individual EMI score. The darker the color the closer the word is to either the evidence or the intuition benchmark. It is interesting that whereas most of the subreddits show generic words like "people", "like", "would, "im" (two examples shown in Figure XX A), some subreddits have more tailored language, which even shows in the most occuring terms, this holds for r/loseit, a sub about weight-loss, where "weight" indeed is the most occuring term and r/talesformtechsupport that shows different vocabular with "back", "one", "get" and "work". 
 
 <figure float="center">
   <img src="/figures/PCA_Subreddit.png" width="95%" />
 <figcaption>Figure XX - Caption goes here</figcaption>
 </figure>
 
-The PCA of each sub's average vector and the concept vectors shows in simplified form the spatial relationship between the subs and the concepts. As in the histograms, advice though colored green shows more similarity (=smaller distance) to the intuition subs than the other evidence subs. r/losit also strikes with a bigger gap to the other evidence subs. Apart from that the general classification seems to work, as you can lay a hyperplane through the space and separate the two groups along the "EMI of 0".
+The PCA of each sub's average vector and the concept vectors shows in simplified form the spatial relationship between the subreddits and the concepts. As in the histograms, advice though colored green shows more similarity (=smaller distance) to the intuition subreddits than the other evidence subreddits. r/losit also strikes with a bigger gap to the other evidence subreddits. Apart from that the general classification seems to work, as you can lay a hyperplane through the space and separate the two groups along the "EMI of 0".
 
 XX - all emi figure
 
 ### Long post vs. Summary
 
-As shown in Figure XX, there are notable differences between long and short posts regarding their EMI scores. For most evidence-based subs, long posts tend to be more evidence-based than their respective summaries. The distribution of EMI scores is broader for summaries than for long posts, indicating a greater variability in summaries. These differences are substantial and not just random fluctuations — the correlation between long posts and summary EMI scores is weak or non-existent (see Figure XX), underlining the difference between the two formats.
+As shown in Figure XX, there are notable differences between long and short posts regarding their EMI scores. For most evidence-based subreddits, long posts tend to be more evidence-based than their respective summaries. The distribution of EMI scores is broader for summaries than for long posts, indicating a greater variability in summaries. These differences are substantial and not just random fluctuations — the correlation between long posts and summary EMI scores is weak or non-existent (see Figure XX), underlining the difference between the two formats.
 
 <figure float="left">
 <p>
@@ -169,7 +161,7 @@ As shown in Figure XX, there are notable differences between long and short post
 </figure>
 
 ### Original vs. Customized Keyword Lists
-The influence of the new keyword lists on the EMI in comparison to the original ones can be seen in Figure XX. As one can see the deviation is minimal, with a global correlation of XX between the scores (see Figure XX). All subs get classified into the same category as before, even though the concept definiton is adjusted. This can also be seen in the corresponding PCA, see Figure XX.
+The influence of the new keyword lists on the EMI in comparison to the original ones can be seen in Figure XX. As one can see the deviation is minimal, with a global correlation of XX between the scores (see Figure XX). All subreddits get classified into the same category as before, even though the concept definiton is adjusted. This can also be seen in the corresponding PCA, see Figure XX.
 
 <figure float="left">
   <img src="/figures/PCA_Sub_dict.png" width="95%" />
@@ -183,7 +175,7 @@ XX - Liane
 
 ## Discussion
 
-The results show that our approach to answer the proposed research quest generally worked quite well. The transfer of the EMI to reddit data succeeded. How the subreddits behave linguistically compared to our expectations is interesting (see Table 1). 13 out of 16 of our expectations were confirmed by the main model. The results deviated for r/Advice, r/loseit and r/talesfromtechsupport, where we guessed intuition. Even though the subreddits discuss personal experiences and advice, they seem to do so in a way, our models detect as evidence-based. Especially for r/talesfromtechsupport this is interesting, as the title of the subreddit already gives away, that there is no "fact-claim" in this subreddit, and we would expect stories that do not have a particular "fact-based" focus in their language.
+The results show that our approach to answer the proposed research quest generally worked quite well. The transfer of the EMI to reddit data succeeded. How the subreddits behave linguistically compared to our expectations is interesting (see Table 1). 13 out of 16 of our expectations were confirmed by the main model. The results deviated for r/Advice, r/loseit and r/talesfromtechsupport, where we guessed intuition. Even though the subreddits discuss personal experiences and advice, they seem to do so in a way, our models detect as evidence-based. Especially for r/talesfromtechsupport this is interesting, as the title of the subreddit already gives away, that there is no "fact-claim" in this subreddit, and we would expect stories that do not have a particular "evidence-based" focus in their language.
 
 <table border="1">
   <thead>
@@ -220,19 +212,19 @@ The results show that our approach to answer the proposed research quest general
 Within the results of our models it is noteworthy, that they mostly give the same language-indication. The goal of the different experiments was to test the robustness of the score. This assessment is therefore positive.
 
 Since language is all about the details, when reflecting on the entire approach, the preprocessing, the editing of the language, must be evaluated. One limitation we find in our approach is that the selection of excluded stop words could have influenced the embeddingsW we did a crosschecking with not removing the words, which did not make a big difference on the sample tested, but we did not check with different sets of stopwords. 
-Another one is that misspelled versions of words have been excluded from the keyword lists. This seems appropriate for official political speeches. For the application to social media data, however, the question arises as to whether “typos” are not much more part of authentic content and should therefore have been taken into account when classifying a post against the concepts.
+Another one is that misspelled versions of words have been excluded from the keyword lists. This seems appropriate for official political speeches. For the application to social media data, however, the question arises as to whether “typos” are not much more part of authentic content and should therefore have been taken into account when classifying the posts against the concepts.
 
 ### Long post vs. Summary
 
-For the EMI scores on the summaries we found values that are significantly deviating from the base EMI score we obtained. This can be explained as firstly, the shorter the post, the weightier the words, therefore the more unstable and fluctuating are the scores. Secondly, a summary does not have to be written with the same attitude as the long post. It is often written with another intention than being a neutral summary and therefore has a different rhetoric. Especially after a long and content-wise potentially serious post, a summary could be phrased more unserious. Or the other way around: a detailed experience is summarised with a pointed fact.
+For the EMI scores on the summaries we found values that are significantly deviating from the base EMI score we obtained. This can be explained as firstly, the shorter the post, the weightier the words, therefore the more unstable and fluctuating are the scores. Secondly, a summary does not have to be written with the same attitude as the long post. It is often written with another intention than being a neutral summary and therefore has a different rhetoric. Especially after a long and content-wise potentially serious post, a summary could be phrased more unserious. Or the other way around: a detailed personal experience is summarised with a pointed fact.
 This could exlain how for r/depression the EMI on the summaries gives a slightly positive averaged EMI score, whereas the main EMI score is on the negative side.
 
 ### Original vs. Customized Keyword Lists
 
 The high correlation between the EMI scores calculated with respect to the original keyword-lists and the EMI scores based on the adapted concept definitions shows a high robustness of the concept capture. 
-To us it was important to clean the intuition lists of negative connotations (with terms such as "wrong" ,"dishonest")as intuition is not meant to be negatively judged and the measure is not intended to judge the content of a post. This adapted did not affect the result significantly.
+To us it was important to clean the intuition lists of negative connotations (with terms such as "wrong" ,"dishonest") as intuition is not meant to be negatively judged and the measure is not intended to judge the content of a post. This adaption did not affect the result significantly.
 
-We see a high transferability, even with keywords that are not matching the language used in social media. The provided dictionary is specialized to political talk (with terms such as "investigate", "dossier", "inquiry") but works well even on general online dialogue. The two approach to honesty and truthfulness, proposed for political communication [Source-1] are, absed on our findings, not constrained to the domain but can be found in general speech. The EMI score is well generalizable, accoring to our results.
+We see a high transferability, even with keywords that are not matching the language used in social media. The provided dictionary is specialized to political talk (with terms such as "investigate", "dossier", "inquiry") but works well even on general online dialogue. The two approaches to honesty and truthfulness, proposed for political communication [Source-1] are, based on our findings, not constrained to the domain but can be found in general speech. The EMI score is well generalizable, accoring to our results.
 
 ### Word2Evc vs. BERT
 
@@ -242,24 +234,23 @@ We kept the initial approach, where we prompted ChatGPT to give a sentence to ea
 
 Another possibility to improve the BERT model on our data woudl have been to finetune it. We chose to apply it out of the box which might have been inadequate for our case.
 
-Overall it has to be noted that the comparability between the BERT EMI-scores and the other results is limited thorugh several factors: First BERT requried a different preprocessing - with an interal tokenization, we then used different keyphrases and finally we could run BERT only on a sample of 222'600 of 615'392 posts as the computational resources needed for the whole dataset exceeded our means.
+Overall it has to be noted that the comparability between the BERT EMI-scores and the other results is limited thorugh several factors: First BERT requried a different preprocessing with its own interal tokenization, we then used different keyphrases and finally we could run BERT only on a sample of 222'600 of 615'392 posts as the computational resources needed for the whole dataset exceeded our means.
 
-## Conclusion XX
+## Conclusion
 
-_Summarize the major outcomes of your project, reflect on the research findings, and clearly state the conclusions you've drawn from the study._
+Looking on our results we again want to remind, that our analyses only inspected language, not content. We only analysed rhetoric and it can only be speculated to which extent it is a statement about the actual methods and rigor to the claims of the postee.
 
-At the end of our 
-- REMINDER: only analyses rhetoric and it can only be speculated to which extent it is a statement about the actual methods and rigor to the claims of the postee.
+To undermine this: We inspected which phrases got the highest evidence score with BERT (?XX). Among the top 10 was the following post:
 
-XX - top 10 evidence -> conspiracy drin
+The post shows s a clear attitude of speculation and conspiracy - still it is ranked in our top of "fact-based" *language*. 
 
-- latent construct was wir angeblich messen: wahrheitsverständnisse
-- vlt messen wir uncertainty in language
-    - does it mirror the cliff between social and natural sciences?
+Overall we are happy with how the EMI applied to reddit posts. It shows generalizability beyond the political domain and robustness in its definition of concepts.
 
-- next steps: Comparison social science paper and computer science / chemistry technical papers
+The latent construct we aimed to measure with the EMI is different approaches to truth. However, we ask ourselves whether - with the given approach - it is not rather the confidence / absoluteness of the language used that is being measured. This naturally has a high correlation with the pursued understandings of truth: Someone who refers to certain facts can speak with more conviction than someone who holds their own opinion. However, especially in times of misinformation and deliberate disinformation, it is precisely the impression of conviction without the backup of scientific facts that is used to influence opinion. 
 
-Since language is all about the details, the preprocessing, the editing of the language, must be evaluated when reflecting on the entire approach. One limitation we find in our approach is for example that the selection of excluded stop words could have influenced the embeddings. Another one is that misspelled versions of words have been excluded from the keyword lists. This seems appropriate for official political speeches. For the application to social media data, however, the question arises as to whether “typos” are not much more part of authentic content and should therefore have been taken into account when classifying a post against the concepts.
+What we also conclude from this assumption is that there are domains that are inevitably categorized differently due to their content and how much uncertainty their content contains. In computer science, existing questions can be discussed with much more precision and insistence, whereas the subject matter of psychology, for example, requires that findings be explicitly relativized.
+
+Accordingly, an interesting next step would be to apply the EMI score to social science and natural science/computer science articles in order to examine these assumptions and hypotheses in detail.
 
 ## Contributions
 
