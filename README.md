@@ -93,29 +93,15 @@ For colexifications we employed the Database of Cross-Linguistic Colexifications
 We then ran again the main analysis with the new keyword lists. Except for exchanging the lists, all other steps of analysis stayed identical. The new keyword lists were applied on the long posts, thus on the cleaned content feature.
 
 #### BERT XX
-   
-3. different model (BERT)
-motivation:
-- static vs contextualized
-  - allgemeine klausurantwort warum context besser
- cls embeddings erklären
 
-embeddings rausgeholt, CLS
-512 Tokens pro input
-die meisten Posts zu gross fürs BERT
+A prevalent limitation of Word2vec models is their inability to handle polysemies. Every possible meaning of a polysemous word is aggregated in the embedding of one token. A model that does consider different embeddings for each meaning of a given token is the bidirectional encoder representation from transformers (BERT) a contextual language model create by Google. 
+In order to harvest the ability to consider context this experiment used BERT, instead of word2vec to encode the reddit posts.
 
-Posts in sätze unterbrechen
-von jedem satz CLS
-mean über Posts
-
-- graue embedding mit PCA gezeigt
-- ev und int als vektor
-- sätze statt wörter als dict
-	- better for contextualization
-- durch bert
-- PCA
-- normalisiert
-- correlation with regular
+Since the dataset contains only posts in English and to limit the running time of the model, we used 'bert-base-uncased' (richtiges Markdown Format? XX) with 110 million parameters (12 layers of self attention, 12 attention heads and 768 dimensions). 
+To achieve comparable results to the word2vec experiment, two major steps needed to be tackled. First, create an embedding for each post and second create an evidence and an intuition vector in the same latent space as the post embeddings.
+For the first step, since BERT is build to take on one or more full sentences as input, we considered each input to be a complete posts (tokenized) and use the average of the last four layers CLS-vector as post embedding. Unfortunately, the BERT's input is limited to 512 tokens and many posts exceeded this number. Therefore we adapted the approach. We split each post into its sentences, retrieved their average CLS-emebdding in the last four layers and once we had every sentences CLS embeding of the post we averaged them again to retain one final embedding for the whole post.
+For the second step we used ChatGPT to create examplatory sentences for the words in the dictionaries and manually checked and adapted a few if necessary. The evidence and intuition vectors are the average embeddings of all the sentences derived from their respective dictionary.
+Once those embeddings where obtain, the same steps are taken to calcualte the EMI score as described in the word2vec approach.
 
 ## Results
 
