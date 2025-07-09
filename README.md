@@ -417,7 +417,7 @@ Accordingly, an interesting next step would be to apply the EMI score to social 
 <table border="1">
   <thead>
     <tr>
-      <th>Intuition</th>
+      <th>Keyword</th>
       <th>Example Sentence</th>
     </tr>
   </thead>
