@@ -163,7 +163,7 @@ The influence of the new keyword lists on the EMI in comparison to the original 
 
 ### Word2Evc vs. BERT
 
-As seen in figure XX the dispersion of the average EMI score per post is higher when the EMI is calcualted using word2vec vs BERT embeddings. For twelve of the sixteen analysed subreddits the mean of the avverage EMI distribution is closer to zero for the ones calculated with BERT (r/relationship_advice, r/explainlikeimfive, r/todayilearned, r/technology, r/worldnews, r/talesfromtechsupport, r/relationships, r/buildapc, r/dating_advice, r/loseit, r/askscience, r/news) for three it is visaully barely distinguishly (r/AskMen, r/offmychest, r/depression) and in one case it flipped the sign (r/Advice). In the last 4 ccases mentioned the mean of the base approach (wor2vec) is already relatively close to zero.
+As seen in figure XX the dispersion of the average EMI score per post is higher when the EMI is calcualted using word2vec vs BERT embeddings. For twelve of the sixteen analysed subreddits the mean of the avverage EMI distribution is closer to zero for the ones calculated with BERT (r/relationship_advice, r/explainlikeimfive, r/todayilearned, r/technology, r/worldnews, r/talesfromtechsupport, r/relationships, r/buildapc, r/dating_advice, r/loseit, r/askscience, r/news) for three it is visaully barely distinguishly (r/AskMen, r/offmychest, r/depression) and in one case it flipped the sign (r/Advice). In the last 4 cases mentioned the mean of the base approach (wor2vec) is already relatively close to zero.
 <figure float="left">
   <img src="figures/hist_bert_w2v.png" width="100%" />
 <figcaption>Figure XX - Distribution of EMI scores over subreddits (word2vec vs BERT) </figcaption>
