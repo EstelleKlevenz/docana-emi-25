@@ -270,8 +270,6 @@ Accordingly, an interesting next step would be to apply the EMI score to social 
 
 ## References
 
-_Include a list of academic and professional sources you cited in your report, using an appropriate citation format to ensure clarity and proper attribution._
-
 [1][Lasser, J., Aroyehun, S.T., Carrella, F. et al. From alternative conceptions of honesty to alternative facts in communications by US politicians. Nat Hum Behav 7, 2140–2151 (2023). https://doi.org/10.1038/s41562-023-01691-w](https://doi.org/10.1038/s41562-023-01691-w)
 
 [2][Aroyehun, S.T., Simchon, A., Carrella, F. et al. Computational analysis of US congressional speeches reveals a shift from evidence to intuition. Nat Hum Behav 9, 1122–1133 (2025). https://doi.org/10.1038/s41562-025-02136-2](https://doi.org/10.1038/s41562-025-02136-2) (EMI-paper)
