@@ -36,7 +36,7 @@ To make the dataload manageable we filtered for the subreddits that contain more
 16 subreddits remained in our selection, which meant 615'392 posts to analyze. The subreddits and their prevalence in the dataset can be seen in Figure 1.
 
 <figure float="left">
-<img src="figures/postcount.png" width="95%" />
+<img src="figures/postcount.png" width="100%" />
 <figcaption>Figure 1 - Post counts per subreddit</figcaption>
 </figure>
 
@@ -73,11 +73,12 @@ To compute the EMI of the post summaries we applied the same cleaning as for the
 The keyword lists define the benchmark for each of the concepts. As the keyword lists used in the main analysis were originally developed in the context of political speech, the question occured, if their performance on social-media-language was equally good. To examine this, we analyzed what of the original vocabulary was actually used in the reddit posts and developed our own keyword lists based on the most common terms. In doing so, we again followed the approach of the developers of the original keyword lists. They themselves followed the apporach of an earlier publication which we adapted [2].
 
 <figure float="left">
-<p>
-  <img src="figures/originalevidence.png" width="45%" />
-  <img src="figures/originalintuition.png" width="45%" />
-</p>
-<figcaption>Figure 2 - Frequency of keywords in our data A) Evidence Keywords, B) Intuition Keywords</figcaption>
+  <img src="figures/originalevidence.png" width="100%" />
+<figcaption>Figure 2A - Frequency of evidence keywords in our data</figcaption>
+</figure>
+<figure float="left">
+  <img src="figures/originalintuition.png" width="100%" />
+<figcaption>Figure 2B - Frequency of intuition keywords in our data</figcaption>
 </figure>
 
 The keyword approach of Lasser et al. involved: (1.) starting out with a set of initial keywords, (2.) expaning them computationally using fasttext embeddings and colexification networks, (3.) filtering for duplicates, overlapping terms (in both lists) and lemma inflections [1]. Subsequently, they validated their keyword lists through an online survey where paricipants rated the terms in how the represent the concpets and used a t-test to examine the results. We adapted their approach but waived the validation.
@@ -119,7 +120,7 @@ mean über Posts
 ## Results
 
 <figure float="left">
-  <img src="figures/subreddit_emi_dist.png" width="95%" />
+  <img src="figures/subreddit_emi_dist.png" width="100%" />
 <figcaption>Figure 3 - Distribution of EMI scores over subreddits</figcaption>
 </figure>
 
@@ -127,45 +128,47 @@ We created binned histograms of the distribution of EMI scores of the posts over
 The EMI ranges from -2 to 8, having a wider range of values on the positive side. Of particular note is r/advice, the only distribution where there is a sign change between mean and mode. For the other subreddits, color and mean correspond in the sign of the EMI scores. Advice is colored green, with a slightly positive mean, but the mode is on the intuitive side.
 
 <figure float="center">
-  <img src="figures/composed_wc.png" width="95%" />
+  <img src="figures/composed_wc.png" width="100%" />
 <figcaption>Figure 4 - Wordclouds of selected subreddits</figcaption>
 </figure>
 
 To gain insight into the language used in the subreddits, we plotted the most used words and their individual EMI score. The darker the color the closer the word is to either the evidence or the intuition benchmark. It is interesting that whereas most of the subreddits show generic words like "people", "like", "would, "im" (two examples shown on the left side of Figure 4), some subreddits have more tailored language, which even shows in the most occuring terms, this holds for r/loseit, a subreddit about weight-loss, where "weight" indeed is the most occuring term and r/talesformtechsupport that shows different vocabular with "back", "one", "get" and "work" (see right side of Figure 4). 
 
 <figure float="center">
-  <img src="figures/PCA_Subreddit.png" width="95%" />
+  <img src="figures/PCA_Subreddit.png" width="100%" />
 <figcaption>Figure 5 - PCA of average vectors and concept vectors for the base analysis</figcaption>
 </figure>
 
 The PCA of each subreddit's average vector and the concept vectors shows in simplified form the spatial relationship between the subreddits and the concepts. As in the histograms, advice though colored green shows more similarity (=smaller distance) to the intuition subreddits than the other evidence subreddits. r/losit also strikes with a bigger gap to the other evidence subreddits. Apart from that the general classification seems to work, as you can lay a hyperplane through the space and separate the two groups along the "EMI of 0".
 
 <figure float="left">
-<p>
-  <img src="figures/all_emi.png" width="40%" />
-  <img src="figures/correlations.png" width="55%" />
-  </p>
+  <img src="figures/all_emi.png" width="70%" />
 <figcaption>Figure 6 - Comparison of total EMI distribution for different experiments</figcaption>
+</figure>
+<figure float="left">
+  <img src="figures/correlations.png" width="80%" />
+<figcaption>Figure 7 - Correlation between different EMI scores</figcaption>
 </figure>
 
 ### Long post vs. Summary
 
-As shown in Figure 7A, there are notable differences between long and short posts regarding their EMI scores. For most evidence-based subreddits, long posts tend to be more evidence-based than their respective summaries. The distribution of EMI scores is broader for summaries than for long posts, indicating a greater variability in summaries. These differences are substantial and not just random fluctuations — the correlation between long posts and summary EMI scores is weak or non-existent (see Figure XX), underlining the difference between the two formats.
+As shown in Figure XX, there are notable differences between long and short posts regarding their EMI scores. For most evidence-based subreddits, long posts tend to be more evidence-based than their respective summaries. The distribution of EMI scores is broader for summaries than for long posts, indicating a greater variability in summaries. These differences are substantial and not just random fluctuations — the correlation between long posts and summary EMI scores is weak or non-existent (see Figure XX), underlining the difference between the two formats.
 
 <figure float="left">
-<p>
-  <img src="figures/comp_tldr_post.png" width="45%" />
-  <img src="figures/comp_dict_post.png" width="45%" />
-</p>
-<figcaption>Figure 7A - Comparison Distribution of long posts and summaries Figure 7B - Comparison for different keyword lsits</figcaption>
+  <img src="figures/comp_tldr_post.png" width="100%" />
+<figcaption>Figure XX - Comparison Distribution of long posts and summaries Figure 7B - Comparison for different keyword lsits</figcaption>
+</figure>
+<figure float="left">
+  <img src="figures/comp_dict_post.png" width="100%" />
+<figcaption>Figure XX - Comparison Distribution of long posts and summaries Figure 7B - Comparison for different keyword lsits</figcaption>
 </figure>
 
 ### Original vs. Customized Keyword Lists
-The influence of the new keyword lists on the EMI in comparison to the original ones can be seen in Figure 7B. As one can see the deviation is minimal, with a global correlation of XX between the scores (see Figure XX). All subreddits get classified into the same category as before, even though the concept definiton is adjusted. This can also be seen in the corresponding PCA, see Figure 9.
+The influence of the new keyword lists on the EMI in comparison to the original ones can be seen in Figure XX. As one can see the deviation is minimal, with a global correlation of XX between the scores (see Figure XX). All subreddits get classified into the same category as before, even though the concept definiton is adjusted. This can also be seen in the corresponding PCA, see Figure XX.
 
 <figure float="left">
   <img src="figures/PCA_Sub_dict.png" width="95%" />
-<figcaption>Figure 9 - PCA of average vectors and tailored concept vectors</figcaption>
+<figcaption>Figure XX - PCA of average vectors and tailored concept vectors</figcaption>
 </figure>
 
 ### Word2Evc vs. BERT
@@ -295,7 +298,7 @@ _Include a list of academic and professional sources you cited in your report, u
     <tr><td>accurate</td><td>advice</td></tr>
     <tr><td style="color: green;">admit</td><td style="color: red;"><s>belief</s></td></tr>
     <tr><td style="color: red;"><s>analyse</s></td><td>believe</td></tr>
-    <tr><td>analysis</td><td><s>bogus</s></td></tr>
+    <tr><td>analysis</td><td style="color: red;"><s>bogus</s></td></tr>
     <tr><td style="color: green;">announce</td><td style="color: red;"><s>common sense</s></td></tr>
     <tr><td style="color: green;">argument</td><td style="color: green;">conceive</td></tr>
     <tr><td style="color: green;">article</td><td style="color: red;"><s>deceive</s></td></tr>
@@ -305,7 +308,7 @@ _Include a list of academic and professional sources you cited in your report, u
     <tr><td>correct</td><td style="color: red;"><s>distrust</s></td></tr>
     <tr><td style="color: red;"><s>correction</s></td><td>doubt</td></tr>
     <tr><td style="color: green;">counter-argument</td><td style="color: green;">dunno</td></tr>
-    <tr><td>data</td><td><s>fake</s></td></tr>
+    <tr><td>data</td><td style="color: red;"><s>fake</s></td></tr>
     <tr><td style="color: red;"><s>dossier</s></td><td style="color: red;"><s>fake news</s></td></tr>
     <tr><td>education</td><td style="color: green;">feel</td></tr>
     <tr><td>evidence</td><td>feeling</td></tr>
@@ -322,7 +325,7 @@ _Include a list of academic and professional sources you cited in your report, u
     <tr><td style="color: green;">incorrect</td><td style="color: red;"><s>mistrust</s></td></tr>
     <tr><td>information</td><td>opinion</td></tr>
     <tr><td style="color: red;"><s>inquiry</s></td><td>perspective</td></tr>
-    <tr><td>intelligence</td><td><s>phony</s></td></tr>
+    <tr><td>intelligence</td><td style="color: red;"><s>phony</s></td></tr>
     <tr><td style="color: red;"><s>investigate</s></td><td style="color: red;"><s>point of view</s></td></tr>
     <tr><td>investigation</td><td><s>propaganda</s></td></tr>
     <tr><td>knowledge</td><td style="color: green;">remember</td></tr>
@@ -332,7 +335,7 @@ _Include a list of academic and professional sources you cited in your report, u
     <tr><td>logical</td><td style="color: green;">suppose</td></tr>
     <tr><td>method</td><td style="color: green;">suspect</td></tr>
     <tr><td style="color: red;"><s>pinpoint</s></td><td>suspicion</td></tr>
-    <tr><td style="color: red;"><s>precise</s></td><td style="color: green;"><b>think</b></td></tr>
+    <tr><td style="color: red;"><s>precise</s></td><td style="color: green;">think</td></tr>
     <tr><td>procedure</td><td style="color: green;">thought</td></tr>
     <tr><td>process</td><td>view</td></tr>
     <tr><td>proof</td><td>viewpoint</td></tr>
@@ -355,6 +358,6 @@ _Include a list of academic and professional sources you cited in your report, u
     <tr><td>45</td><td>26</td></tr>
   </tbody>
 </table>
-<figcaption>Table 1 - this is the table</figcaption>
+<figcaption>Table 2 - Evolution Original to Tailored Keyword Lists (green added - red removed)</figcaption>
 </figure>
 {% endraw %}
