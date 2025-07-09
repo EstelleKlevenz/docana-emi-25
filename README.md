@@ -147,8 +147,10 @@ To gain insight into the language used in the subreddits, we plotted the most us
 The PCA of each subreddit's average vector and the concept vectors shows in simplified form the spatial relationship between the subreddits and the concepts. As in the histograms, advice though colored green shows more similarity (=smaller distance) to the intuition subreddits than the other evidence subreddits. r/losit also strikes with a bigger gap to the other evidence subreddits. Apart from that the general classification seems to work, as you can lay a hyperplane through the space and separate the two groups along the "EMI of 0".
 
 <figure float="left">
+<p>
   <img src="/figures/all_emi.png" width="45%" />
-    <img src="/figures/correlations.png" width="45%" />
+  <img src="/figures/correlations.png" width="45%" />
+  </p>
 <figcaption>Figure 6 - Comparison of total EMI distribution for different experiments</figcaption>
 </figure>
 
