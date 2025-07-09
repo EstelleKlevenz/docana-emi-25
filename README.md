@@ -281,6 +281,7 @@ _Include a list of academic and professional sources you cited in your report, u
 
 style="color: green;"
 ## Appendix
+{% raw %}
 <figure>
 <table border="1">
   <thead>
@@ -292,7 +293,7 @@ style="color: green;"
   <tbody>
     <tr><td>accurate</td><td>advice</td></tr>
     <tr><td style="color: green;">admit</td><td style="color: red;"><s>belief</s></td></tr>
-    <tr><td style="color: red;"><s>analyse</s></td></td><td>believe</td></tr>
+    <tr><td style="color: red;"><s>analyse</s></td><td>believe</td></tr>
     <tr><td>analysis</td><td><s>bogus</s></td></tr>
     <tr><td style="color: green;">announce</td><td style="color: red;"><s>common sense</s></td></tr>
     <tr><td style="color: green;">argument</td><td style="color: green;">conceive</td></tr>
@@ -301,10 +302,10 @@ style="color: green;"
     <tr><td style="color: green;">certain</td><td style="color: red;"><s>dishonest</s></td></tr>
     <tr><td style="color: green;">clear</td><td style="color: red;"><s>dishonesty</s></td></tr>
     <tr><td>correct</td><td style="color: red;"><s>distrust</s></td></tr>
-    <tr><td style="color: red;"><s>correction</s></td><td>doubt</td>
+    <tr><td style="color: red;"><s>correction</s></td><td>doubt</td></tr>
     <tr><td style="color: green;">counter-argument</td><td style="color: green;">dunno</td></tr>
     <tr><td>data</td><td><s>fake</s></td></tr>
-    <tr><td style="color: red;"><s>dossier</s><td style="color: red;"><s>fake news</s></td></td></tr>
+    <tr><td style="color: red;"><s>dossier</s></td><td style="color: red;"><s>fake news</s></td></tr>
     <tr><td>education</td><td style="color: green;">feel</td></tr>
     <tr><td>evidence</td><td>feeling</td></tr>
     <tr><td style="color: red;"><s>evident</s></td><td>genuine</td></tr>
@@ -355,3 +356,4 @@ style="color: green;"
 </table>
 <figcaption>Table 1 - this is the table</figcaption>
 </figure>
+{% endraw %}
