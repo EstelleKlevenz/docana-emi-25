@@ -345,3 +345,121 @@ Accordingly, an interesting next step would be to apply the EMI score to social 
 <figcaption>Table 2 - Evolution Original to Tailored Keyword Lists (green added - red removed)</figcaption>
 </figure>
 {% endraw %}
+
+<br><br>
+
+<figure>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Keyword</th>
+      <th>Example Sentence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>accurate</td><td>The report was highly accurate in its details.</td></tr>
+    <tr><td>exact</td><td>She needed the exact measurements for the experiment.</td></tr>
+    <tr><td>intelligence</td><td>The agency gathered intelligence about the situation.</td></tr>
+    <tr><td>precise</td><td>His explanation was precise.</td></tr>
+    <tr><td>search</td><td>They began a thorough search for the missing data.</td></tr>
+    <tr><td>analyse</td><td>We need to analyse the results before making a decision.</td></tr>
+    <tr><td>examination</td><td>The doctor conducted a full examination.</td></tr>
+    <tr><td>investigate</td><td>Scientists plan to investigate the root cause.</td></tr>
+    <tr><td>procedure</td><td>Follow the procedure step by step.</td></tr>
+    <tr><td>show</td><td>The results show a pattern.</td></tr>
+    <tr><td>analysis</td><td>The data analysis revealed trends.</td></tr>
+    <tr><td>examine</td><td>She will examine the samples tomorrow.</td></tr>
+    <tr><td>investigation</td><td>An investigation was launched into the findings.</td></tr>
+    <tr><td>process</td><td>The process took several hours to complete.</td></tr>
+    <tr><td>statistics</td><td>The statistics support the initial hypothesis.</td></tr>
+    <tr><td>correct</td><td>He gave the correct answer after reviewing the facts.</td></tr>
+    <tr><td>expert</td><td>An expert was consulted to verify the claim.</td></tr>
+    <tr><td>knowledge</td><td>Her knowledge in biology helped interpret the results.</td></tr>
+    <tr><td>proof</td><td>We still need proof before drawing conclusions.</td></tr>
+    <tr><td>study</td><td>They published a study in a peer-reviewed journal.</td></tr>
+    <tr><td>correction</td><td>A correction was issued after the mistake was found.</td></tr>
+    <tr><td>explore</td><td>We aim to explore this phenomenon in more detail.</td></tr>
+    <tr><td>lab</td><td>She spent hours working in the lab.</td></tr>
+    <tr><td>question</td><td>That question requires careful analysis.</td></tr>
+    <tr><td>trial</td><td>The trial was conducted over several months.</td></tr>
+    <tr><td>data</td><td>The data was collected from various sources.</td></tr>
+    <tr><td>fact</td><td>It is a fact supported by multiple studies.</td></tr>
+    <tr><td>learn</td><td>We hope to learn more from this research.</td></tr>
+    <tr><td>read</td><td>He decided to read the full report.</td></tr>
+    <tr><td>real</td><td>The effects were real and measurable.</td></tr>
+    <tr><td>dossier</td><td>The agent compiled a dossier on the subject.</td></tr>
+    <tr><td>find</td><td>They were able to find a correlation.</td></tr>
+    <tr><td>logic</td><td>Her argument was based on clear logic.</td></tr>
+    <tr><td>reason</td><td>There is a scientific reason for this outcome.</td></tr>
+    <tr><td>true</td><td>It turned out to be true after verification.</td></tr>
+    <tr><td>education</td><td>Education is crucial for scientific literacy.</td></tr>
+    <tr><td>findings</td><td>The findings were published last week.</td></tr>
+    <tr><td>logical</td><td>It is a logical conclusion based on the facts.</td></tr>
+    <tr><td>research</td><td>Ongoing research supports the hypothesis.</td></tr>
+    <tr><td>truth</td><td>We must seek the truth through evidence.</td></tr>
+    <tr><td>evidence</td><td>There is strong evidence to support the theory.</td></tr>
+    <tr><td>information</td><td>The report contains useful information.</td></tr>
+    <tr><td>method</td><td>The method was tested and peer-reviewed.</td></tr>
+    <tr><td>science</td><td>Science plays a key role in understanding reality.</td></tr>
+    <tr><td>truthful</td><td>She gave a truthful account of the experiment.</td></tr>
+    <tr><td>evident</td><td>It was evident that more testing was needed.</td></tr>
+    <tr><td>inquiry</td><td>An official inquiry was launched into the issue.</td></tr>
+    <tr><td>pinpoint</td><td>They tried to pinpoint the source of the error.</td></tr>
+    <tr><td>scientific</td><td>We need a scientific explanation for this.</td></tr>
+  </tbody>
+</table>
+<figcaption>Table 3 - Evidence Keywords with Example Sentences</figcaption>
+</figure>
+
+<br><br>
+
+<figure>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Intuition</th>
+      <th>Example Sentence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>advice</td><td>She gave me advice based on her experience.</td></tr>
+    <tr><td>doubt</td><td>There was doubt about the accuracy of the statement.</td></tr>
+    <tr><td>mislead</td><td>Some people felt misled.</td></tr>
+    <tr><td>suggestion</td><td>He offered a helpful suggestion during the meeting.</td></tr>
+    <tr><td>belief</td><td>Her belief influenced how she interpreted the facts.</td></tr>
+    <tr><td>fake</td><td>She had a gut feeling the story might be fake, despite no clear proof.</td></tr>
+    <tr><td>mistaken</td><td>I might be mistaken, but it just does not feel right.</td></tr>
+    <tr><td>suspicion</td><td>The scientist raised a suspicion about the data.</td></tr>
+    <tr><td>believe</td><td>Many people believe the story without evidence.</td></tr>
+    <tr><td>fake news</td><td>To her, it just seemed like fake news, though she couldn't explain why.</td></tr>
+    <tr><td>mistrust</td><td>There is growing mistrust toward the source.</td></tr>
+    <tr><td>view</td><td>His view on the topic differed from the consensus.</td></tr>
+    <tr><td>bogus</td><td>It sounded bogus to him.</td></tr>
+    <tr><td>feeling</td><td>She had a feeling something was not right.</td></tr>
+    <tr><td>opinion</td><td>The editorial reflects the writer’s opinion.</td></tr>
+    <tr><td>viewpoint</td><td>From her viewpoint, the results were inconclusive.</td></tr>
+    <tr><td>common sense</td><td>Common sense suggests a different conclusion.</td></tr>
+    <tr><td>genuine</td><td>It felt genuine, even if others weren't convinced.</td></tr>
+    <tr><td>perspective</td><td>That perspective adds a new angle to the issue.</td></tr>
+    <tr><td>wrong</td><td>Something felt wrong, though I could not point to any facts.</td></tr>
+    <tr><td>deceive</td><td>He worried they might be trying to deceive people, but it was just a feeling.</td></tr>
+    <tr><td>guess</td><td>My guess is that the numbers are off.</td></tr>
+    <tr><td>phony</td><td>It came across as phony.</td></tr>
+    <tr><td>deception</td><td>She sensed some deception, though she couldn't articulate the reason.</td></tr>
+    <tr><td>gut</td><td>I went with my gut on this one.</td></tr>
+    <tr><td>point of view</td><td>Her point of view shaped her interpretation.</td></tr>
+    <tr><td>dishonest</td><td>It struck him as dishonest</td></tr>
+    <tr><td>instinct</td><td>He trusted his instinct in making the call.</td></tr>
+    <tr><td>propaganda</td><td>It felt like propaganda.</td></tr>
+    <tr><td>dishonesty</td><td>Her intuition told her there was some dishonesty involved.</td></tr>
+    <tr><td>intuition</td><td>She relied on intuition to guide her choice.</td></tr>
+    <tr><td>sense</td><td>There was a sense that something was off.</td></tr>
+    <tr><td>distrust</td><td>Distrust in the media has increased recently.</td></tr>
+    <tr><td>lie</td><td>It seems to be a lie.</td></tr>
+    <tr><td>suggest</td><td>Some suggest this is the right path.</td></tr>
+  </tbody>
+</table>
+<figcaption>Table 4 - Intuition Keywords with Example Sentences</figcaption>
+</figure>
+
+
