@@ -73,7 +73,7 @@ The keyword lists define the benchmark for each of the concepts. As the keyword 
 <figure float="left">
 <p>
   <img src="figures/originalevidence.png" width="45%" />
-  <img src="/figures/originalintuition.png" width="45%" />
+  <img src="figures/originalintuition.png" width="45%" />
 </p>
 <figcaption>Figure 2 - Frequency of keywords in our data A) Evidence Keywords, B) Intuition Keywords</figcaption>
 </figure>
@@ -117,7 +117,7 @@ mean über Posts
 ## Results
 
 <figure float="left">
-  <img src="/figures/subreddit_emi_dist.png" width="95%" />
+  <img src="figures/subreddit_emi_dist.png" width="95%" />
 <figcaption>Figure 3 - Distribution of EMI scores over subreddits</figcaption>
 </figure>
 
@@ -125,14 +125,14 @@ We created binned histograms of the distribution of EMI scores of the posts over
 The EMI ranges from -2 to 8, having a wider range of values on the positive side. Of particular note is r/advice, the only distribution where there is a sign change between mean and mode. For the other subreddits, color and mean correspond in the sign of the EMI scores. Advice is colored green, with a slightly positive mean, but the mode is on the intuitive side.
 
 <figure float="center">
-  <img src="/figures/composed_wc.png" width="95%" />
+  <img src="figures/composed_wc.png" width="95%" />
 <figcaption>Figure 4 - Wordclouds of selected subreddits</figcaption>
 </figure>
 
 To gain insight into the language used in the subreddits, we plotted the most used words and their individual EMI score. The darker the color the closer the word is to either the evidence or the intuition benchmark. It is interesting that whereas most of the subreddits show generic words like "people", "like", "would, "im" (two examples shown on the left side of Figure 4), some subreddits have more tailored language, which even shows in the most occuring terms, this holds for r/loseit, a subreddit about weight-loss, where "weight" indeed is the most occuring term and r/talesformtechsupport that shows different vocabular with "back", "one", "get" and "work" (see right side of Figure 4). 
 
 <figure float="center">
-  <img src="/figures/PCA_Subreddit.png" width="95%" />
+  <img src="figures/PCA_Subreddit.png" width="95%" />
 <figcaption>Figure 5 - PCA of average vectors and concept vectors for the base analysis</figcaption>
 </figure>
 
@@ -140,8 +140,8 @@ The PCA of each subreddit's average vector and the concept vectors shows in simp
 
 <figure float="left">
 <p>
-  <img src="/figures/all_emi.png" width="40%" />
-  <img src="/figures/correlations.png" width="55%" />
+  <img src="figures/all_emi.png" width="40%" />
+  <img src="figures/correlations.png" width="55%" />
   </p>
 <figcaption>Figure 6 - Comparison of total EMI distribution for different experiments</figcaption>
 </figure>
@@ -152,8 +152,8 @@ As shown in Figure 7A, there are notable differences between long and short post
 
 <figure float="left">
 <p>
-  <img src="/figures/comp_tldr_post.png" width="45%" />
-  <img src="/figures/comp_dict_post.png" width="45%" />
+  <img src="figures/comp_tldr_post.png" width="45%" />
+  <img src="figures/comp_dict_post.png" width="45%" />
 </p>
 <figcaption>Figure 7A - Comparison Distribution of long posts and summaries Figure 7B - Comparison for different keyword lsits</figcaption>
 </figure>
@@ -162,7 +162,7 @@ As shown in Figure 7A, there are notable differences between long and short post
 The influence of the new keyword lists on the EMI in comparison to the original ones can be seen in Figure 7B. As one can see the deviation is minimal, with a global correlation of XX between the scores (see Figure XX). All subreddits get classified into the same category as before, even though the concept definiton is adjusted. This can also be seen in the corresponding PCA, see Figure 9.
 
 <figure float="left">
-  <img src="/figures/PCA_Sub_dict.png" width="95%" />
+  <img src="figures/PCA_Sub_dict.png" width="95%" />
 <figcaption>Figure 9 - PCA of average vectors and tailored concept vectors</figcaption>
 </figure>
 
