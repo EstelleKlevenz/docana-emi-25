@@ -53,7 +53,7 @@ Processing and analysis happened mostly on the content column and the summary, g
 ## Methods - Setup
 
 All analysis was done using Pythona and Python libraries. Our code ran with a Python 3.9.21 kernel in its own conda environment. To replicate our analysis we provide the requirements.txt to replicate the environment. All code-files can be found on our Github under "code". Consult the README in the code directory for details on the script management and usage.
-Tools that were used in addition to Python libraries were the CLICS3 web interface for colexifications (see the subsection "Tailored keyword lists") and ChatGPT for the generation of keyphrases (see the subsection "BERT XX")
+Tools that were used in addition to Python libraries were the CLICS3 web interface for colexifications (see the subsection "Tailored keyword lists") and ChatGPT for the generation of keyphrases (see the subsection "BERT")
 
 ## Method - Experiments
 ### Main Analysis - EMI
@@ -100,7 +100,7 @@ For colexifications we employed the Database of Cross-Linguistic Colexifications
 
 We then ran again the main analysis with the new keyword lists. Except for exchanging the lists, all other steps of analysis stayed identical. The new keyword lists were applied on the long posts, thus on the cleaned content feature.
 
-#### BERT XX
+#### BERT
 
 A prevalent limitation of Word2vec models is their inability to handle polysemies. Every possible meaning of a polysemous word is aggregated in the embedding of one token. A model that does consider different embeddings for each meaning of a given token is the bidirectional encoder representation from transformers (BERT) a contextual language model create by Google. 
 In order to harvest the ability to consider context this experiment used BERT, instead of word2vec to encode the reddit posts.
@@ -108,12 +108,12 @@ In order to harvest the ability to consider context this experiment used BERT, i
 Since the dataset contains only posts in English and to limit the running time of the model, we used `bert-base-uncased` with 110 million parameters (12 layers of self attention, 12 attention heads and 768 dimensions). 
 To achieve comparable results to the word2vec experiment, two major steps needed to be tackled. First, create an embedding for each post and second create an evidence and an intuition vector in the same latent space as the post embeddings.
 
-For the first step, since BERT is build to take on one or more full sentences as input, we considered each input to be a complete posts (tokenized) and use the average of the last four layers CLS-vector as post embedding. Unfortunately, the BERT's input is limited to 512 tokens and many posts exceeded this number. Therefore we adapted the approach. We split each post into its sentences, retrieved their average CLS-emebdding in the last four layers and once we had every sentences CLS embeding of the post we averaged them again to retain one final embedding for the whole post.
+For the first step, since BERT is built to take on one or more full sentences as input, we considered each input to be a complete post (tokenized) and to use the average of the last four layers' CLS-vector as post embedding. Unfortunately, the BERT's input is limited to 512 tokens and many posts exceeded this number. Therefore we adapted the approach: We split each post into its sentences, retrieved their average CLS-emebedding in the last four layers and once we had every sentence's CLS embedding of the post, we averaged them again to retain one final embedding for the whole post.
 
-For the second step we used ChatGPT to create examplatory sentences for the words in the dictionaries and manually checked and adapted a few if necessary. The evidence and intuition vectors are the average embeddings of all the sentences derived from their respective dictionary.
+For the second step we used ChatGPT to create examplatory sentences for the words in the keyword lists and manually checked and adapted a few if necessary. The evidence and intuition vectors are the average embeddings of all the sentences derived from their respective dictionary. The keyphrases used can be inspected in Tables 3 and 4 in the Appendix.
 
-Once those embeddings where obtain, the same steps are taken to calcualte the EMI score as described in the word2vec approach.   
-Due to the long processing time the post embeddings for the BERT experiment are only calculated for a sample (37%) of all the posts we considered in this study. 
+Once those embeddings were obtained, the same steps were taken to calculate the EMI score as described in the word2vec approach.   
+Due to the long processing time, the post embeddings for the BERT experiment are only calculated for a sample (37%) of all the posts we considered in this study. 
 
 ## Results
 
@@ -150,31 +150,31 @@ The PCA of each subreddit's average vector and the concept vectors shows in simp
 
 ### Long post vs. Summary
 
-As shown in Figure XX, there are notable differences between long and short posts regarding their EMI scores. For most evidence-based subreddits, long posts tend to be more evidence-based than their respective summaries. The distribution of EMI scores is broader for summaries than for long posts, indicating a greater variability in summaries. These differences are substantial and not just random fluctuations — the correlation between long posts and summary EMI scores is weak or non-existent (see Figure XX), underlining the difference between the two formats.
+As shown in Figure 8, there are notable differences between long and short posts regarding their EMI scores. For most evidence-based subreddits, long posts tend to be more evidence-based than their respective summaries. The distribution of EMI scores is broader for summaries than for long posts, indicating a greater variability in summaries. These differences are substantial and not just random fluctuations — the correlation between long posts and summary EMI scores is weak or non-existent (see Figure 7 - Base and Summary), underlining the difference between the two formats.
 
 <figure float="left">
   <img src="figures/comp_tldr_post.png" width="100%" />
-<figcaption>Figure XX - Comparison Distribution of long posts and summaries Figure 7B - Comparison for different keyword lsits</figcaption>
+<figcaption>Figure 8 - Comparison of the EMI distributions on long posts and summaries</figcaption>
 </figure>
 <figure float="left">
   <img src="figures/comp_dict_post.png" width="100%" />
-<figcaption>Figure XX - Comparison Distribution of long posts and summaries Figure 7B - Comparison for different keyword lsits</figcaption>
+<figcaption>Figure 9 - Comparison for different keyword lists</figcaption>
 </figure>
 
 ### Original vs. Customized Keyword Lists
-The influence of the new keyword lists on the EMI in comparison to the original ones can be seen in Figure XX. As one can see the deviation is minimal, with a global correlation of XX between the scores (see Figure XX). All subreddits get classified into the same category as before, even though the concept definiton is adjusted. This can also be seen in the corresponding PCA, see Figure XX.
+The influence of the new keyword lists on the EMI in comparison to the original ones can be seen in Figure 9. As one can see the deviation is minimal, with a global correlation between the scores that is nearly perfect  (see Figure 7 - Base and new dictionary). All subreddits get classified into the same category as before, even though the concept definitons are adjusted. This can also be seen in the corresponding PCA, see Figure 10.
 
 <figure float="left">
   <img src="figures/PCA_Sub_dict.png" width="95%" />
-<figcaption>Figure XX - PCA of average vectors and tailored concept vectors</figcaption>
+<figcaption>Figure 10  - PCA of average vectors and tailored concept vectors</figcaption>
 </figure>
 
 ### Word2Evc vs. BERT
 
-As seen in figure XX the dispersion of the average EMI score per post is higher when the EMI is calcualted using word2vec vs BERT embeddings. For twelve of the sixteen analysed subreddits the mean of the avverage EMI distribution is closer to zero for the ones calculated with BERT (r/relationship_advice, r/explainlikeimfive, r/todayilearned, r/technology, r/worldnews, r/talesfromtechsupport, r/relationships, r/buildapc, r/dating_advice, r/loseit, r/askscience, r/news) for three it is visaully barely distinguishly (r/AskMen, r/offmychest, r/depression) and in one case it flipped the sign (r/Advice). In the last 4 cases mentioned the mean of the base approach (wor2vec) is already relatively close to zero.
+As seen in Figure 11 the dispersion of the average EMI score per post is higher when the EMI is calculated using word2vec as it is with the BERT embeddings. For 12 of the 16 analysed subreddits the mean of the avverage EMI distribution is closer to zero for the ones calculated with BERT (r/relationship_advice, r/explainlikeimfive, r/todayilearned, r/technology, r/worldnews, r/talesfromtechsupport, r/relationships, r/buildapc, r/dating_advice, r/loseit, r/askscience, r/news) for three it is visaully barely distinguishly (r/AskMen, r/offmychest, r/depression) and in one case it flipped the sign (r/Advice). In the last four cases mentioned, the mean of the base approach (word2vec) is already relatively close to zero.
 <figure float="left">
   <img src="figures/hist_bert_w2v.png" width="100%" />
-<figcaption>Figure XX - Distribution of EMI scores over subreddits (word2vec vs BERT) </figcaption>
+<figcaption>Figure 11 - Distribution of EMI scores over subreddits (word2vec vs BERT) </figcaption>
 </figure>
 
 ## Discussion
@@ -220,20 +220,20 @@ The results show that our approach to answer the proposed research quest general
 
 Within the results of our models it is noteworthy, that they mostly give the same language-indication. The goal of the different experiments was to test the robustness of the score. This assessment is therefore positive.
 
-Since language is all about the details, when reflecting on the entire approach, the preprocessing, the editing of the language, must be evaluated. One limitation we find in our approach is that the selection of excluded stop words could have influenced the embeddingsW we did a crosschecking with not removing the words, which did not make a big difference on the sample tested, but we did not check with different sets of stopwords. 
+Since language is all about the details, when reflecting on the entire approach, the preprocessing, the editing of the language, must be evaluated. One limitation we find in our approach is that the selection of excluded stop words could have influenced the embeddings. We did a cross-check with not removing the words, which did not make a big difference on the sample tested, but we did not check with different sets of stopwords. 
 Another one is that misspelled versions of words have been excluded from the keyword lists. This seems appropriate for official political speeches. For the application to social media data, however, the question arises as to whether “typos” are not much more part of authentic content and should therefore have been taken into account when classifying the posts against the concepts.
 
 ### Long post vs. Summary
 
 For the EMI scores on the summaries we found values that are significantly deviating from the base EMI score we obtained. This can be explained as firstly, the shorter the post, the weightier the words, therefore the more unstable and fluctuating are the scores. Secondly, a summary does not have to be written with the same attitude as the long post. It is often written with another intention than being a neutral summary and therefore has a different rhetoric. Especially after a long and content-wise potentially serious post, a summary could be phrased more unserious. Or the other way around: a detailed personal experience is summarised with a pointed fact.
-This could exlain how for r/depression the EMI on the summaries gives a slightly positive averaged EMI score, whereas the main EMI score is on the negative side.
+This could exlain how for r/depression the EMI on the summaries gives a slightly positive averaged EMI score, whereas the main EMI score is on the negative side (see Figure 8).
 
 ### Original vs. Customized Keyword Lists
 
 The high correlation between the EMI scores calculated with respect to the original keyword-lists and the EMI scores based on the adapted concept definitions shows a high robustness of the concept capture. 
 To us it was important to clean the intuition lists of negative connotations (with terms such as "wrong" ,"dishonest") as intuition is not meant to be negatively judged and the measure is not intended to judge the content of a post. This adaption did not affect the result significantly.
 
-We see a high transferability, even with keywords that are not matching the language used in social media. The provided dictionary is specialized to political talk (with terms such as "investigate", "dossier", "inquiry") but works well even on general online dialogue. The two approaches to honesty and truthfulness, proposed for political communication [Source-1] are, based on our findings, not constrained to the domain but can be found in general speech. The EMI score is well generalizable, accoring to our results.
+We see a high transferability, even with keywords that are not matching the language used in social media. The provided dictionary is specialized to political talk (with terms such as "investigate", "dossier", "inquiry") but works well even on general online dialogue. The two approaches to honesty and truthfulness, proposed for political communication [1] are, based on our findings, not constrained to the domain but can be found in general speech. The EMI score is well generalizable, accoring to our results.
 
 ### Word2Evc vs. BERT
 

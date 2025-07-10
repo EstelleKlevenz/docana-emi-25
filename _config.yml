@@ -11,12 +11,3 @@ include:
   - REPORT.md
 
 theme: jekyll-theme-cayman
-
-sass:
-  style: compressed
-
-defaults:
-- scope:
-    path: ""
-  values:
-    css: "custom.css"
