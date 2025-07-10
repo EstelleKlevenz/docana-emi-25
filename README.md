@@ -16,12 +16,12 @@ As social media is cited as a key medium for spreading misinformation [1], it is
 
 ### Evidence minus Intuition (EMI)
 
-To explore this we employ the EMI-Score. The Evidence-minus-Intuition measure was created in the context of US congressional speeches and the communication of politicians. It aims to capture how much of their language is "evidence-based" opposed to "intuition-based" to give insight into their approach to honesty and truthfulness [2]. "Evidence-based" reasoning apporaches truth "by relying on evidence, facts, data and other elements of external reality" [2] whereas the "intuition-based" approach relies "on feelings, instincts, personal values and other elements drawn mainly from a person’s internal experiences" in its conception of truth [2]. 
+To explore this we employ the EMI-Score. The Evidence-minus-Intuition measure was created in the context of US congressional speeches and the communication of politicians. It aims to capture how much of their language is "evidence-based" opposed to "intuition-based" to give insight into their approach to honesty and truthfulness [2]. "Evidence-based" reasoning approaches truth "by relying on evidence, facts, data and other elements of external reality" [2] whereas the "intuition-based" approach relies "on feelings, instincts, personal values and other elements drawn mainly from a person’s internal experiences" in its conception of truth [2]. 
 The EMI is not concerned with the actual truth value of the content it is applied on but only considers the rhetoric. Therefore, we cannot infer anything about the actual quality of posts. But we assume that the concept can be transferred from political speech to the diverse content of Reddit forums - the social-media data to be analyzed - and can be employed to gain insight about the present language.
 
 ### Hypotheses
 
-The data used are long Reddit posts from different subreddits, subforums on the platform. We expect some to have more evidence based language and other to rely more on intuition in how topics are discussed. More evidence-based language we expect in subreddits that explicitely have real-world facts as content, as news pages or "funfacts" people share. In our selection this would correspond to the r/worldnews, r/news, r/explainlikeimfive and r/todayilearned. We also expect evidence based communication in subreddits that have a defined topic that is supposed to be discussed seriously and or subreddits that explicitely focus on science, as in r/buildapc, r/technology and r/askscience.
+The data used are long Reddit posts from different subreddits, subforums on the platform. We expect some to have more evidence based language and other to rely more on intuition in how topics are discussed. More evidence-based language we expect in subreddits that explicitly have real-world facts as content, as news pages or "funfacts" people share. In our selection this would correspond to the r/worldnews, r/news, r/explainlikeimfive and r/todayilearned. We also expect evidence based communication in subreddits that have a defined topic that is supposed to be discussed seriously and or subreddits that explicitly focus on science, as in r/buildapc, r/technology and r/askscience.
 Intuition-based language on the other hand we expect in subreddits that regard personal experience, like in r/relationships, r/offmychest, r/talesfromtechsupport and r/depression, and advice: r/relationship_advice, r/askmen, r/dating_advice, r/loseit, r/advice. 
 
 Our research quest is to show that the EMI can be applied to the domain of social-media and to find out how language is used in different subreddits.
@@ -34,7 +34,7 @@ To validate our findings and test them for their robustness we conducted several
 
 ## Dataset
 
-The dataset contains Reddit subreddit posts containing "TL;DR" from 2006 to 2016. "TL;DR" is short for "too long, didn't read" and indicates a summary to a given post (either written by the author of the post or someone in the comments). The posts in the datasets are submissions and comments but only human produced, as bot-posts were filtered out. The original dataset contains 3,848,330 posts of 29'651 subreddits. For each posts the dataset has information on the author, the text body (raw and normalized), content, summary, subreddit and subreddit ID. The data is available on hugging face as hugging face dataset[3].
+The dataset contains Reddit subreddit posts containing "TL;DR" from 2006 to 2016. "TL;DR" is short for "too long, didn't read" and indicates a summary to a given post (either written by the author of the post or someone in the comments). The posts in the datasets are submissions and comments but only human produced, as bot-posts were filtered out. The original dataset contains 3,848,330 posts of 29'651 subreddits. For each post the dataset has information on the author, the text body (raw and normalized), content, summary, subreddit and subreddit ID. The data is available on hugging face as hugging face dataset[3].
 
 The dataset was originally intended to train summary-prediciton but it is suitable for our task as well as working with "TL;DR" posts ensures a certain length of the posts which helps with consistent quality of the computed EMI scores and relativizes the influence of single words. 
 The fact that bot posts were filtered is also important, as our analysis focuses on the language of humans in specific contexts.
@@ -53,7 +53,7 @@ Processing and analysis happened mostly on the content column and the summary, g
 ## Methods - Setup
 
 All analysis was done using Pythona and Python libraries. Our code ran with a Python 3.9.21 kernel in its own conda environment. To replicate our analysis we provide the requirements.txt to replicate the environment. All code-files can be found on our Github under "code". Consult the README in the code directory for details on the script management and usage.
-Tools that were used in addition to Python libraries were the CLICS3 web interface for colexifications (see the subsection "Tailored keyword lists") and ChatGPT for the generation of keyphrases (see the subsection "BERT")
+Tools that were used in addition to Python libraries were the CLICS3 web interface for colexifications (see the subsection "Tailored keyword lists") and ChatGPT for the generation of keyphrases (see the subsection "BERT").
 
 ## Method - Experiments
 ### Main Analysis - EMI
@@ -74,7 +74,7 @@ If the resulting EMI score is now a positive value, it indicates that evidence-b
 
 As proposed in the introduction we expect the EMI to work much better on long posts than on short ones. To check if this assumption holds for our data we employ the provided summaries to the posts and run the EMI score computation on them as well.
 
-To compute the EMI of the post summaries we applied the same cleaning as for the long posts on the summaries and the same computations. We saved the similarities and EMI score into the dataset for later analysis.
+To compute the EMI of the post summaries, we applied the same cleaning as for the long posts on the summaries and the same computations. We saved the similarities and EMI score into the dataset for later analysis.
 
 #### Tailored keyword lists
 
@@ -89,16 +89,16 @@ The keyword lists define the benchmark for each of the concepts. As the keyword 
 <figcaption>Figure 2B - Frequency of intuition keywords in our data</figcaption>
 </figure>
 
-The keyword approach of Lasser et al. involved: (1.) starting out with a set of initial keywords, (2.) expaning them computationally using fasttext embeddings and colexification networks, (3.) filtering for duplicates, overlapping terms (in both lists) and lemma inflections [1]. Subsequently, they validated their keyword lists through an online survey where paricipants rated the terms in how the represent the concpets and used a t-test to examine the results. We adapted their approach but waived the validation.
+The keyword approach of Lasser et al. involved: (1.) starting out with a set of initial keywords, (2.) expanding them computationally using fasttext embeddings and colexification networks, (3.) filtering for duplicates, overlapping terms (in both lists) and lemma inflections [1]. Subsequently, they validated their keyword lists through an online survey where paricipants rated the terms in how the represent the concpets and used a t-test to examine the results. We adapted their approach but waived the validation.
 
-As initial keywords we used those of the original keywords used in the main analysis that had a word count of over 1000 in our data. The frequency charts can be seen in Figure 2. We manually excluded "true" from the evidence seed-list and "wrong" from the intuition list to remove initial bias. we also removed "find" from the evidence list, as the termn is ambiguous, with different meanings in different contexts (E: "The study finds..." / I: "I find it to be challenging..."). we added to the evidence list the terms "article" and "argument" as we expect them to be prevalent in contexts such as: "This article shows..." and "An argument against this.." both showing evidence based language.
+As initial keywords we used those of the original keywords used in the main analysis that had a word count of over 1000 in our data. The frequency charts can be seen in Figure 2. We manually excluded "true" from the evidence seed-list and "wrong" from the intuition list to remove initial bias. We also removed "find" from the evidence list, as the termn is ambiguous, with different meanings in different contexts (E: "The study finds..." / I: "I find it to be challenging..."). we added to the evidence list the terms "article" and "argument" as we expect them to be prevalent in contexts such as: "This article shows..." and "An argument against this.." both showing evidence based language.
 
-We expaned this list using a pretrained embedding model, the English fastText word vectors trained on Common Crawl (subword-aware, 300d). The subword modeling makes it well suited for informal language, as can be present on social media. The fasttext model vectors were then translated to Gensim KeyedVectors format for easy handling. We expanded using the top 10'000 neighbors and filtered those with a cosine simialrity greater than / equal to 0.75.
+We expanded this list using a pretrained embedding model, the English fastText word vectors trained on Common Crawl (subword-aware, 300d). The subword modeling makes it well suited for informal language, as can be present on social media. The fasttext model vectors were then translated to Gensim KeyedVectors format for easy handling. We expanded using the top 10'000 neighbors and filtered those with a cosine simialrity greater than / equal to 0.75.
 As an interim step we cleaned the retrieved set from misspellings and lemma inflections.
 
 For colexifications we employed the Database of Cross-Linguistic Colexifications [5]. As there is currently no API to their concept database available, we manually retrieved related concepts via the web interface [6]. Further we removed the intersection between the evidence and intuition list and manually excluded the terms that were not satisfactory associated with the pursued definiton of evidence and intuition.
 
-We then ran again the main analysis with the new keyword lists. Except for exchanging the lists, all other steps of analysis stayed identical. The new keyword lists were applied on the long posts, thus on the cleaned content feature.
+We then ran the main analysis again with the new keyword lists. Except for exchanging the lists, all other steps of analysis stayed identical. The new keyword lists were applied on the long posts, thus on the cleaned content feature.
 
 #### BERT
 
@@ -108,7 +108,7 @@ In order to harvest the ability to consider context this experiment used BERT, i
 Since the dataset contains only posts in English and to limit the running time of the model, we used `bert-base-uncased` with 110 million parameters (12 layers of self attention, 12 attention heads and 768 dimensions). 
 To achieve comparable results to the word2vec experiment, two major steps needed to be tackled. First, create an embedding for each post and second create an evidence and an intuition vector in the same latent space as the post embeddings.
 
-For the first step, since BERT is built to take on one or more full sentences as input, we considered each input to be a complete post (tokenized) and to use the average of the last four layers' CLS-vector as post embedding. Unfortunately, the BERT's input is limited to 512 tokens and many posts exceeded this number. Therefore we adapted the approach: We split each post into its sentences, retrieved their average CLS-emebedding in the last four layers and once we had every sentence's CLS embedding of the post, we averaged them again to retain one final embedding for the whole post.
+For the first step, since BERT is built to take on one or more full sentences as input, we considered each input to be a complete post (tokenized) and to use the average of the last four layers' CLS-vector as post embedding. Unfortunately, BERT's input is limited to 512 tokens and many posts exceeded this number. Therefore, we adapted the approach: We split each post into its sentences, retrieved their average CLS-emebedding in the last four layers and once we had every sentence's CLS embedding of the post, we averaged them again to retain one final embedding for the whole post.
 
 For the second step we used ChatGPT to create examplatory sentences for the words in the keyword lists and manually checked and adapted a few if necessary. The evidence and intuition vectors are the average embeddings of all the sentences derived from their respective dictionary. The keyphrases used can be inspected in Tables 3 and 4 in the Appendix.
 
@@ -137,7 +137,7 @@ To gain insight into the language used in the subreddits, we plotted the most us
 <figcaption>Figure 5 - PCA of average vectors and concept vectors for the base analysis</figcaption>
 </figure>
 
-The PCA of each subreddit's average vector and the concept vectors shows in simplified form the spatial relationship between the subreddits and the concepts. As in the histograms, advice though colored green shows more similarity (=smaller distance) to the intuition subreddits than the other evidence subreddits. r/losit also strikes with a bigger gap to the other evidence subreddits. Apart from that the general classification seems to work, as you can lay a hyperplane through the space and separate the two groups along the "EMI of 0".
+The PCA of each subreddit's average vector and the concept vectors shows, in simplified form, the spatial relationship between the subreddits and the concepts. As in the histograms, advice though colored green shows more similarity (=smaller distance) to the intuition subreddits than the other evidence subreddits. r/losit also strikes with a bigger gap to the other evidence subreddits. Apart from that the general classification seems to work, as you can lay a hyperplane through the space and separate the two groups along the "EMI of 0".
 
 <figure float="left">
   <img src="figures/all_emi.png" width="70%" />
@@ -171,7 +171,7 @@ The influence of the new keyword lists on the EMI in comparison to the original 
 
 ### Word2Evc vs. BERT
 
-As seen in Figure 11 the dispersion of the average EMI score per post is higher when the EMI is calculated using word2vec as it is with the BERT embeddings. For 12 of the 16 analysed subreddits the mean of the avverage EMI distribution is closer to zero for the ones calculated with BERT (r/relationship_advice, r/explainlikeimfive, r/todayilearned, r/technology, r/worldnews, r/talesfromtechsupport, r/relationships, r/buildapc, r/dating_advice, r/loseit, r/askscience, r/news) for three it is visaully barely distinguishly (r/AskMen, r/offmychest, r/depression) and in one case it flipped the sign (r/Advice). In the last four cases mentioned, the mean of the base approach (word2vec) is already relatively close to zero.
+As seen in Figure 11 the dispersion of the average EMI score per post is higher when the EMI is calculated using word2vec as it is with the BERT embeddings. For 12 of the 16 analysed subreddits the mean of the average EMI distribution is closer to zero for the ones calculated with BERT (r/relationship_advice, r/explainlikeimfive, r/todayilearned, r/technology, r/worldnews, r/talesfromtechsupport, r/relationships, r/buildapc, r/dating_advice, r/loseit, r/askscience, r/news) for three it is visually barely distinguishable (r/AskMen, r/offmychest, r/depression) and in one case it flipped the sign (r/Advice). In the last four cases mentioned, the mean of the base approach (word2vec) is already relatively close to zero.
 <figure float="left">
   <img src="figures/hist_bert_w2v.png" width="100%" />
 <figcaption>Figure 11 - Distribution of EMI scores over subreddits (word2vec vs BERT) </figcaption>
@@ -225,7 +225,7 @@ Another one is that misspelled versions of words have been excluded from the key
 
 ### Long post vs. Summary
 
-For the EMI scores on the summaries we found values that are significantly deviating from the base EMI score we obtained. This can be explained as firstly, the shorter the post, the weightier the words, therefore the more unstable and fluctuating are the scores. Secondly, a summary does not have to be written with the same attitude as the long post. It is often written with another intention than being a neutral summary and therefore has a different rhetoric. Especially after a long and content-wise potentially serious post, a summary could be phrased more unserious. Or the other way around: a detailed personal experience is summarised with a pointed fact.
+For the EMI scores on the summaries we found values that are clearly deviating from the base EMI score we obtained. This can be explained as firstly, the shorter the post, the weightier the words, therefore the more unstable and fluctuating are the scores. Secondly, a summary does not have to be written with the same attitude as the long post. It is often written with another intention than being a neutral summary and therefore has a different rhetoric. Especially after a long and content-wise potentially serious post, a summary could be phrased more unserious. Or the other way around: a detailed personal experience is summarised with a pointed fact.
 This could exlain how for r/depression the EMI on the summaries gives a slightly positive averaged EMI score, whereas the main EMI score is on the negative side (see Figure 8).
 
 ### Original vs. Customized Keyword Lists
@@ -233,11 +233,11 @@ This could exlain how for r/depression the EMI on the summaries gives a slightly
 The high correlation between the EMI scores calculated with respect to the original keyword-lists and the EMI scores based on the adapted concept definitions shows a high robustness of the concept capture. 
 To us it was important to clean the intuition lists of negative connotations (with terms such as "wrong" ,"dishonest") as intuition is not meant to be negatively judged and the measure is not intended to judge the content of a post. This adaption did not affect the result significantly.
 
-We see a high transferability, even with keywords that are not matching the language used in social media. The provided dictionary is specialized to political talk (with terms such as "investigate", "dossier", "inquiry") but works well even on general online dialogue. The two approaches to honesty and truthfulness, proposed for political communication [1] are, based on our findings, not constrained to the domain but can be found in general speech. The EMI score is well generalizable, accoring to our results.
+We see a high transferability, even with keywords that are not matching the language used in social media. The provided dictionary is specialized to political talk (with terms such as "investigate", "dossier", "inquiry") but works well even on general online dialogue. The two approaches to honesty and truthfulness, proposed for political communication [1] are, based on our findings, not constrained to the domain but can be found in general speech. The EMI score is well generalizable, according to our results.
 
 ### Word2Evc vs. BERT
 
-As contextualized embeddings can capture more nuances and layers of meaning we were interested, how well our approach would work employing BERT for the embeddings. To learn this mentioned context, BERT required sentences that represented the concepts, more than just keyword lists. One limitation of our approach, and possible explanation for the big diffrence in performance on the data, is that we did miss to test several different ways of providing concept-context for the model.
+As contextualized embeddings can capture more nuances and layers of meaning we were interested, how well our approach would work employing BERT for the embeddings. To learn this mentioned context, BERT required sentences that represented the concepts, more than just keyword lists. One limitation of our approach, and possible explanation for the big differences in performance on the data, is that we did miss to test several different ways of providing concept-context for the model.
 
 We kept the initial approach, where we prompted ChatGPT to give a sentence to each keyword. It would have been interesting to compare this to the raw keyword lists, and customised sentences that are a) simpler and b) more complex than the ones ChatGPT provided us with. We could have validated them within the team and could have had them run on a small sample of the BERT model to see their influence on the embeddings. Instead we have only pursued one approach and see that it has not been effective.
 
